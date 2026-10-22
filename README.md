@@ -1,102 +1,198 @@
 # Upside Radar
 
-A personal job radar. Every morning a small Python script checks the job boards of the companies you care about, keeps the software roles that fit your level, and publishes them to a tracker page. The page gives you a fixed number of applications to make each day, spread across different sectors.
+A personal job radar for early-career software roles in the **Greater Seattle Area**.
 
-No AI and no servers. It runs for free on GitHub.
+Every morning a small Python script checks the job boards of a hand-picked watchlist of companies, keeps the roles that fit, and publishes them to a tracker page. The page hands you a fixed number of applications to make each day (3 by default), favors roles posted in the last few days, and spreads your bets across sectors.
 
-## How it works
+No AI, no servers, no accounts. It runs free on GitHub Actions and GitHub Pages.
 
-```
-GitHub Actions (every morning)
-   └─ scraper.py ── asks each job board for open jobs (plain HTTP)
-        └─ keeps: software roles, your level, US or remote
-        └─ writes docs/jobs.json (remembers first-seen dates, marks closed jobs)
-GitHub Pages
-   └─ docs/index.html ── reads jobs.json, shows today's bets
-        └─ your Applied / Skipped marks are saved in your browser
-```
+**Live page:** https://nepali234.github.io/upside/
 
-## Files
+---
 
-| File | What it is |
-|---|---|
-| `scraper.py` | Fetches Greenhouse, Lever, Ashby and Workday boards, filters, merges. |
-| `docs/companies.json` | Your watchlist and filters. Edit this to add companies. |
-| `docs/jobs.json` | The job list. The script rewrites it every morning. |
-| `docs/index.html` | The tracker page. |
-| `.github/workflows/daily.yml` | Runs the script every morning and commits the results. |
-| `tests/test_scraper.py` | Tests with fake board data. Run: `python3 -m unittest discover tests` |
+## What it does
 
-## Setup (about 10 minutes)
+**Every morning (automatic)**
+1. GitHub Actions runs `scraper.py` at 13:36 UTC (6:36am Seattle in summer, 5:36am in winter).
+2. The script asks each watched company's job board for its open jobs over plain HTTP.
+3. It keeps software roles at early-career level in the Greater Seattle Area. Amazon is always excluded.
+4. It merges the results into `docs/jobs.json`: new roles are added, each job's real posting date is saved, and jobs that disappeared are marked closed.
+5. It commits the file. GitHub Pages republishes the site a minute later.
 
-1. **Create a repo** on GitHub, for example `upside-radar`. Make it **private** if you don't want anyone to see your watchlist.
-   GitHub Pages on a private repo needs a paid plan; with a free plan, use a public repo.
-2. **Upload these files**, keeping the folder structure, including the hidden `.github` folder:
-   ```bash
-   cd upside-radar
-   git init && git add . && git commit -m "Upside Radar"
-   git branch -M main
-   git remote add origin https://github.com/<you>/upside-radar.git
-   git push -u origin main
-   ```
-3. **Let the workflow save results:** Settings → Actions → General → Workflow permissions → **Read and write permissions** → Save.
-4. **Turn on the page:** Settings → Pages → Source: **Deploy from a branch** → Branch `main`, folder **`/docs`** → Save.
-   Your page will be at `https://<you>.github.io/upside-radar/`.
-5. **Run it once now:** Actions → *Daily job refresh* → **Run workflow**. After that it runs every morning on its own.
-6. **Bring over your progress (optional):** on the page, open *Back up or move your progress* → *Import progress*, and pick `upside-radar-progress.json`.
+**On the page (you)**
+- **Today's bets:** your daily quota of roles to apply to. Each set mixes one safe bet (big, stable company) with wild bets (startups), every pick from a different company and sector, freshest roles first. Tap **✓ I applied** or **not for me**.
+- **Streak:** days in a row you hit your quota. Use **−** and **+** to change the quota (1–10).
+- **Spread:** where your bets have gone by sector, with a warning if more than half land in one.
+- **The list:** every open role, newest first. Roles posted in the last 3 days are tagged **just posted**. Mark each one by circling **applied**, **interview** or **skip**, and tap again to clear it.
+- **Filters:** status tabs, sector chips, search, and **Posted this week**.
+- **Add a role you found yourself**, for anything spotted elsewhere.
+- **Back up or move your progress:** export and import your marks as a JSON file.
+- **The watchlist:** one card per company, with why it's a bet and a link to its careers page.
 
-### Phone alerts (optional)
+---
 
-Install the free **ntfy** app and subscribe to a hard-to-guess topic name (for example `sayuj-radar-8f3k2q`). In the repo: Settings → Secrets and variables → Actions → **New repository secret**, name `NTFY_TOPIC`, value your topic name. You'll get a push only on days with new roles.
+## Setup
 
-## Growing the watchlist
+1. Push this folder to a GitHub repo. Pages on a private repo needs a paid plan, so use a public repo on the free plan.
+2. **Settings → Actions → General → Workflow permissions → Read and write permissions.** The workflow commits `jobs.json`.
+3. **Settings → Pages →** Deploy from a branch → `main`, folder `/docs`.
+4. **Actions → Daily job refresh → Run workflow** once. After that it runs every morning.
+5. Optional phone alerts: install the free **ntfy** app, subscribe to a hard-to-guess topic, and add it as the repository secret `NTFY_TOPIC`. You get a push only on days with new roles.
 
-This replaces a "scout": when you hear about a company (funding news, a friend, LinkedIn), check it in 30 seconds.
+GitHub's guides: [Pages publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) · [Actions settings](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository) · [Running a workflow by hand](https://docs.github.com/actions/managing-workflow-runs/manually-running-a-workflow)
 
-1. Open one of its job postings and look at the URL:
+## Adding a company
+
+1. Open one of its job postings and read the URL:
    - `boards.greenhouse.io/acme/...` or `job-boards.greenhouse.io/acme/...` → board `greenhouse`, slug `acme`
    - `jobs.lever.co/acme/...` → board `lever`, slug `acme`
    - `jobs.ashbyhq.com/acme/...` → board `ashby`, slug `acme`
-2. See what it would pick up:
-   ```bash
-   python3 scraper.py check greenhouse acme
-   ```
-3. If it looks good, add an entry to `docs/companies.json`:
-   ```json
-   { "name": "Acme", "category": "Robotics", "tier": "wild", "hq": "Seattle, WA",
-     "why": "One sentence on why it's a bet.",
-     "careersUrl": "https://job-boards.greenhouse.io/acme", "board": "greenhouse", "slug": "acme" }
-   ```
-   - `tier`: `"safe"` for big, stable companies; `"wild"` for startups. Each day's picks mix one safe with the rest wild.
-   - `category`: any name works. Sectors with a color already: AI infrastructure, Defense, Energy, Developer tools, Fintech, Robotics, Space, Big tech.
-   - Companies without a supported board: use `"board": "link"`. They show as a card with a link, and you check them by hand.
+2. Preview what it would pick up: `python3 scraper.py check greenhouse acme`
+3. Add an entry to `docs/companies.json` (the full format is under *Data formats* below).
 
-Keep it spread out. If one sector grows past about a third of the list, add somewhere else.
+Prefer companies with real Seattle-area offices, and keep sectors balanced. If one sector passes about a third of the list, add elsewhere.
 
-## Recently posted roles come first
+## Running locally
 
-Applying in the first few days matters, so the script saves each job's real posting date from the board (Greenhouse `first_published`, Lever `createdAt`, Ashby `publishedAt`, Workday "Posted N days ago").
+```bash
+python3 -m unittest discover tests     # tests use fake board data, no network
+python3 scraper.py                     # real run: fetches boards, rewrites docs/jobs.json
+python3 scraper.py check ashby baseten # preview one board against the filters
+cd docs && python3 -m http.server      # then open http://localhost:8000
+```
 
-- The list is sorted newest first. Roles posted in the last 3 days get a green **just posted** tag.
-- Today's bets pick from the freshest roles first (last 3 days, then this week, then older), while still mixing sectors and one safe bet.
-- **Posted this week** narrows the list to the last 7 days.
+Opening `docs/index.html` directly from disk won't load the data. Serve the folder.
 
-## Changing the filters
+---
 
-The three regexes at the top of `docs/companies.json` decide what counts:
+## For future agents and maintainers
 
-- `title_include`: the title must match (software, backend, SDE, ...).
-- `title_exclude`: skip if it matches (senior, staff, manager, intern, ...).
-- `location_include`: Greater Seattle Area cities (Seattle, Bellevue, Redmond, Kirkland, Bothell, Everett, Renton, Tacoma, ...). A job listing several cities is kept if any of them is in the area. Remote-only roles are skipped; add `|remote` to include them.
+Read this before changing anything.
 
-Change them, then run `python3 -m unittest discover tests` to make sure nothing broke.
+### Design principles
 
-## Notes
+1. **No AI and no paid services at runtime.** The owner chose this deliberately. Don't add LLM calls, hosted APIs, databases, or anything that needs a key or costs money. The whole system is a cron job, a script, a JSON file and a static page.
+2. **Simple over clever.** Standard library Python only, and one self-contained HTML file with no build step and no framework. Keep it that way.
+3. **Many small bets.** The page exists to make the owner apply to a few roles every day, spread across sectors, with a mix of safe and high-upside companies. Changes should support that habit, not add dashboards.
 
-- Amazon and AWS are blocked in the code and can never be added.
-- Microsoft, Google, Meta, Helion, Zap Energy and Overland AI don't publish a job feed the script can read. They appear as link cards, so check those by hand once a week.
-- NVIDIA uses Workday's public search endpoint. If it ever stops working, the page shows "boards unreachable" at the top and everything else keeps running.
-- Closed postings are hidden. Ones you marked applied or interviewing stay in those tabs, so your history and streak are kept.
-- Mark a role by circling **applied**, **interview** or **skip**; tap the circled one again to clear it.
-- Your statuses live in your browser. Use Export/Import to back them up or move between phone and laptop.
-- Run the page locally with `cd docs && python3 -m http.server`, then open http://localhost:8000. Opening the file directly won't load the data.
+### Rules that must not break
+
+- **Amazon and AWS are never shown.** They're blocked by `BLOCKED_COMPANIES` in `scraper.py`. Don't remove this, and don't add Amazon-owned companies to the watchlist.
+- **Greater Seattle Area only.** `location_include` in `docs/companies.json` decides this. A multi-city job is kept if any of its cities is in the area. Remote-only and unknown locations are dropped.
+- **Early-career level only.** `title_exclude` drops senior, staff, principal, lead, manager, director, head, intern, level III/IV and similar titles. The owner has about a year of full-time industry experience plus an internship. Target "Software Engineer I/II", roles asking 0–3 years, and new-grad or early-career programs.
+- **The scraper never touches the owner's statuses.** Applied, skipped and interviewing marks live only in the browser's `localStorage`. `jobs.json` is board data only.
+- **One broken board never stops the run.** Each fetch is wrapped in try/except. Errors go into `jobs.json` under `errors`, and the page shows "N boards unreachable".
+- **Never invent jobs or dates.** Every job comes from a board feed or from the owner's manual entry.
+
+### How the pieces fit
+
+```
+.github/workflows/daily.yml   cron 13:36 UTC + manual "Run workflow"
+   └─ runs tests, then scraper.py, then commits docs/jobs.json if it changed
+scraper.py
+   ├─ fetch_greenhouse / fetch_lever / fetch_ashby / fetch_workday   (one per board type)
+   ├─ is_match(job, filters)    title include/exclude + location regexes from companies.json
+   ├─ refresh(config, existing, fetchers, now)   pure merge logic, easy to test
+   ├─ summary_text / notify_phone   optional ntfy push
+   └─ check_board(board, slug)   "python3 scraper.py check <board> <slug>"
+docs/companies.json   watchlist + filter regexes (edited by hand)
+docs/jobs.json        generated each morning; never hand-edit except to repair
+docs/index.html       the whole front end: CSS, markup and JS in one file
+tests/test_scraper.py unittest; fakes every network call
+```
+
+### Data formats
+
+**`docs/companies.json`**
+```json
+{
+  "filters": { "title_include": "regex", "title_exclude": "regex", "location_include": "regex" },
+  "companies": [{
+    "name": "Baseten",                 // display name; also the join key used by jobs.json "company"
+    "category": "AI infrastructure",   // sector, used for colors, chips and the diversity rule
+    "tier": "wild",                    // "safe" (big, stable) or "wild" (startup); defaults by category
+    "hq": "San Francisco, CA",
+    "why": "One plain sentence on why it's a bet.",
+    "careersUrl": "https://...",       // must be https; shown on the watchlist card
+    "linkLabel": "optional link text",
+    "board": "greenhouse",             // greenhouse | lever | ashby | workday | link
+    "slug": "baseten",
+    "workday": { "host": "...", "tenant": "...", "site": "...", "search": "software engineer" }  // workday only
+  }]
+}
+```
+Regexes are Python `re` with `re.I`. `"board": "link"` means there's no readable feed (Microsoft, Google, Meta, Helion, Zap, Overland): the company appears as a card for checking by hand and is never fetched.
+
+**`docs/jobs.json`** (written by the scraper)
+```json
+{
+  "updatedAt": "2026-10-22T13:36:00Z",
+  "errors": ["NVIDIA: URLError: ..."],
+  "jobs": [{
+    "id": "gh-stripe-6042172",   // <prefix>-<slug>-<board job id>; prefixes gh, lv, ab, wd
+    "company": "Stripe",
+    "title": "Backend Engineer, Core Technology",
+    "location": "Seattle · US-Remote · Chicago",
+    "url": "https://...",
+    "postedAt": "2026-10-20T13:00:00Z",   // real posting date from the board; may be missing
+    "firstSeen": "...", "lastSeen": "...",
+    "open": true,                          // false once it vanishes from the board
+    "closedAt": "..."                      // set when closed
+  }]
+}
+```
+Merge rules, all in `refresh()`:
+- A job is new the first time its `id` is seen. If it disappears and comes back, it reopens without counting as new again.
+- `postedAt` keeps the **earliest** date ever seen, because Workday's "Posted 30+ Days Ago" drifts.
+- Jobs missing from their company's board are marked `open: false`. Closed jobs are deleted 60 days after `closedAt` (`KEEP_CLOSED_DAYS`).
+- Saved jobs that no longer pass the current filters are dropped. Narrowing a filter cleans up on the next run.
+
+Posting-date sources: Greenhouse `first_published`, Lever `createdAt` (epoch ms), Ashby `publishedAt`, Workday `postedOn` text parsed by `workday_posted()`. Workday's search only says "N Locations" for multi-city jobs, so `workday_locations()` fetches the job's detail endpoint to get the real cities.
+
+**Browser storage** (`localStorage["upside-radar-v1"]`, also the export/import file format)
+```json
+{
+  "statuses": { "<job id>": { "status": "applied", "statusAt": "ISO", "appliedAt": "ISO" } },
+  "manual":   [{ "id": "manual-...", "company": "...", "title": "...", "location": "...", "url": "https://...", "firstSeen": "ISO" }],
+  "target": 3,
+  "ui": { "tab": "new" }
+}
+```
+`status` is `new`, `applied`, `interviewing` or `skipped`. A bet counts toward a day's quota and the streak on its `appliedAt` date, and only while the status is still applied or interviewing. Clearing a mark removes `appliedAt`. Import merges by keeping the newer `statusAt` per job. If you rename the storage key, migrate the old one, or the owner loses their history.
+
+### Page logic (`docs/index.html`)
+
+- **Today's picks** (`choosePicks`): the pool is open roles still at `new`, sorted by freshness band (posted ≤3 days, ≤7, ≤21, older or unknown) and then by a hash of the date plus the job id, so picks are stable through the day and change daily. Three passes fill the quota: first a strict pass (a new sector per pick, one safe bet, the rest wild), then one that relaxes the safe/wild split, then one that relaxes sectors. A company is never picked twice in a day.
+- **Visibility:** closed postings are hidden unless the owner marked them applied or interviewing (`isVisible`).
+- **Sorting:** by `postedAt` newest first. Jobs with no posting date sort after dated ones.
+- **`shortLoc`** shortens long city lists to the Seattle-area city plus a count. Its `AREA` regex mirrors `location_include`, so keep the two in sync.
+- Sector chips only show sectors that currently have roles.
+
+### Visual design
+
+Minimal, Apple-like layout drawn as if in pencil on paper. Keep this direction unless the owner asks otherwise.
+- **Color:** monochrome graphite on near-white paper with faint grain, plus a dark mode (charcoal on dark paper). Colored pencil appears only for sector dots, the green "placed" and "just posted" states, and amber for interviewing. All colors are CSS variables on `:root`, redefined under `prefers-color-scheme: dark`.
+- **Type:** the system font (SF Pro on Apple devices) for UI text and headings. **Kalam**, a neat handwritten print, for job titles and buttons. **Caveat**, a looser hand, for small notes and annotations. Both come from Google Fonts with handwriting fallbacks.
+- **Pencil effect:** two inline SVG filters, `#rough` and `#rough2` (turbulence plus displacement), wobble the outlines. Frames are pseudo-elements (`.sk::before/::after`) so text is never distorted. Buttons (`.pb`) are hand-drawn outlines that fill with pencil hatching on hover. Status marks (`.mark`) get a pencil circle when chosen.
+- The page must work at phone width with no sideways scrolling.
+
+### Common changes
+
+| Want to… | Change |
+|---|---|
+| Add or remove a company | `docs/companies.json` (check with `scraper.py check` first) |
+| Include remote roles again | Add `\|remote` to `location_include`, and to `AREA` in `index.html` |
+| Change seniority | `title_exclude` / `title_include`, then run the tests |
+| Support a new board type | Add `fetch_<board>()` returning `make_job(...)` dicts, register it in `FETCHERS`, add a fake-data test |
+| Change the run time | The cron in `.github/workflows/daily.yml` (UTC) |
+| Change the default daily quota | `target: 3` in `loadStore()` in `index.html` |
+
+Always run `python3 -m unittest discover tests` before committing. Workflow runs execute the tests first and won't publish if they fail.
+
+### Gotchas
+
+- GitHub Pages can take a minute or two to show a new commit. Hard-refresh if the page looks stale.
+- The workflow can only push if workflow permissions are set to read and write.
+- The daily workflow commits `jobs.json`. Pull before pushing local changes, or the push will be rejected.
+- Job boards occasionally change their APIs. A failing board shows up in `errors` and in the run summary under **Actions**, and the other boards keep working.
+- If `location_include` changes, `refresh()` drops non-matching saved jobs on the next run. Roles the owner marked applied keep their status in the browser but vanish from the list if their job was dropped.
