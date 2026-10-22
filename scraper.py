@@ -48,20 +48,59 @@ def http_json(url, body=None):
         return json.loads(resp.read().decode("utf-8"))
 
 
-def make_job(prefix, slug, job_id, title, location, url):
+def make_job(prefix, slug, job_id, title, location, url, posted=None):
     return {
         "id": f"{prefix}-{slug}-{job_id}",
         "title": (title or "").strip(),
         "location": (location or "").strip(),
         "url": url or "",
+        "postedAt": to_iso(posted),
     }
+
+
+ISO = "%Y-%m-%dT%H:%M:%SZ"
+
+
+def to_iso(value):
+    """Board dates come as ISO strings with offsets or as epoch milliseconds. Return UTC 'Z' or None."""
+    if value in (None, ""):
+        return None
+    try:
+        if isinstance(value, (int, float)):
+            dt = datetime.fromtimestamp(value / 1000, tz=timezone.utc)
+        elif isinstance(value, datetime):
+            dt = value
+        else:
+            dt = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc).strftime(ISO)
+    except (ValueError, OverflowError, OSError):
+        return None
+
+
+def workday_posted(text, now=None):
+    """Workday says 'Posted Today', 'Posted Yesterday', 'Posted 3 Days Ago', 'Posted 30+ Days Ago'."""
+    now = now or datetime.now(timezone.utc)
+    t = (text or "").lower()
+    if "today" in t:
+        days = 0
+    elif "yesterday" in t:
+        days = 1
+    else:
+        m = re.search(r"(\d+)\+?\s*day", t)
+        if not m:
+            return None
+        days = int(m.group(1))
+    return now - timedelta(days=days)
 
 
 def fetch_greenhouse(company):
     slug = company["slug"]
     data = http_json(f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs")
     return [
-        make_job("gh", slug, j["id"], j.get("title"), (j.get("location") or {}).get("name"), j.get("absolute_url"))
+        make_job("gh", slug, j["id"], j.get("title"), (j.get("location") or {}).get("name"), j.get("absolute_url"),
+                 j.get("first_published"))
         for j in data.get("jobs", [])
     ]
 
@@ -74,7 +113,7 @@ def fetch_lever(company):
         cats = j.get("categories") or {}
         locations = cats.get("allLocations") or [cats.get("location") or ""]
         jobs.append(make_job("lv", slug, j["id"], j.get("text"),
-                             " · ".join(l for l in locations if l), j.get("hostedUrl")))
+                             " · ".join(l for l in locations if l), j.get("hostedUrl"), j.get("createdAt")))
     return jobs
 
 
@@ -90,7 +129,8 @@ def fetch_ashby(company):
         if j.get("isRemote"):
             locations.append("Remote")
         unique = list(dict.fromkeys(l for l in locations if l))
-        jobs.append(make_job("ab", slug, j["id"], j.get("title"), " · ".join(unique), j.get("jobUrl")))
+        jobs.append(make_job("ab", slug, j["id"], j.get("title"), " · ".join(unique), j.get("jobUrl"),
+                             j.get("publishedAt")))
     return jobs
 
 
@@ -111,7 +151,7 @@ def fetch_workday(company):
             if re.match(r"^\d+ Locations?$", location, re.I):
                 location = workday_locations(endpoint.rsplit("/jobs", 1)[0] + path) or location
             jobs.append(make_job("wd", company["slug"], job_id, p.get("title"),
-                                 location, f"{base}/en-US/{w['site']}{path}"))
+                                 location, f"{base}/en-US/{w['site']}{path}", workday_posted(p.get("postedOn"))))
         if len(postings) < 20:
             break
     return jobs
@@ -196,8 +236,13 @@ def refresh(config, existing_jobs, fetchers=FETCHERS, now=None):
                 old.update(title=job["title"], location=job["location"], url=job["url"],
                            lastSeen=stamp, open=True)
                 old.pop("closedAt", None)
+                # Keep the earliest known posting date (Workday's "30+ days ago" drifts).
+                if job.get("postedAt") and (not old.get("postedAt") or job["postedAt"] < old["postedAt"]):
+                    old["postedAt"] = job["postedAt"]
             else:
                 record = {**job, "company": name, "firstSeen": stamp, "lastSeen": stamp, "open": True}
+                if not record.get("postedAt"):
+                    record.pop("postedAt", None)
                 by_id[job["id"]] = record
                 new_jobs.append(record)
 

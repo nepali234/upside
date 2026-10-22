@@ -51,29 +51,42 @@ class FilterTests(unittest.TestCase):
 class FetcherTests(unittest.TestCase):
     def test_greenhouse(self):
         fake = {"jobs": [{"id": 5, "title": "Software Engineer", "location": {"name": "Seattle, WA"},
-                          "absolute_url": "https://boards.greenhouse.io/x/jobs/5"}]}
+                          "absolute_url": "https://boards.greenhouse.io/x/jobs/5",
+                          "first_published": "2026-10-20T09:00:00-04:00", "updated_at": "2026-10-21T10:00:00-04:00"}]}
         with mock.patch.object(scraper, "http_json", return_value=fake):
             out = scraper.fetch_greenhouse({"slug": "x"})
         self.assertEqual(out, [{"id": "gh-x-5", "title": "Software Engineer", "location": "Seattle, WA",
-                                "url": "https://boards.greenhouse.io/x/jobs/5"}])
+                                "url": "https://boards.greenhouse.io/x/jobs/5", "postedAt": "2026-10-20T13:00:00Z"}])
 
     def test_lever(self):
-        fake = [{"id": "abc", "text": "Software Engineer", "hostedUrl": "https://jobs.lever.co/x/abc",
+        fake = [{"id": "abc", "text": "Software Engineer", "hostedUrl": "https://jobs.lever.co/x/abc", "createdAt": 1792076891429,
                  "categories": {"location": "San Diego", "allLocations": ["San Diego", "Boston"]}}]
         with mock.patch.object(scraper, "http_json", return_value=fake):
             out = scraper.fetch_lever({"slug": "x"})
         self.assertEqual(out[0]["location"], "San Diego · Boston")
+        self.assertEqual(out[0]["postedAt"], "2026-10-15T15:08:11Z")
         self.assertEqual(out[0]["id"], "lv-x-abc")
 
     def test_ashby_skips_unlisted_and_merges_locations(self):
         fake = {"jobs": [
-            {"id": "a1", "title": "MTS", "location": "New York", "isRemote": True,
+            {"id": "a1", "title": "MTS", "location": "New York", "isRemote": True, "publishedAt": "2026-07-31T18:56:39.246+00:00",
              "secondaryLocations": [{"location": "San Francisco"}], "jobUrl": "https://jobs.ashbyhq.com/x/a1"},
             {"id": "a2", "title": "Hidden", "isListed": False, "jobUrl": "https://jobs.ashbyhq.com/x/a2"}]}
         with mock.patch.object(scraper, "http_json", return_value=fake):
             out = scraper.fetch_ashby({"slug": "x"})
         self.assertEqual(len(out), 1)
         self.assertEqual(out[0]["location"], "New York · San Francisco · Remote")
+        self.assertEqual(out[0]["postedAt"], "2026-07-31T18:56:39Z")
+
+    def test_workday_posted_text(self):
+        now = datetime(2026, 10, 22, 13, 0, tzinfo=timezone.utc)
+        day = lambda t: scraper.to_iso(scraper.workday_posted(t, now))[:10]
+        self.assertEqual(day("Posted Today"), "2026-10-22")
+        self.assertEqual(day("Posted Yesterday"), "2026-10-21")
+        self.assertEqual(day("Posted 3 Days Ago"), "2026-10-19")
+        self.assertEqual(day("Posted 30+ Days Ago"), "2026-09-22")
+        self.assertIsNone(scraper.workday_posted("", now))
+        self.assertIsNone(scraper.to_iso("not a date"))
 
     def test_workday_pages_and_builds_urls(self):
         page = {"jobPostings": [{"title": "Software Engineer", "locationsText": "US, CA, Santa Clara",
@@ -134,6 +147,14 @@ class RefreshTests(unittest.TestCase):
         merged, new, _ = self.run_refresh([j("Software Engineer", jid="1"), j("Backend Engineer", jid="3")], merged, t3)
         self.assertEqual(new, [])                                      # reopened job isn't "new" again
         self.assertTrue(next(r for r in merged if r["id"] == "gh-x-1")["open"])
+
+        # Posting dates: filled in when a board provides one, and the earliest date wins.
+        with_date = [dict(j("Software Engineer", jid="1"), postedAt="2026-10-20T00:00:00Z"), j("Backend Engineer", jid="3")]
+        merged, _, _ = self.run_refresh(with_date, merged, t3)
+        self.assertEqual(next(r for r in merged if r["id"] == "gh-x-1")["postedAt"], "2026-10-20T00:00:00Z")
+        later = [dict(j("Software Engineer", jid="1"), postedAt="2026-10-22T00:00:00Z"), j("Backend Engineer", jid="3")]
+        merged, _, _ = self.run_refresh(later, merged, t3)
+        self.assertEqual(next(r for r in merged if r["id"] == "gh-x-1")["postedAt"], "2026-10-20T00:00:00Z")
 
         # Saved jobs that no longer fit the filters (e.g. after narrowing locations) are dropped.
         stale = dict(merged[0], id="gh-x-99", location="Austin, TX")

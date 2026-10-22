@@ -73,6 +73,14 @@ This replaces a "scout": when you hear about a company (funding news, a friend, 
 
 Keep it spread out. If one sector grows past about a third of the list, add somewhere else.
 
+## Recently posted roles come first
+
+Applying in the first few days matters, so the script saves each job's real posting date from the board (Greenhouse `first_published`, Lever `createdAt`, Ashby `publishedAt`, Workday "Posted N days ago").
+
+- The list is sorted newest first. Roles posted in the last 3 days get a green **just posted** tag.
+- Today's bets pick from the freshest roles first (last 3 days, then this week, then older), while still mixing sectors and one safe bet.
+- **Posted this week** narrows the list to the last 7 days.
+
 ## Changing the filters
 
 The three regexes at the top of `docs/companies.json` decide what counts:

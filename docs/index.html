@@ -147,6 +147,7 @@ h1 { font-size: clamp(38px, 7vw, 56px); font-weight: 600; letter-spacing: -0.035
 .job-meta { font-size: 13px; color: var(--lead); display: flex; flex-wrap: wrap; gap: 2px 14px; }
 .when { font: 500 17px/1.1 var(--hand); }
 .closed-tag { color: var(--warn); font: 500 17px/1.1 var(--hand); }
+.fresh { color: var(--ok); font: 600 18px/1.1 var(--hand); }
 .job-act { display: flex; gap: 14px; align-items: center; }
 select.status { appearance: none; -webkit-appearance: none; font: 500 13px var(--sans); color: var(--graphite);
   background: transparent; border: 1.2px solid var(--hair); border-radius: 999px; padding: 6px 28px 6px 13px; cursor: pointer;
@@ -244,6 +245,7 @@ details.box[open] summary::before { content: "– "; }
     <div class="cats" id="cats" role="group" aria-label="Sector"></div>
     <div class="row">
       <label class="field"><input type="search" id="q" placeholder="Search title or company" aria-label="Search jobs"></label>
+      <label class="toggle"><input type="checkbox" id="recent"> Posted this week</label>
       <label class="toggle"><input type="checkbox" id="showClosed"> Show closed postings</label>
     </div>
   </section>
@@ -300,7 +302,7 @@ let store = loadStore();
 function saveStore() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) {} }
 
 let boardJobs = [], companies = [], updatedAt = null, boardErrors = [], loadFailed = false;
-const ui = { tab: store.ui.tab || "new", cats: new Set(), q: "", showClosed: false };
+const ui = { tab: store.ui.tab || "new", cats: new Set(), q: "", showClosed: false, recent: false };
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -319,6 +321,17 @@ function shortLoc(loc) {
   const others = parts.length - local.length;
   if (!local.length) return loc;
   return [...new Set(local)].join(" · ") + (others ? ` · +${others} other ${others === 1 ? "city" : "cities"}` : "");
+}
+// ---------- Freshness: early applicants get seen first ----------
+const DAY_MS = 86400000;
+const ageDays = (j) => { if (!j.postedAt) return null; const t = Date.parse(j.postedAt); return isNaN(t) ? null : Math.max(0, Math.floor((Date.now() - t) / DAY_MS)); };
+const freshRank = (j) => { const d = ageDays(j); return d === null ? 3 : d <= 3 ? 0 : d <= 7 ? 1 : d <= 21 ? 2 : 3; };
+const sortTime = (j) => j.postedAt || j.firstSeen || "";
+function postedTag(j) {
+  const d = ageDays(j);
+  if (d === null) return j.firstSeen ? `<span class="when">found ${esc(fmtDate(j.firstSeen))}</span>` : "";
+  const txt = d === 0 ? "posted today" : d === 1 ? "posted yesterday" : d < 30 ? `posted ${d}d ago` : `posted ${fmtDate(j.postedAt)}`;
+  return d <= 3 ? `<span class="fresh">just posted · ${esc(txt.replace("posted ", ""))}</span>` : `<span class="when">${esc(txt)}</span>`;
 }
 const coLine = (name) => `<span class="co-line"><span class="dot" style="background:${catColor(catOf(name))}"></span>${esc(name)}</span>`;
 
@@ -346,7 +359,9 @@ function hash(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^=
 function choosePicks(jobs, n, placedToday) {
   if (n <= 0) return [];
   const day = todayKey();
-  const pool = jobs.filter(j => j.status === "new" && j.open !== false).sort((a, b) => hash(day + a.id) - hash(day + b.id));
+  // Freshest first (posted in the last 3 days, then this week...), shuffled daily within each band.
+  const pool = jobs.filter(j => j.status === "new" && j.open !== false)
+    .sort((a, b) => freshRank(a) - freshRank(b) || hash(day + a.id) - hash(day + b.id));
   const usedCo = new Set(placedToday.map(j => j.company));
   const usedCat = new Set(placedToday.map(j => catOf(j.company)));
   let safeLeft = placedToday.some(j => tierOf(j.company) === "safe") ? 0 : (n + placedToday.length >= 2 ? 1 : 0);
@@ -394,6 +409,7 @@ function renderToday(jobs) {
     return `<article class="pick sk soft ${isDone ? "done" : ""}">
       <span class="tier ${tier}">${tier === "safe" ? "safe bet" : "wild bet"} · ${esc(catOf(j.company).toLowerCase())}</span>
       ${coLine(j.company)}
+      ${freshRank(j) === 0 ? postedTag(j) : ""}
       <a class="t" href="${esc(safeUrl(j.url))}" target="_blank" rel="noopener">${esc(j.title)}</a>
       <span class="m" title="${esc(j.location || "")}">${esc(shortLoc(j.location))}</span>
       <div class="acts">${isDone ? `<span class="placed">placed ✓</span>` :
@@ -448,16 +464,17 @@ function renderQueue(jobs) {
     .filter(j => ui.tab === "all" || j.status === ui.tab)
     .filter(j => !ui.cats.size || ui.cats.has(catOf(j.company)))
     .filter(j => !q || (j.title + " " + j.company).toLowerCase().includes(q))
-    .sort((a, b) => (b.firstSeen || "").localeCompare(a.firstSeen || "") || a.company.localeCompare(b.company));
+    .filter(j => !ui.recent || (ageDays(j) ?? 99) <= 7)
+    .sort((a, b) => (b.postedAt || "").localeCompare(a.postedAt || "") || sortTime(b).localeCompare(sortTime(a)) || a.company.localeCompare(b.company));
   if (!jobs.length) { $("queue").innerHTML = `<div class="empty"><strong>No roles yet</strong>Run the daily workflow once (Actions → Daily job refresh → Run workflow) and reload.</div>`; return; }
   if (!list.length) { $("queue").innerHTML = `<div class="empty"><strong>Nothing here</strong>Try another tab or clear the filters.</div>`; return; }
   $("queue").innerHTML = list.map((j, i) => {
-    const when = j.status !== "new" && j.statusAt ? `${j.status} ${fmtDate(j.statusAt)}` : `found ${fmtDate(j.firstSeen)}`;
+    const when = j.status !== "new" && j.statusAt ? `${j.status} ${fmtDate(j.statusAt)}` : "";
     return `${i ? `<div class="rule" aria-hidden="true"></div>` : ""}<article class="job">
       <div class="job-main">
         ${coLine(j.company)}
         <a class="job-title" href="${esc(safeUrl(j.url))}" target="_blank" rel="noopener">${esc(j.title)}</a>
-        <div class="job-meta"><span title="${esc(j.location || "")}">${esc(shortLoc(j.location))}</span><span class="when">${esc(when)}</span>${j.open === false ? `<span class="closed-tag">posting closed</span>` : ""}</div>
+        <div class="job-meta"><span title="${esc(j.location || "")}">${esc(shortLoc(j.location))}</span>${postedTag(j)}${when ? `<span class="when">${esc(when)}</span>` : ""}${j.open === false ? `<span class="closed-tag">posting closed</span>` : ""}</div>
       </div>
       <div class="job-act">
         <a class="btn-text" href="${esc(safeUrl(j.url))}" target="_blank" rel="noopener">Open ↗</a>
@@ -492,6 +509,7 @@ $("tabs").addEventListener("click", e => { const b = e.target.closest("[data-tab
 $("cats").addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if (!b) return; const c = b.dataset.cat; ui.cats.has(c) ? ui.cats.delete(c) : ui.cats.add(c); renderAll(); });
 $("q").addEventListener("input", e => { ui.q = e.target.value; renderAll(); });
 $("showClosed").addEventListener("change", e => { ui.showClosed = e.target.checked; renderAll(); });
+$("recent").addEventListener("change", e => { ui.recent = e.target.checked; renderAll(); });
 $("queue").addEventListener("change", e => { const s = e.target.closest("select.status"); if (s) setStatus(s.dataset.id, s.value); });
 $("picks").addEventListener("click", e => { const b = e.target.closest("button[data-act]"); if (b) setStatus(b.dataset.id, b.dataset.act); });
 $("t-minus").addEventListener("click", () => { store.target = Math.max(1, store.target - 1); saveStore(); renderAll(); });
