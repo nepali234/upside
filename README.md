@@ -123,7 +123,7 @@ tests/test_scraper.py unittest; fakes every network call
   }]
 }
 ```
-Regexes are Python `re` with `re.I`. `"board": "link"` means there's no readable feed (Microsoft, Google, Meta, Helion, Zap, Overland): the company appears as a card for checking by hand and is never fetched.
+Regexes are Python `re` with `re.I`. `"board": "link"` means there's no readable feed (Microsoft, Google, Meta, Helion, Zap, Overland, Blue Origin): the company appears as a card for checking by hand and is never fetched.
 
 **`docs/jobs.json`** (written by the scraper)
 ```json
