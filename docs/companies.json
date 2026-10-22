@@ -2,7 +2,7 @@
   "filters": {
     "title_include": "software|developer|\\bSDE\\b|\\bSWE\\b|back[- ]?end|full[- ]?stack|platform engineer|infrastructure engineer|infrastructure systems|cloud engineer|\\bSRE\\b|site reliability|member of technical staff|forward deployed|\\bAI engineer|data engineer|embedded|autonomy",
     "title_exclude": "senior|\\bsr\\.?\\b|(?<!technical )staff|principal|\\blead\\b|manager|director|\\bhead\\b|chief|intern|research scientist|\\bIII\\b|\\bIV\\b|architect|\\bvp\\b|technician",
-    "location_include": "united states|\\bUSA?\\b|\\bUS-|remote|anywhere|seattle|bellevue|redmond|kirkland|everett|bothell|san francisco|\\bSF\\b|south san francisco|bay area|san jose|santa clara|mountain view|palo alto|menlo park|sunnyvale|oakland|los angeles|long beach|costa mesa|irvine|san diego|new york|\\bNYC\\b|boston|chicago|austin|dallas|denver|broomfield|colorado|atlanta|washington|\\bD\\.?C\\.?\\b|reston|arlington|ann arbor|michigan|cape canaveral|florida|texas|california|virginia|massachusetts|georgia|\\bSEA\\b|, ?(AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY)\\b"
+    "location_include": "seattle|bellevue|redmond|kirkland|bothell|everett(?!,? ?ma)|renton|issaquah|sammamish|woodinville|lynnwood|tukwila|tacoma|mercer island|shoreline|kent,? ?wa|\\bSEA\\b|puget sound"
   },
 
   "companies": [

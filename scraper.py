@@ -107,11 +107,24 @@ def fetch_workday(company):
         for p in postings:
             path = p.get("externalPath", "")
             job_id = path.rstrip("/").split("_")[-1] or path
+            location = p.get("locationsText") or ""
+            if re.match(r"^\d+ Locations?$", location, re.I):
+                location = workday_locations(endpoint.rsplit("/jobs", 1)[0] + path) or location
             jobs.append(make_job("wd", company["slug"], job_id, p.get("title"),
-                                 p.get("locationsText"), f"{base}/en-US/{w['site']}{path}"))
+                                 location, f"{base}/en-US/{w['site']}{path}"))
         if len(postings) < 20:
             break
     return jobs
+
+
+def workday_locations(detail_url):
+    """Workday's search shows '3 Locations' for multi-city jobs; the job's detail page names them."""
+    try:
+        info = http_json(detail_url).get("jobPostingInfo", {})
+    except Exception:
+        return ""
+    names = [info.get("location", "")] + list(info.get("additionalLocations") or [])
+    return " · ".join(dict.fromkeys(n for n in names if n))
 
 
 FETCHERS = {
@@ -133,9 +146,9 @@ def is_match(job, filters):
         return False
     if re.search(filters["title_exclude"], title, re.I):
         return False
-    # Location: keep US / remote. Keep "3 Locations"-style text (Workday) and blanks too.
-    if location and not re.search(filters["location_include"], location, re.I) \
-            and not re.match(r"^\d+ Locations?$", location, re.I):
+    # Location: Greater Seattle Area only. A job listing several cities counts
+    # if any of them is in the area. No location listed = can't tell = skip.
+    if not re.search(filters["location_include"], location or "", re.I):
         return False
     return True
 
@@ -156,7 +169,8 @@ def refresh(config, existing_jobs, fetchers=FETCHERS, now=None):
     now = now or datetime.now(timezone.utc)
     stamp = now.strftime("%Y-%m-%dT%H:%M:%SZ")
     filters = config["filters"]
-    by_id = {j["id"]: dict(j) for j in existing_jobs}
+    # If the filters changed, forget saved jobs that no longer fit them.
+    by_id = {j["id"]: dict(j) for j in existing_jobs if is_match(j, filters)}
     new_jobs, errors = [], []
 
     for company in config["companies"]:

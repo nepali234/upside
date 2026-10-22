@@ -38,11 +38,13 @@ class FilterTests(unittest.TestCase):
                   "Propulsion Technician I", "Solutions Architect"]:
             self.assertFalse(self.keep(t), t)
 
-    def test_locations(self):
-        for loc in ["Seattle, WA", "Remote (US)", "US-Remote, Chicago", "Costa Mesa, California, United States",
-                    "San Francisco · Toronto", "Austin, TX", "3 Locations", "", "SEA, SF, NY, Toronto"]:
+    def test_locations_greater_seattle_only(self):
+        for loc in ["Seattle, WA", "Bellevue, Washington", "US, WA, Redmond", "Kirkland, WA", "Everett, WA",
+                    "Bothell", "Renton, WA", "Tacoma, WA", "SEA, SF, NY, Toronto", "NYC, Sea, SF, Tor",
+                    "San Francisco · Seattle · Remote", "Seattle, WA · Atlanta · Costa Mesa"]:
             self.assertTrue(self.keep("Software Engineer", loc), loc)
-        for loc in ["London, UK", "Amsterdam", "Stockholm", "Singapore", "Kigali, Rwanda", "Toronto, Canada"]:
+        for loc in ["Remote (US)", "US-Remote, Chicago", "San Francisco · Toronto", "Austin, TX", "3 Locations", "",
+                    "Washington, D.C.", "Everett, MA", "Kent, UK", "London, UK", "Costa Mesa, California, United States"]:
             self.assertFalse(self.keep("Software Engineer", loc), loc)
 
 
@@ -83,6 +85,21 @@ class FetcherTests(unittest.TestCase):
         self.assertEqual(out[0]["id"], "wd-nvidia-JR123")
         self.assertEqual(out[0]["url"], "https://nvidia.wd5.myworkdayjobs.com/en-US/Ext/job/US-CA-Santa-Clara/Software-Engineer_JR123")
 
+    def test_workday_resolves_vague_locations(self):
+        page = {"jobPostings": [{"title": "Software Engineer", "locationsText": "2 Locations",
+                                 "externalPath": "/job/US-WA-Redmond/Software-Engineer_JR9"}]}
+        detail = {"jobPostingInfo": {"location": "US, CA, Santa Clara", "additionalLocations": ["US, WA, Redmond"]}}
+        calls = []
+        def fake(url, body=None):
+            calls.append(url)
+            return detail if body is None else page
+        with mock.patch.object(scraper, "http_json", side_effect=fake):
+            out = scraper.fetch_workday({"slug": "nvidia", "workday": {
+                "host": "nvidia.wd5.myworkdayjobs.com", "tenant": "nvidia", "site": "Ext"}})
+        self.assertEqual(calls[1], "https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/Ext/job/US-WA-Redmond/Software-Engineer_JR9")
+        self.assertEqual(out[0]["location"], "US, CA, Santa Clara · US, WA, Redmond")
+        self.assertTrue(scraper.is_match(out[0], FILTERS))
+
 
 class RefreshTests(unittest.TestCase):
     CONF = {"filters": FILTERS, "companies": [
@@ -117,6 +134,11 @@ class RefreshTests(unittest.TestCase):
         merged, new, _ = self.run_refresh([j("Software Engineer", jid="1"), j("Backend Engineer", jid="3")], merged, t3)
         self.assertEqual(new, [])                                      # reopened job isn't "new" again
         self.assertTrue(next(r for r in merged if r["id"] == "gh-x-1")["open"])
+
+        # Saved jobs that no longer fit the filters (e.g. after narrowing locations) are dropped.
+        stale = dict(merged[0], id="gh-x-99", location="Austin, TX")
+        merged2, _, _ = self.run_refresh([], merged + [stale], t3)
+        self.assertNotIn("gh-x-99", [r["id"] for r in merged2])
 
         t4 = t3 + timedelta(days=61)
         merged, _, _ = self.run_refresh([], merged, t4)                # both close now...

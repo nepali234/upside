@@ -79,7 +79,7 @@ The three regexes at the top of `docs/companies.json` decide what counts:
 
 - `title_include`: the title must match (software, backend, SDE, ...).
 - `title_exclude`: skip if it matches (senior, staff, manager, intern, ...).
-- `location_include`: keep US cities, states and remote.
+- `location_include`: Greater Seattle Area cities (Seattle, Bellevue, Redmond, Kirkland, Bothell, Everett, Renton, Tacoma, ...). A job listing several cities is kept if any of them is in the area. Remote-only roles are skipped; add `|remote` to include them.
 
 Change them, then run `python3 -m unittest discover tests` to make sure nothing broke.
 
