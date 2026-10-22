@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#1b1b1d" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Kalam:wght@400;700&display=swap">
 <style>
 /* Layout: a single quiet column on paper. Pencil lines frame only what you act on:
    today's bets first, then the list, then the watchlist. Monochrome graphite,
@@ -28,6 +28,7 @@
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --hand: "Caveat", "Bradley Hand", "Segoe Print", cursive;
+  --print: "Kalam", "Bradley Hand", "Segoe Print", cursive;
   --mono: ui-monospace, "SF Mono", Menlo, monospace;
   color-scheme: light;
 }
@@ -101,14 +102,21 @@ h1 { font-size: clamp(38px, 7vw, 56px); font-weight: 600; letter-spacing: -0.035
 .tier { font: 500 19px/1.1 var(--hand); color: var(--lead); }
 .tier.wild { color: var(--graphite); }
 .co-line { display: flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--lead); margin-top: 4px; }
-.pick .t { font-weight: 600; font-size: 16px; line-height: 1.35; color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
+.pick .t { font: 700 19px/1.3 var(--print); color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
 .pick .t:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .pick .m { font-size: 13px; color: var(--lead); }
 .pick .acts { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 10px; }
-.btn-ink { font: 600 13px var(--sans); border: 0; border-radius: 999px; padding: 8px 15px; cursor: pointer; background: var(--ink); color: var(--paper); }
-.btn-ink:hover { opacity: .85; }
-.btn-text { font: 500 13px var(--sans); border: 0; background: none; padding: 8px 2px; cursor: pointer; color: var(--lead); text-decoration: none; }
-.btn-text:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+/* pencil buttons: a hand-drawn outline; hovering shades it in with hatching */
+.pb { position: relative; font: 700 16px/1 var(--print); color: var(--ink); background: none; border: 0; padding: 10px 18px 8px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center; text-decoration: none; }
+.pb::before { content: ""; position: absolute; inset: 0; border: 1.5px solid currentColor; border-radius: 14px 18px 13px 17px / 17px 13px 18px 14px; filter: url(#rough); opacity: .85; }
+.pb:hover::before { background: repeating-linear-gradient(-50deg, color-mix(in srgb, currentColor 22%, transparent) 0 1.2px, transparent 1.2px 5px); }
+.pb:active { transform: translateY(1px); }
+.pb.go { color: var(--ok); }
+.pb .tick { font-size: 18px; line-height: 0; }
+.skip { font: 400 16px/1 var(--print); color: var(--lead); background: none; border: 0; padding: 10px 4px 8px; cursor: pointer; position: relative; }
+.skip::after { content: ""; position: absolute; left: 2px; right: 2px; top: 52%; border-top: 1.5px solid currentColor; filter: url(#rough2); transform: scaleX(0); transform-origin: left; transition: transform .2s; }
+.skip:hover { color: var(--ink); }
+.skip:hover::after { transform: scaleX(1); }
 .placed { font: 600 21px/1 var(--hand); color: var(--ok); }
 .pick.done .t { color: var(--lead); }
 .spread { font-size: 13px; color: var(--lead); display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; }
@@ -142,22 +150,22 @@ h1 { font-size: clamp(38px, 7vw, 56px); font-weight: 600; letter-spacing: -0.035
 .queue { display: grid; }
 .job { display: grid; grid-template-columns: 1fr auto; gap: 6px 20px; padding: 18px 2px; align-items: center; }
 .job-main { min-width: 0; display: grid; gap: 2px; }
-.job-title { font-weight: 600; font-size: 17px; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
+.job-title { font: 700 20px/1.3 var(--print); color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
 .job-title:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .job-meta { font-size: 13px; color: var(--lead); display: flex; flex-wrap: wrap; gap: 2px 14px; }
 .when { font: 500 17px/1.1 var(--hand); }
-.closed-tag { color: var(--warn); font: 500 17px/1.1 var(--hand); }
 .fresh { color: var(--ok); font: 600 18px/1.1 var(--hand); }
 .job-act { display: flex; gap: 14px; align-items: center; }
-select.status { appearance: none; -webkit-appearance: none; font: 500 13px var(--sans); color: var(--graphite);
-  background: transparent; border: 1.2px solid var(--hair); border-radius: 999px; padding: 6px 28px 6px 13px; cursor: pointer;
-  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
-  background-position: calc(100% - 15px) 52%, calc(100% - 11px) 52%; background-size: 4px 4px, 4px 4px; background-repeat: no-repeat; }
-select.status option { color: initial; }
-select.status[data-s="new"] { color: var(--graphite); }
-select.status[data-s="applied"] { color: var(--ok); border-color: var(--ok); }
-select.status[data-s="interviewing"] { color: var(--warn); border-color: var(--warn); }
-select.status[data-s="skipped"] { color: var(--lead); border-style: dashed; }
+.marks { display: flex; gap: 2px; align-items: center; }
+.mark { position: relative; font: 400 16px/1 var(--print); color: var(--lead); background: none; border: 0; padding: 9px 10px 7px; cursor: pointer; }
+.mark:hover { color: var(--ink); }
+.mark::before { content: ""; position: absolute; inset: 1px -1px 0; border: 1.6px solid currentColor; border-radius: 50% 46% 52% 48% / 55% 50% 48% 52%; transform: rotate(-3deg); filter: url(#rough); opacity: 0; transition: opacity .15s; }
+.mark:hover::before { opacity: .25; }
+.mark[aria-pressed="true"] { font-weight: 700; }
+.mark[aria-pressed="true"]::before { opacity: .9; }
+.mark.applied[aria-pressed="true"] { color: var(--ok); }
+.mark.interviewing[aria-pressed="true"] { color: var(--warn); }
+.mark.skipped[aria-pressed="true"] { color: var(--lead); }
 .empty { padding: 34px 16px; text-align: center; color: var(--lead); }
 .empty strong { display: block; color: var(--ink); font: 600 24px/1.2 var(--hand); margin-bottom: 4px; }
 
@@ -173,8 +181,7 @@ details.box[open] summary::before { content: "– "; }
 .addform input:focus { outline: none; border-bottom-color: var(--graphite); }
 .full { grid-column: 1 / -1; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
 .msg { font-size: 13px; color: var(--lead); }
-.btn-line { font: 600 13px var(--sans); border: 1.2px solid var(--graphite); border-radius: 999px; padding: 7px 14px; cursor: pointer; background: none; color: var(--ink); display: inline-block; }
-.btn-line:hover { background: var(--wash); }
+
 
 /* ---------- watchlist ---------- */
 .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
@@ -246,7 +253,6 @@ details.box[open] summary::before { content: "– "; }
     <div class="row">
       <label class="field"><input type="search" id="q" placeholder="Search title or company" aria-label="Search jobs"></label>
       <label class="toggle"><input type="checkbox" id="recent"> Posted this week</label>
-      <label class="toggle"><input type="checkbox" id="showClosed"> Show closed postings</label>
     </div>
   </section>
 
@@ -261,15 +267,15 @@ details.box[open] summary::before { content: "– "; }
       <label>Job title<input type="text" id="f-title" required></label>
       <label>Location<input type="text" id="f-loc" placeholder="Seattle, WA"></label>
       <label>Link<input type="url" id="f-url" placeholder="https://…" required></label>
-      <div class="full"><button class="btn-ink" type="submit">Add role</button><span class="msg" id="f-msg"></span></div>
+      <div class="full"><button class="pb" type="submit">add role</button><span class="msg" id="f-msg"></span></div>
     </form>
   </details>
 
   <details class="box sk dash">
     <summary>back up or move your progress</summary>
     <p class="msg">Your statuses are saved in this browser. Export a backup file, then import it on another device or after clearing your browser.</p>
-    <div class="full"><button class="btn-line" type="button" id="export">Export progress</button>
-      <label class="btn-line" for="import" style="cursor:pointer">Import progress</label>
+    <div class="full"><button class="pb" type="button" id="export">export progress</button>
+      <label class="pb" for="import">import progress</label>
       <input type="file" id="import" accept="application/json,.json" hidden>
       <span class="msg" id="io-msg"></span></div>
   </details>
@@ -291,6 +297,7 @@ const CAT_COLORS = {
 };
 const STATUSES = [["new", "To review"], ["applied", "Applied"], ["interviewing", "Interviewing"], ["skipped", "Skipped"], ["all", "All"]];
 const PLACED = ["applied", "interviewing"];
+const MARKS = [["applied", "applied"], ["interviewing", "interview"], ["skipped", "skip"]];
 
 // ---------- Local storage: your progress lives in this browser ----------
 const STORE_KEY = "upside-radar-v1";
@@ -302,7 +309,7 @@ let store = loadStore();
 function saveStore() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) {} }
 
 let boardJobs = [], companies = [], updatedAt = null, boardErrors = [], loadFailed = false;
-const ui = { tab: store.ui.tab || "new", cats: new Set(), q: "", showClosed: false, recent: false };
+const ui = { tab: store.ui.tab || "new", cats: new Set(), q: "", recent: false };
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -345,7 +352,8 @@ function setStatus(id, status) {
   const prev = store.statuses[id] || {};
   const now = new Date().toISOString();
   const rec = { ...prev, status, statusAt: now };
-  if (PLACED.includes(status) && !prev.appliedAt) rec.appliedAt = now;
+  if (PLACED.includes(status)) { if (!prev.appliedAt) rec.appliedAt = now; }
+  else delete rec.appliedAt;  // un-marking takes the bet back
   store.statuses[id] = rec;
   saveStore(); renderAll();
 }
@@ -353,7 +361,8 @@ function setStatus(id, status) {
 // ---------- Daily bets: fixed number, barbell, spread across sectors ----------
 const dayKey = (d) => { const x = new Date(d); return isNaN(x) ? null : `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, "0")}-${String(x.getDate()).padStart(2, "0")}`; };
 const todayKey = () => dayKey(new Date());
-const placedDay = (j) => j.appliedAt ? dayKey(j.appliedAt) : (PLACED.includes(j.status) && j.statusAt ? dayKey(j.statusAt) : null);
+// A bet counts on the day you first applied, and only while it is still marked applied/interviewing.
+const placedDay = (j) => PLACED.includes(j.status) ? dayKey(j.appliedAt || j.statusAt) : null;
 function hash(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
 
 function choosePicks(jobs, n, placedToday) {
@@ -413,7 +422,7 @@ function renderToday(jobs) {
       <a class="t" href="${esc(safeUrl(j.url))}" target="_blank" rel="noopener">${esc(j.title)}</a>
       <span class="m" title="${esc(j.location || "")}">${esc(shortLoc(j.location))}</span>
       <div class="acts">${isDone ? `<span class="placed">placed ✓</span>` :
-        `<button type="button" class="btn-ink" data-act="applied" data-id="${esc(j.id)}">I applied</button><button type="button" class="btn-text" data-act="skipped" data-id="${esc(j.id)}">Not for me</button>`}</div>
+        `<button type="button" class="pb go" data-act="applied" data-id="${esc(j.id)}"><span class="tick">✓</span> I applied</button><button type="button" class="skip" data-act="skipped" data-id="${esc(j.id)}">not for me</button>`}</div>
     </article>`;
   };
   let html = placedToday.map(j => card(j, true)).join("") + picks.map(j => card(j, false)).join("");
@@ -433,6 +442,9 @@ function renderToday(jobs) {
 }
 
 // ---------- List, stats, watchlist ----------
+// Closed postings are hidden. Ones you applied to stay, so your history and streak are kept.
+const isVisible = (j) => j.open !== false || PLACED.includes(j.status);
+
 function renderStats(jobs) {
   const by = (s) => jobs.filter(j => j.status === s && (s !== "new" || j.open !== false)).length;
   $("s-new").textContent = by("new");
@@ -446,7 +458,7 @@ function renderStats(jobs) {
 }
 
 function renderTabs(jobs) {
-  const visible = jobs.filter(j => ui.showClosed || j.open !== false || j.status !== "new");
+  const visible = jobs.filter(isVisible);
   const count = (s) => s === "all" ? visible.length : visible.filter(j => j.status === s).length;
   $("tabs").innerHTML = STATUSES.map(([k, label]) =>
     `<button class="tab" data-tab="${k}" aria-pressed="${ui.tab === k}">${label}<span class="n">${count(k)}</span></button>`).join("");
@@ -460,7 +472,7 @@ function renderQueue(jobs) {
   if (loadFailed) { $("queue").innerHTML = `<div class="empty"><strong>Couldn't load the job list</strong>Make sure jobs.json sits next to this page. If you opened the file directly, serve the folder instead (see the README).</div>`; return; }
   const q = ui.q.trim().toLowerCase();
   const list = jobs
-    .filter(j => ui.showClosed || j.open !== false || j.status !== "new")
+    .filter(isVisible)
     .filter(j => ui.tab === "all" || j.status === ui.tab)
     .filter(j => !ui.cats.size || ui.cats.has(catOf(j.company)))
     .filter(j => !q || (j.title + " " + j.company).toLowerCase().includes(q))
@@ -474,13 +486,10 @@ function renderQueue(jobs) {
       <div class="job-main">
         ${coLine(j.company)}
         <a class="job-title" href="${esc(safeUrl(j.url))}" target="_blank" rel="noopener">${esc(j.title)}</a>
-        <div class="job-meta"><span title="${esc(j.location || "")}">${esc(shortLoc(j.location))}</span>${postedTag(j)}${when ? `<span class="when">${esc(when)}</span>` : ""}${j.open === false ? `<span class="closed-tag">posting closed</span>` : ""}</div>
+        <div class="job-meta"><span title="${esc(j.location || "")}">${esc(shortLoc(j.location))}</span>${postedTag(j)}${when ? `<span class="when">${esc(when)}</span>` : ""}</div>
       </div>
-      <div class="job-act">
-        <a class="btn-text" href="${esc(safeUrl(j.url))}" target="_blank" rel="noopener">Open ↗</a>
-        <select class="status" data-id="${esc(j.id)}" data-s="${j.status}" aria-label="Status for ${esc(j.title)}">
-          ${STATUSES.filter(x => x[0] !== "all").map(([k, l]) => `<option value="${k}" ${k === j.status ? "selected" : ""}>${l}</option>`).join("")}
-        </select>
+      <div class="job-act marks" role="group" aria-label="Status for ${esc(j.title)}">
+        ${MARKS.map(([k, l]) => `<button type="button" class="mark ${k}" data-id="${esc(j.id)}" data-set="${k}" aria-pressed="${j.status === k}">${l}</button>`).join("")}
       </div>
     </article>`;
   }).join("");
@@ -508,9 +517,9 @@ function saveUi() { store.ui = { tab: ui.tab }; saveStore(); }
 $("tabs").addEventListener("click", e => { const b = e.target.closest("[data-tab]"); if (!b) return; ui.tab = b.dataset.tab; saveUi(); renderAll(); });
 $("cats").addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if (!b) return; const c = b.dataset.cat; ui.cats.has(c) ? ui.cats.delete(c) : ui.cats.add(c); renderAll(); });
 $("q").addEventListener("input", e => { ui.q = e.target.value; renderAll(); });
-$("showClosed").addEventListener("change", e => { ui.showClosed = e.target.checked; renderAll(); });
 $("recent").addEventListener("change", e => { ui.recent = e.target.checked; renderAll(); });
-$("queue").addEventListener("change", e => { const s = e.target.closest("select.status"); if (s) setStatus(s.dataset.id, s.value); });
+// Circle a mark to set it; tap the circled one again to clear it.
+$("queue").addEventListener("click", e => { const b = e.target.closest("button.mark"); if (b) setStatus(b.dataset.id, b.getAttribute("aria-pressed") === "true" ? "new" : b.dataset.set); });
 $("picks").addEventListener("click", e => { const b = e.target.closest("button[data-act]"); if (b) setStatus(b.dataset.id, b.dataset.act); });
 $("t-minus").addEventListener("click", () => { store.target = Math.max(1, store.target - 1); saveStore(); renderAll(); });
 $("t-plus").addEventListener("click", () => { store.target = Math.min(10, store.target + 1); saveStore(); renderAll(); });

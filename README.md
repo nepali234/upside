@@ -96,5 +96,7 @@ Change them, then run `python3 -m unittest discover tests` to make sure nothing 
 - Amazon and AWS are blocked in the code and can never be added.
 - Microsoft, Google, Meta, Helion, Zap Energy and Overland AI don't publish a job feed the script can read. They appear as link cards, so check those by hand once a week.
 - NVIDIA uses Workday's public search endpoint. If it ever stops working, the page shows "boards unreachable" at the top and everything else keeps running.
+- Closed postings are hidden. Ones you marked applied or interviewing stay in those tabs, so your history and streak are kept.
+- Mark a role by circling **applied**, **interview** or **skip**; tap the circled one again to clear it.
 - Your statuses live in your browser. Use Export/Import to back them up or move between phone and laptop.
 - Run the page locally with `cd docs && python3 -m http.server`, then open http://localhost:8000. Opening the file directly won't load the data.
