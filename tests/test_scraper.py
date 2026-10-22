@@ -48,15 +48,59 @@ class FilterTests(unittest.TestCase):
             self.assertFalse(self.keep("Software Engineer", loc), loc)
 
 
+class FitCheckTests(unittest.TestCase):
+    """The description filter: drop roles that ask for 4+ years, an active clearance, or a PhD."""
+    def keep(self, description, title="Software Engineer"):
+        return scraper.is_match(dict(j(title), description=description), FILTERS)
+
+    def test_drops_roles_out_of_reach(self):
+        for d in ["You have 5+ years of professional software engineering experience.",
+                  "Minimum 4 years building distributed systems",
+                  "At least five years of industry experience in backend development",
+                  "4-6 years of experience with Go or Rust",
+                  "8 or more years working on large-scale infrastructure",
+                  "10+ years experience",
+                  "Must possess an active U.S. Top Secret/SCI clearance.",
+                  "Currently hold an active Secret security clearance",
+                  "Active TS/SCI clearance is required",
+                  "PhD in Computer Science or a related field is required.",
+                  "This role requires a PhD."]:
+            self.assertFalse(self.keep(d), d)
+
+    def test_keeps_roles_within_reach(self):
+        for d in ["1+ years of experience, or a strong internship.",
+                  "2-4 years of experience building backend services",
+                  "3+ years of experience; 5+ years is not needed",
+                  "3 months - 2 years of technical work to include technical internship",
+                  "Eligible to obtain and maintain an active U.S. Secret security clearance.",
+                  "Must have the ability to obtain an active Top Secret clearance",
+                  "BS, MS or PhD in Computer Science.",
+                  "Founded 10 years ago, we have grown 4x in two years.",
+                  "Salary range $140,000 - $190,000. 401(k) with 4% match.",
+                  ""]:
+            self.assertTrue(self.keep(d), d)
+
+    def test_title_drops_phd_and_clearance_roles(self):
+        self.assertFalse(scraper.is_match(j("Systems PhD - Software Engineer"), FILTERS))
+        self.assertFalse(scraper.is_match(j("Software Engineer, Strategic Defense (Active Clearance)"), FILTERS))
+
+    def test_why_not_names_the_reason(self):
+        why = scraper.why_not(dict(j("Software Engineer"), description="Requires 6+ years of experience."), FILTERS)
+        self.assertIn("6+ years of experience", why)
+
+
 class FetcherTests(unittest.TestCase):
     def test_greenhouse(self):
         fake = {"jobs": [{"id": 5, "title": "Software Engineer", "location": {"name": "Seattle, WA"},
                           "absolute_url": "https://boards.greenhouse.io/x/jobs/5",
-                          "first_published": "2026-10-20T09:00:00-04:00", "updated_at": "2026-10-21T10:00:00-04:00"}]}
-        with mock.patch.object(scraper, "http_json", return_value=fake):
+                          "first_published": "2026-10-20T09:00:00-04:00", "updated_at": "2026-10-21T10:00:00-04:00",
+                          "content": "&lt;p&gt;You have &lt;strong&gt;2+ years&lt;/strong&gt; of experience &amp;amp; grit.&lt;/p&gt;"}]}
+        with mock.patch.object(scraper, "http_json", return_value=fake) as call:
             out = scraper.fetch_greenhouse({"slug": "x"})
+        self.assertIn("content=true", call.call_args[0][0])
         self.assertEqual(out, [{"id": "gh-x-5", "title": "Software Engineer", "location": "Seattle, WA",
-                                "url": "https://boards.greenhouse.io/x/jobs/5", "postedAt": "2026-10-20T13:00:00Z"}])
+                                "url": "https://boards.greenhouse.io/x/jobs/5", "postedAt": "2026-10-20T13:00:00Z",
+                                "description": "You have 2+ years of experience & grit.."}])
 
     def test_lever(self):
         fake = [{"id": "abc", "text": "Software Engineer", "hostedUrl": "https://jobs.lever.co/x/abc", "createdAt": 1792076891429,
@@ -66,6 +110,15 @@ class FetcherTests(unittest.TestCase):
         self.assertEqual(out[0]["location"], "San Diego · Boston")
         self.assertEqual(out[0]["postedAt"], "2026-10-15T15:08:11Z")
         self.assertEqual(out[0]["id"], "lv-x-abc")
+
+    def test_lever_reads_requirement_lists(self):
+        fake = [{"id": "abc", "text": "Software Engineer", "hostedUrl": "https://jobs.lever.co/x/abc",
+                 "descriptionPlain": "Build drones.", "categories": {"location": "Seattle"},
+                 "lists": [{"text": "What you'll need", "content": "<li>5+ years of C++ experience</li>"}]}]
+        with mock.patch.object(scraper, "http_json", return_value=fake):
+            out = scraper.fetch_lever({"slug": "x"})
+        self.assertIn("5+ years of C++ experience", out[0]["description"])
+        self.assertFalse(scraper.is_match(out[0], FILTERS))
 
     def test_ashby_skips_unlisted_and_merges_locations(self):
         fake = {"jobs": [
@@ -160,6 +213,14 @@ class RefreshTests(unittest.TestCase):
         stale = dict(merged[0], id="gh-x-99", location="Austin, TX")
         merged2, _, _ = self.run_refresh([], merged + [stale], t3)
         self.assertNotIn("gh-x-99", [r["id"] for r in merged2])
+
+        # Fit Check: a saved job whose posting turns out to ask for 5+ years is dropped,
+        # and descriptions are never written into jobs.json.
+        too_senior = [dict(j("Software Engineer", jid="1"), description="5+ years of experience required."),
+                      dict(j("Backend Engineer", jid="3"), description="New grads welcome.")]
+        merged, new, _ = self.run_refresh(too_senior, merged, t3)
+        self.assertEqual([r["id"] for r in merged], ["gh-x-3"])
+        self.assertNotIn("description", merged[0])
 
         t4 = t3 + timedelta(days=61)
         merged, _, _ = self.run_refresh([], merged, t4)                # both close now...

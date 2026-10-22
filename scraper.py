@@ -15,6 +15,7 @@ every morning and commits the result.
 Standard library only. Run locally with:  python3 scraper.py
 """
 
+import html
 import json
 import os
 import re
@@ -35,7 +36,8 @@ KEEP_CLOSED_DAYS = 60
 
 # ---------------------------------------------------------------------------
 # 1. Fetching. Every fetcher returns a list of
-#    {"id", "title", "location", "url"} dicts.
+#    {"id", "title", "location", "url", "postedAt", "description"} dicts.
+#    The description is only used for filtering; it is never saved.
 # ---------------------------------------------------------------------------
 
 def http_json(url, body=None):
@@ -48,14 +50,23 @@ def http_json(url, body=None):
         return json.loads(resp.read().decode("utf-8"))
 
 
-def make_job(prefix, slug, job_id, title, location, url, posted=None):
+def make_job(prefix, slug, job_id, title, location, url, posted=None, description=""):
     return {
         "id": f"{prefix}-{slug}-{job_id}",
         "title": (title or "").strip(),
         "location": (location or "").strip(),
         "url": url or "",
         "postedAt": to_iso(posted),
+        "description": plain_text(description),
     }
+
+
+def plain_text(markup):
+    """Job descriptions come as HTML (Greenhouse escapes it twice). Turn it into one line of plain text."""
+    text = html.unescape(markup or "")
+    text = re.sub(r"<(br|/p|/li|/div|/h\d)\b[^>]*>", ". ", text, flags=re.I)
+    text = html.unescape(re.sub(r"<[^>]+>", " ", text))
+    return re.sub(r"\s+", " ", text).strip()
 
 
 ISO = "%Y-%m-%dT%H:%M:%SZ"
@@ -97,10 +108,10 @@ def workday_posted(text, now=None):
 
 def fetch_greenhouse(company):
     slug = company["slug"]
-    data = http_json(f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs")
+    data = http_json(f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs?content=true")
     return [
         make_job("gh", slug, j["id"], j.get("title"), (j.get("location") or {}).get("name"), j.get("absolute_url"),
-                 j.get("first_published"))
+                 j.get("first_published"), j.get("content"))
         for j in data.get("jobs", [])
     ]
 
@@ -112,8 +123,14 @@ def fetch_lever(company):
     for j in data:
         cats = j.get("categories") or {}
         locations = cats.get("allLocations") or [cats.get("location") or ""]
+        # Lever keeps requirements in "lists" (e.g. "What you'll need"), separate from the main description.
+        parts = [j.get("descriptionPlain") or j.get("description") or ""]
+        for item in j.get("lists") or []:
+            parts += [item.get("text") or "", item.get("content") or ""]
+        parts.append(j.get("additionalPlain") or j.get("additional") or "")
         jobs.append(make_job("lv", slug, j["id"], j.get("text"),
-                             " · ".join(l for l in locations if l), j.get("hostedUrl"), j.get("createdAt")))
+                             " · ".join(l for l in locations if l), j.get("hostedUrl"), j.get("createdAt"),
+                             " . ".join(p for p in parts if p)))
     return jobs
 
 
@@ -130,7 +147,7 @@ def fetch_ashby(company):
             locations.append("Remote")
         unique = list(dict.fromkeys(l for l in locations if l))
         jobs.append(make_job("ab", slug, j["id"], j.get("title"), " · ".join(unique), j.get("jobUrl"),
-                             j.get("publishedAt")))
+                             j.get("publishedAt"), j.get("descriptionHtml") or j.get("descriptionPlain")))
     return jobs
 
 
@@ -180,17 +197,30 @@ FETCHERS = {
 # 2. Filtering: is this a job worth showing?
 # ---------------------------------------------------------------------------
 
-def is_match(job, filters):
+def why_not(job, filters):
+    """Return the reason a job doesn't fit, or None if it does."""
     title, location = job["title"], job["location"]
     if not re.search(filters["title_include"], title, re.I):
-        return False
-    if re.search(filters["title_exclude"], title, re.I):
-        return False
+        return "title is not a software role"
+    m = re.search(filters["title_exclude"], title, re.I)
+    if m:
+        return f"title says '{m.group(0)}'"
     # Location: Greater Seattle Area only. A job listing several cities counts
     # if any of them is in the area. No location listed = can't tell = skip.
     if not re.search(filters["location_include"], location or "", re.I):
-        return False
-    return True
+        return "not in the Seattle area"
+    # Fit Check: the title is a label; the description says what the job really asks for.
+    # No description (Workday, saved jobs) = can't tell = keep.
+    rule = filters.get("description_exclude")
+    if rule and job.get("description"):
+        m = re.search(rule, job["description"], re.I)
+        if m:
+            return f"posting asks for '{m.group(0).strip()}'"
+    return None
+
+
+def is_match(job, filters):
+    return why_not(job, filters) is None
 
 
 # ---------------------------------------------------------------------------
@@ -229,7 +259,9 @@ def refresh(config, existing_jobs, fetchers=FETCHERS, now=None):
         seen_here = set()
         for job in fetched:
             if not job["url"].startswith("https://") or not is_match(job, filters):
+                by_id.pop(job["id"], None)  # a saved job that fails the Fit Check is dropped, not "closed"
                 continue
+            job = {k: v for k, v in job.items() if k != "description"}
             seen_here.add(job["id"])
             if job["id"] in by_id:
                 old = by_id[job["id"]]
@@ -308,6 +340,13 @@ def check_board(board, slug):
     print(f"{board}/{slug}: {len(jobs)} jobs on the board, {len(matches)} match your filters.")
     for j in matches:
         print(f"  - {j['title']} | {j['location']}")
+    # Show what the Fit Check dropped, so a too-strict rule is easy to spot.
+    no_desc = dict(config["filters"], description_exclude="")
+    dropped = [(j, why_not(j, config["filters"])) for j in jobs if is_match(j, no_desc) and not is_match(j, config["filters"])]
+    if dropped:
+        print(f"\nDropped by the Fit Check ({len(dropped)}):")
+        for j, reason in dropped:
+            print(f"  - {j['title']} | {reason}")
 
 
 def main():

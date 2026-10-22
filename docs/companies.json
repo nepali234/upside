@@ -1,7 +1,8 @@
 {
   "filters": {
     "title_include": "software|developer|\\bSDE\\b|\\bSWE\\b|back[- ]?end|full[- ]?stack|platform engineer|infrastructure engineer|infrastructure systems|cloud engineer|\\bSRE\\b|site reliability|member of technical staff|forward deployed|\\bAI engineer|data engineer|embedded|autonomy",
-    "title_exclude": "senior|\\bsr\\.?\\b|(?<!technical )staff|principal|\\blead\\b|manager|director|\\bhead\\b|chief|intern|research scientist|\\bIII\\b|\\bIV\\b|architect|\\bvp\\b|technician",
+    "title_exclude": "senior|\\bsr\\.?\\b|(?<!technical )staff|principal|\\blead\\b|manager|director|\\bhead\\b|chief|intern|research scientist|\\bIII\\b|\\bIV\\b|architect|\\bvp\\b|technician|\\bph\\.?\\s?d\\b|active clearance",
+    "description_exclude": "(?:(?:\\b(?:[4-9]|1[0-9]|four|five|six|seven|eight|nine|ten)\\s*\\+|\\b(?:at least|a minimum of|minimum of|minimum)\\s+(?:[4-9]|1[0-9]|four|five|six|seven|eight|nine|ten)|\\b(?:[4-9]|1[0-9]|four|five|six|seven|eight|nine|ten)\\s*(?:-|–|to)\\s*\\d+|\\b(?:[4-9]|1[0-9]|four|five|six|seven|eight|nine|ten)\\s+or more)\\s*\\+?\\s*(?:\\(\\d+\\)\\s*)?years?\\b[^.;]{0,40}?\\b(?:experience|building|developing|working|writing|shipping|designing|professional|industry|engineering))|(?:\\b(?:possess|hold|have)\\b(?:(?!obtain|eligib)[^.;]){0,25}\\bactive\\b(?:u\\.s\\.|[^.;]){0,40}\\bclearance|\\b(?:active|current)\\s+(?:u\\.?s\\.?\\s+)?(?:ts|top secret|secret|ts/sci)[^.;]{0,25}clearance\\s+(?:is\\s+)?required|\\bclearance is required)|(?:\\bph\\.?\\s?d\\.?\\b[^.;]{0,60}\\brequired\\b|\\brequires? a ph\\.?\\s?d\\b|\\bmust have a ph\\.?\\s?d\\b)",
     "location_include": "seattle|bellevue|redmond|kirkland|bothell|everett(?!,? ?ma)|renton|issaquah|sammamish|woodinville|lynnwood|tukwila|tacoma|mercer island|shoreline|kent,? ?wa|\\bSEA\\b|puget sound"
   },
 

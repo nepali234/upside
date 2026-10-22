@@ -16,6 +16,7 @@ No AI, no servers, no accounts. It runs free on GitHub Actions and GitHub Pages.
 1. GitHub Actions runs `scraper.py` at 13:36 UTC (6:36am Seattle in summer, 5:36am in winter).
 2. The script asks each watched company's job board for its open jobs over plain HTTP.
 3. It keeps software roles at early-career level in the Greater Seattle Area. Amazon is always excluded.
+   It also reads each posting's full description and drops roles that ask for 4+ years, an active security clearance, or a PhD (the **Fit Check**).
 4. It merges the results into `docs/jobs.json`: new roles are added, each job's real posting date is saved, and jobs that disappeared are marked closed.
 5. It commits the file. GitHub Pages republishes the site a minute later.
 
@@ -80,6 +81,7 @@ Read this before changing anything.
 - **Amazon and AWS are never shown.** They're blocked by `BLOCKED_COMPANIES` in `scraper.py`. Don't remove this, and don't add Amazon-owned companies to the watchlist.
 - **Greater Seattle Area only.** `location_include` in `docs/companies.json` decides this. A multi-city job is kept if any of its cities is in the area. Remote-only and unknown locations are dropped.
 - **Early-career level only.** `title_exclude` drops senior, staff, principal, lead, manager, director, head, intern, level III/IV and similar titles. The owner has about a year of full-time industry experience plus an internship. Target "Software Engineer I/II", roles asking 0–3 years, and new-grad or early-career programs.
+- **Fit Check: judge a job by what it asks for, not what it's called.** Titles hide level ("Software Engineer - GPU Kernels" can mean 5+ years). `description_exclude` in `companies.json` is matched against the full posting text and drops roles asking for 4+ years of experience, an *active* clearance (eligibility to obtain one is fine), or a required PhD. Descriptions come from Greenhouse (`?content=true`), Lever (`descriptionPlain` plus the requirement `lists`) and Ashby (`descriptionHtml`). They're used only for filtering and never saved to `jobs.json`. Workday gives no description in its search results, so Workday roles skip this check. When a rule looks too strict, `python3 scraper.py check <board> <slug>` lists every role the Fit Check dropped and the phrase that dropped it.
 - **The scraper never touches the owner's statuses.** Applied, skipped and interviewing marks live only in the browser's `localStorage`. `jobs.json` is board data only.
 - **One broken board never stops the run.** Each fetch is wrapped in try/except. Errors go into `jobs.json` under `errors`, and the page shows "N boards unreachable".
 - **Never invent jobs or dates.** Every job comes from a board feed or from the owner's manual entry.
@@ -106,7 +108,7 @@ tests/test_scraper.py unittest; fakes every network call
 **`docs/companies.json`**
 ```json
 {
-  "filters": { "title_include": "regex", "title_exclude": "regex", "location_include": "regex" },
+  "filters": { "title_include": "regex", "title_exclude": "regex", "description_exclude": "regex", "location_include": "regex" },
   "companies": [{
     "name": "Baseten",                 // display name; also the join key used by jobs.json "company"
     "category": "AI infrastructure",   // sector, used for colors, chips and the diversity rule
@@ -182,7 +184,7 @@ Minimal, Apple-like layout drawn as if in pencil on paper. Keep this direction u
 |---|---|
 | Add or remove a company | `docs/companies.json` (check with `scraper.py check` first) |
 | Include remote roles again | Add `\|remote` to `location_include`, and to `AREA` in `index.html` |
-| Change seniority | `title_exclude` / `title_include`, then run the tests |
+| Change seniority | `title_exclude` / `title_include`, and the years part of `description_exclude`, then run the tests |
 | Support a new board type | Add `fetch_<board>()` returning `make_job(...)` dicts, register it in `FETCHERS`, add a fake-data test |
 | Change the run time | The cron in `.github/workflows/daily.yml` (UTC) |
 | Change the default daily quota | `target: 3` in `loadStore()` in `index.html` |
