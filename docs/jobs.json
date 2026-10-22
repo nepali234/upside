@@ -1,0 +1,336 @@
+{
+ "updatedAt": "2026-10-22T04:30:00Z",
+ "errors": [],
+ "jobs": [
+  {
+   "id": "gh-flyzipline-7848909003",
+   "title": "Embedded Software Engineer, Validation",
+   "location": "South San Francisco, CA · Ann Arbor, MI",
+   "url": "https://www.zipline.com/open-roles/7848909003?gh_jid=7848909003",
+   "company": "Zipline",
+   "firstSeen": "2026-10-22T04:30:00Z",
+   "lastSeen": "2026-10-22T04:30:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-flyzipline-7918303003",
+   "title": "Autonomy Zip Perception SWE",
+   "location": "South San Francisco, CA · Ann Arbor, MI",
+   "url": "https://www.zipline.com/open-roles/7918303003?gh_jid=7918303003",
+   "company": "Zipline",
+   "firstSeen": "2026-10-22T04:30:00Z",
+   "lastSeen": "2026-10-22T04:30:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-stripe-6042172",
+   "title": "Backend Engineer, Core Technology",
+   "location": "Seattle · US-Remote · Chicago · San Francisco",
+   "url": "https://stripe.com/jobs/search?gh_jid=6042172",
+   "company": "Stripe",
+   "firstSeen": "2026-10-22T04:30:00Z",
+   "lastSeen": "2026-10-22T04:30:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-stripe-7476555",
+   "title": "Backend Engineer, Developer & End-user Experience Platform",
+   "location": "Seattle · San Francisco · New York · Toronto",
+   "url": "https://stripe.com/jobs/search?gh_jid=7476555",
+   "company": "Stripe",
+   "firstSeen": "2026-10-22T04:30:00Z",
+   "lastSeen": "2026-10-22T04:30:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-stripe-7557899",
+   "title": "Backend Engineer, Developer SDKs",
+   "location": "Seattle · San Francisco · New York · Toronto",
+   "url": "https://stripe.com/jobs/search?gh_jid=7557899",
+   "company": "Stripe",
+   "firstSeen": "2026-10-22T04:30:00Z",
+   "lastSeen": "2026-10-22T04:30:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-stripe-8131144",
+   "title": "Backend Engineer, Link",
+   "location": "Seattle · San Francisco · New York · Toronto",
+   "url": "https://stripe.com/jobs/search?gh_jid=8131144",
+   "company": "Stripe",
+   "firstSeen": "2026-10-22T04:30:00Z",
+   "lastSeen": "2026-10-22T04:30:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-relativity-8608644002",
+   "title": "Infrastructure Engineer II",
+   "location": "Cape Canaveral, FL",
+   "url": "https://boards.greenhouse.io/relativity/jobs/8608644002?gh_jid=8608644002",
+   "company": "Relativity Space",
+   "firstSeen": "2026-10-22T04:30:00Z",
+   "lastSeen": "2026-10-22T04:30:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-relativity-8726264002",
+   "title": "AI Software Engineer II",
+   "location": "Long Beach, CA",
+   "url": "https://boards.greenhouse.io/relativity/jobs/8726264002?gh_jid=8726264002",
+   "company": "Relativity Space",
+   "firstSeen": "2026-10-22T04:30:00Z",
+   "lastSeen": "2026-10-22T04:30:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-figureai-4345915006",
+   "title": "Helix AI Engineer, Data Infrastructure",
+   "location": "San Jose, CA",
+   "url": "https://job-boards.greenhouse.io/figureai/jobs/4345915006",
+   "company": "Figure",
+   "firstSeen": "2026-10-22T04:30:00Z",
+   "lastSeen": "2026-10-22T04:30:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-figureai-4685172006",
+   "title": "Helix AI Engineer, Backend",
+   "location": "San Jose, CA",
+   "url": "https://job-boards.greenhouse.io/figureai/jobs/4685172006",
+   "company": "Figure",
+   "firstSeen": "2026-10-22T04:30:00Z",
+   "lastSeen": "2026-10-22T04:30:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-figureai-4692559006",
+   "title": "Software Engineer, Manufacturing Systems",
+   "location": "San Jose, CA",
+   "url": "https://job-boards.greenhouse.io/figureai/jobs/4692559006",
+   "company": "Figure",
+   "firstSeen": "2026-10-22T04:30:00Z",
+   "lastSeen": "2026-10-22T04:30:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-figureai-4713838006",
+   "title": "Software Engineer, Service & Operations",
+   "location": "San Jose, CA",
+   "url": "https://job-boards.greenhouse.io/figureai/jobs/4713838006",
+   "company": "Figure",
+   "firstSeen": "2026-10-22T04:30:00Z",
+   "lastSeen": "2026-10-22T04:30:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-databricks-8546367002",
+   "title": "AI Engineer – Forward Deployed Engineering (AI FDE)",
+   "location": "United States",
+   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8546367002",
+   "company": "Databricks",
+   "firstSeen": "2026-10-22T04:20:00Z",
+   "lastSeen": "2026-10-22T04:20:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-togetherai-4790243007",
+   "title": "Platform Engineer, Model Shaping",
+   "location": "San Francisco, CA",
+   "url": "https://job-boards.greenhouse.io/togetherai/jobs/4790243007",
+   "company": "Together AI",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-togetherai-5131941007",
+   "title": "Forward Deployed Engineer (Inference & Post-Training)",
+   "location": "San Francisco, CA",
+   "url": "https://job-boards.greenhouse.io/togetherai/jobs/5131941007",
+   "company": "Together AI",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-togetherai-5138540007",
+   "title": "AI Infrastructure Systems Engineer",
+   "location": "San Francisco, CA",
+   "url": "https://job-boards.greenhouse.io/togetherai/jobs/5138540007",
+   "company": "Together AI",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "ab-supabase-2e718684-4f75-4a99-8d6b-3b6bd44e4228",
+   "title": "Multigres Engineer",
+   "location": "Remote (global)",
+   "url": "https://jobs.ashbyhq.com/supabase/2e718684-4f75-4a99-8d6b-3b6bd44e4228",
+   "company": "Supabase",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "ab-supabase-3b5d54ca-741b-45ac-bd3f-31605a0d3541",
+   "title": "AI Platform Engineer",
+   "location": "Remote (global)",
+   "url": "https://jobs.ashbyhq.com/supabase/3b5d54ca-741b-45ac-bd3f-31605a0d3541",
+   "company": "Supabase",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "lv-shieldai-79c3b65f-ce0c-4868-bedf-4ddcc4cfe583",
+   "title": "Software Development Engineer - New Graduate",
+   "location": "San Diego, CA · Washington, DC · Boston, MA",
+   "url": "https://jobs.lever.co/shieldai/79c3b65f-ce0c-4868-bedf-4ddcc4cfe583",
+   "company": "Shield AI",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "lv-shieldai-8ab0ecee-89be-4670-bcc0-055b8afbf254",
+   "title": "Mission Systems Software Engineer - BlueSky",
+   "location": "Los Angeles, CA · Dallas, TX",
+   "url": "https://jobs.lever.co/shieldai/8ab0ecee-89be-4670-bcc0-055b8afbf254",
+   "company": "Shield AI",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "ab-saronic-1e3a3444-4218-4003-8442-660cc6163c9a",
+   "title": "Systems Architecture, Integration, and Test Engineer (Electrical and/or Software)",
+   "location": "Austin, TX",
+   "url": "https://jobs.ashbyhq.com/saronic/1e3a3444-4218-4003-8442-660cc6163c9a",
+   "company": "Saronic",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "rp-overland-ai-be1d98b3-8696-4c1f-aab4-70b63d02ae6c",
+   "title": "Embedded Engineer",
+   "location": "Seattle, WA",
+   "url": "https://ats.rippling.com/overland-ai/jobs/be1d98b3-8696-4c1f-aab4-70b63d02ae6c",
+   "company": "Overland AI",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "ab-modal-265d6127-dd34-433b-819a-1f935572c7d8",
+   "title": "Member of Technical Staff - SDK",
+   "location": "San Francisco (remote)",
+   "url": "https://jobs.ashbyhq.com/modal/265d6127-dd34-433b-819a-1f935572c7d8",
+   "company": "Modal",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "ab-modal-9b33ebe7-e829-4f03-97ba-5c94dbd7daf6",
+   "title": "Member of Technical Staff - Systems",
+   "location": "New York, NY",
+   "url": "https://jobs.ashbyhq.com/modal/9b33ebe7-e829-4f03-97ba-5c94dbd7daf6",
+   "company": "Modal",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "ab-modal-a4b8b2b6-5d0c-4ba6-9256-b84be84fb79e",
+   "title": "Member of Technical Staff - Product (Backend)",
+   "location": "San Francisco, CA",
+   "url": "https://jobs.ashbyhq.com/modal/a4b8b2b6-5d0c-4ba6-9256-b84be84fb79e",
+   "company": "Modal",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "ab-modal-cbbbee50-3d3b-4873-8ae8-ff4b885b8e54",
+   "title": "Forward Deployed Engineer - Systems",
+   "location": "New York, NY",
+   "url": "https://jobs.ashbyhq.com/modal/cbbbee50-3d3b-4873-8ae8-ff4b885b8e54",
+   "company": "Modal",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "ab-baseten-84c1801c-1a65-49fb-aaaa-beeafd530e7e",
+   "title": "Forward Deployed Engineer",
+   "location": "Seattle · San Francisco · Remote · New York",
+   "url": "https://jobs.ashbyhq.com/baseten/84c1801c-1a65-49fb-aaaa-beeafd530e7e",
+   "company": "Baseten",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "ab-baseten-916e9d62-492a-4562-971f-3e97e3868392",
+   "title": "Cloud Platform Engineer",
+   "location": "Seattle · San Francisco · Remote · New York · Toronto",
+   "url": "https://jobs.ashbyhq.com/baseten/916e9d62-492a-4562-971f-3e97e3868392",
+   "company": "Baseten",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "ab-baseten-fc6e5f2e-eb2d-4a6c-8a51-8422e8662bde",
+   "title": "Software Engineer - Dedicated Inference",
+   "location": "Seattle · San Francisco · New York · Toronto · Montreal",
+   "url": "https://jobs.ashbyhq.com/baseten/fc6e5f2e-eb2d-4a6c-8a51-8422e8662bde",
+   "company": "Baseten",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "ab-baseten-ff008b8e-b38d-4941-b24f-9a48c970e7fb",
+   "title": "Site Reliability Engineer",
+   "location": "San Francisco · Remote · New York · Toronto",
+   "url": "https://jobs.ashbyhq.com/baseten/ff008b8e-b38d-4941-b24f-9a48c970e7fb",
+   "company": "Baseten",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-andurilindustries-4802146007",
+   "title": "2026 Early Career Software Engineer",
+   "location": "Seattle, WA · Atlanta · Colorado Springs · Costa Mesa · Fort Collins",
+   "url": "https://boards.greenhouse.io/andurilindustries/jobs/4802146007",
+   "company": "Anduril",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-andurilindustries-5162263007",
+   "title": "2027 Early Career Software Engineer",
+   "location": "Seattle, WA · Boston · Reston · Costa Mesa · +5 more",
+   "url": "https://boards.greenhouse.io/andurilindustries/jobs/5162263007",
+   "company": "Anduril",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  },
+  {
+   "id": "gh-andurilindustries-5228868007",
+   "title": "2027 Early Career Flight Software Engineer",
+   "location": "Costa Mesa, CA",
+   "url": "https://boards.greenhouse.io/andurilindustries/jobs/5228868007",
+   "company": "Anduril",
+   "firstSeen": "2026-10-22T04:10:00Z",
+   "lastSeen": "2026-10-22T04:10:00Z",
+   "open": true
+  }
+ ]
+}
