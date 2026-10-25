@@ -100,7 +100,7 @@ h1 { font-size: clamp(38px, 7vw, 56px); font-weight: 600; letter-spacing: -0.035
 .picks { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
 .pick { padding: 16px 18px 15px; display: grid; gap: 3px; align-content: start; min-width: 0; }
 .tier { font: 500 19px/1.1 var(--hand); color: var(--lead); }
-.tier.wild { color: var(--graphite); }
+.tier.wild, .tier.found { color: var(--graphite); }
 .co-line { display: flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--lead); margin-top: 4px; }
 .pick .t { font: 700 19px/1.3 var(--print); color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
 .pick .t:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
@@ -155,6 +155,9 @@ h1 { font-size: clamp(38px, 7vw, 56px); font-weight: 600; letter-spacing: -0.035
 .job-meta { font: 400 15px/1.35 var(--print); color: var(--lead); display: flex; flex-wrap: wrap; gap: 2px 14px; align-items: baseline; }
 .when { font: 500 17px/1.1 var(--hand); }
 .fresh { color: var(--ok); font: 600 18px/1.1 var(--hand); }
+/* "backed by Sequoia": a label, never a filter. Underlined in pencil so it reads as a note in the margin. */
+.backed { font: 600 18px/1.1 var(--hand); color: var(--ink); text-decoration: underline; text-decoration-style: wavy;
+  text-decoration-thickness: 1px; text-decoration-color: var(--lead); text-underline-offset: 4px; }
 .job-act { display: flex; gap: 14px; align-items: center; }
 .marks { display: flex; gap: 2px; align-items: center; }
 .mark { position: relative; font: 400 16px/1 var(--print); color: var(--lead); background: none; border: 0; padding: 9px 10px 7px; cursor: pointer; }
@@ -308,7 +311,7 @@ function loadStore() {
 let store = loadStore();
 function saveStore() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) {} }
 
-let boardJobs = [], companies = [], updatedAt = null, boardErrors = [], loadFailed = false;
+let boardJobs = [], companies = [], backers = {}, updatedAt = null, boardErrors = [], loadFailed = false;
 const ui = { tab: store.ui.tab || "new", cats: new Set(), q: "", recent: false };
 
 const $ = (id) => document.getElementById(id);
@@ -316,9 +319,16 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<"
 const safeUrl = (u) => /^https:\/\//i.test(u || "") ? u : "#";
 const fmtDate = (iso) => { if (!iso) return ""; const d = new Date(iso); return isNaN(d) ? "" : d.toLocaleDateString(undefined, { month: "short", day: "numeric" }); };
 const companyOf = (name) => companies.find(c => c.name === name) || {};
-const catOf = (name) => companyOf(name).category || "Other";
+// Companies found through the Wider Net feed aren't on the watchlist: they get their own sector and tier.
+const WIDER = "Wider net";
+const catOf = (name) => companyOf(name).category || WIDER;
 const catColor = (c) => CAT_COLORS[c] || "var(--c-other)";
-const tierOf = (name) => { const c = companyOf(name); return c.tier || (c.category === "Big tech" ? "safe" : "wild"); };
+const tierOf = (name) => { const c = companyOf(name); return !c.name ? "found" : c.tier || (c.category === "Big tech" ? "safe" : "wild"); };
+const TIER_LABEL = { safe: "safe bet", wild: "wild bet", found: "new find" };
+// Same idea as norm_name() in scraper.py: "WhatNot" and "Whatnot, Inc." are one company.
+const normName = (n) => String(n || "").toLowerCase().replace(/[^a-z0-9 ]+/g, " ").replace(/^the |\b(inc|llc|corp|corporation|company|co)\b/g, " ").split(/\s+/).filter(Boolean).join(" ");
+const backerOf = (name) => { const k = normName(name); const hit = Object.keys(backers).find(b => normName(b) === k); return hit ? backers[hit] : ""; };
+const backedTag = (name) => { const b = backerOf(name); return b ? `<span class="backed" title="Top investors in this company">backed by ${esc(b)}</span>` : ""; };
 // "Costa Mesa, CA, United States; Seattle, Washington, United States; ..." -> "Seattle · +2 other cities"
 const AREA = /seattle|bellevue|redmond|kirkland|bothell|everett|renton|issaquah|sammamish|woodinville|lynnwood|tukwila|tacoma|mercer island|shoreline|kent,? ?wa|\bSEA\b|puget sound/i;
 function shortLoc(loc) {
@@ -383,7 +393,7 @@ function choosePicks(jobs, n, placedToday) {
       if (strictCat && usedCat.has(cat)) continue;
       if (strictTier) {
         if (tier === "safe" && safeLeft <= 0) continue;
-        if (tier === "wild" && n - out.length - safeLeft <= 0) continue;
+        if (tier !== "safe" && n - out.length - safeLeft <= 0) continue;
       }
       out.push(j); usedCo.add(j.company); usedCat.add(cat);
       if (tier === "safe" && safeLeft > 0) safeLeft--;
@@ -416,8 +426,9 @@ function renderToday(jobs) {
   const card = (j, isDone) => {
     const tier = tierOf(j.company);
     return `<article class="pick sk soft ${isDone ? "done" : ""}">
-      <span class="tier ${tier}">${tier === "safe" ? "safe bet" : "wild bet"} · ${esc(catOf(j.company).toLowerCase())}</span>
+      <span class="tier ${tier}">${TIER_LABEL[tier]} · ${esc(catOf(j.company).toLowerCase())}</span>
       ${coLine(j.company)}
+      ${backedTag(j.company)}
       ${freshRank(j) === 0 ? postedTag(j) : ""}
       <a class="t" href="${esc(safeUrl(j.url))}" target="_blank" rel="noopener">${esc(j.title)}</a>
       <span class="m" title="${esc(j.location || "")}">${esc(shortLoc(j.location))}</span>
@@ -463,7 +474,7 @@ function renderTabs(jobs) {
   $("tabs").innerHTML = STATUSES.map(([k, label]) =>
     `<button class="tab" data-tab="${k}" aria-pressed="${ui.tab === k}">${label}<span class="n">${count(k)}</span></button>`).join("");
   const withJobs = new Set(visible.map(j => catOf(j.company)));
-  const cats = [...new Set(companies.map(c => c.category))].filter(c => withJobs.has(c) || ui.cats.has(c));
+  const cats = [...new Set(companies.map(c => c.category).concat(WIDER))].filter(c => withJobs.has(c) || ui.cats.has(c));
   $("cats").innerHTML = cats.map(c =>
     `<button class="chip" data-cat="${esc(c)}" aria-pressed="${ui.cats.has(c)}"><span class="dot" style="background:${catColor(c)}"></span>${esc(c)}</button>`).join("");
 }
@@ -486,7 +497,7 @@ function renderQueue(jobs) {
       <div class="job-main">
         ${coLine(j.company)}
         <a class="job-title" href="${esc(safeUrl(j.url))}" target="_blank" rel="noopener">${esc(j.title)}</a>
-        <div class="job-meta"><span title="${esc(j.location || "")}">${esc(shortLoc(j.location))}</span>${postedTag(j)}${when ? `<span class="when">${esc(when)}</span>` : ""}</div>
+        <div class="job-meta"><span title="${esc(j.location || "")}">${esc(shortLoc(j.location))}</span>${postedTag(j)}${backedTag(j.company)}${when ? `<span class="when">${esc(when)}</span>` : ""}</div>
       </div>
       <div class="job-act marks" role="group" aria-label="Status for ${esc(j.title)}">
         ${MARKS.map(([k, l]) => `<button type="button" class="mark ${k}" data-id="${esc(j.id)}" data-set="${k}" aria-pressed="${j.status === k}">${l}</button>`).join("")}
@@ -498,10 +509,11 @@ function renderQueue(jobs) {
 function renderCompanies(jobs) {
   $("cos").innerHTML = companies.map(c => {
     const open = jobs.filter(j => j.company === c.name && j.open !== false && j.status !== "skipped").length;
-    const foot = c.board === "link" ? "check by hand" : `${open} open here`;
+    const foot = c.board === "link" ? (open ? `${open} open here · check by hand too` : "check by hand") : `${open} open here`;
     return `<article class="co sk soft">
       <div class="co-top"><span class="co-name">${esc(c.name)}</span><span class="co-tag" style="color:${catColor(c.category)}">${esc(c.category.toLowerCase())}</span></div>
       <p class="co-why">${esc(c.why)}</p>
+      ${backedTag(c.name)}
       <div class="co-foot"><span class="count">${esc(foot)}</span><a href="${esc(safeUrl(c.careersUrl))}" target="_blank" rel="noopener">${esc(c.linkLabel || "Careers")} ↗</a></div>
     </article>`;
   }).join("");
@@ -564,6 +576,7 @@ $("import").addEventListener("change", async e => {
     const jobsData = await jr.json(); const coData = await cr.json();
     boardJobs = jobsData.jobs || []; updatedAt = jobsData.updatedAt; boardErrors = jobsData.errors || [];
     companies = coData.companies || [];
+    backers = coData.backers || {};
   } catch (e) { loadFailed = true; }
   renderAll();
 })();

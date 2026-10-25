@@ -228,5 +228,66 @@ class RefreshTests(unittest.TestCase):
         self.assertEqual(merged, [])                                   # ...and are pruned after 60 days
 
 
+
+class WiderNetTests(unittest.TestCase):
+    """The Simplify feed adds roles beyond the watchlist without duplicating direct boards."""
+    FEED = {"name": "Simplify New Grad", "type": "simplify", "url": "https://x.test/listings.json"}
+    CONF = {"filters": FILTERS, "feeds": [FEED], "companies": [
+        {"name": "Acme", "board": "fake", "slug": "acme"},
+        {"name": "Microsoft", "board": "link", "slug": "microsoft"},
+        {"name": "Helion", "board": "link", "slug": "helion", "aliases": ["Helion Energy"]}]}
+
+    def listing(self, company, title="Software Engineer New Grad", loc="Seattle, WA", lid="1", **kw):
+        return {"id": lid, "company_name": company, "title": title, "locations": [loc], "active": True,
+                "is_visible": True, "url": f"https://x.test/{lid}", "date_posted": 1792800000, **kw}
+
+    def run_feed(self, listings, existing=(), now=None):
+        with mock.patch.object(scraper, "http_json", return_value=listings):
+            return scraper.refresh(self.CONF, list(existing), {"fake": lambda c: []},
+                                   now=now or datetime(2026, 10, 24, 13, tzinfo=timezone.utc))
+
+    def test_adds_roles_from_any_company(self):
+        merged, new, errors = self.run_feed([self.listing("Truveta")])
+        self.assertEqual(errors, [])
+        self.assertEqual([(r["company"], r["source"], r["id"]) for r in new], [("Truveta", "Simplify New Grad", "sf-simplify-1")])
+        self.assertEqual(new[0]["postedAt"], "2026-10-24T00:00:00Z")   # feed dates are epoch seconds
+
+    def test_filters_and_blocks_still_apply(self):
+        listings = [self.listing("Truveta", title="Senior Software Engineer", lid="1"),
+                    self.listing("Truveta", loc="Austin, TX", lid="2"),
+                    self.listing("Truveta", lid="3", active=False),
+                    self.listing("Amazon", lid="4"), self.listing("Zoox", lid="5"), self.listing("Twitch", lid="6")]
+        _, new, _ = self.run_feed(listings)
+        self.assertEqual(new, [])
+
+    def test_no_duplicates_and_link_only_companies_get_filled(self):
+        listings = [self.listing("Acme", lid="1"),             # read directly from its board already
+                    self.listing("Microsoft", lid="2"),        # link-only card: the feed fills it in
+                    self.listing("Helion Energy", lid="3")]    # matched through aliases
+        _, new, _ = self.run_feed(listings)
+        self.assertEqual(sorted(r["company"] for r in new), ["Helion", "Microsoft"])
+
+    def test_roles_that_leave_the_feed_close_and_a_broken_feed_closes_nothing(self):
+        merged, _, _ = self.run_feed([self.listing("Truveta")])
+        merged, _, _ = self.run_feed([], merged)
+        self.assertFalse(merged[0]["open"])
+        merged, _, _ = self.run_feed([self.listing("Truveta")], merged)
+        self.assertTrue(merged[0]["open"])
+        with mock.patch.object(scraper, "http_json", side_effect=TimeoutError("down")):
+            merged2, _, errors = scraper.refresh(self.CONF, merged, {"fake": lambda c: []})
+        self.assertTrue(merged2[0]["open"])
+        self.assertIn("Simplify New Grad", errors[0])
+
+    def test_norm_name(self):
+        self.assertEqual(scraper.norm_name("The Boeing Company"), "boeing")
+        self.assertEqual(scraper.norm_name("WhatNot"), scraper.norm_name("Whatnot"))
+        self.assertEqual(scraper.norm_name("Stripe, Inc."), "stripe")
+
+    def test_watchlist_config_is_valid(self):
+        self.assertTrue(CONFIG["feeds"] and CONFIG["feeds"][0]["url"].startswith("https://"))
+        for name, who in CONFIG["backers"].items():
+            self.assertTrue(name and who, name)
+
+
 if __name__ == "__main__":
     unittest.main()

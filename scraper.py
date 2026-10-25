@@ -30,7 +30,9 @@ COMPANIES_FILE = DOCS / "companies.json"
 JOBS_FILE = DOCS / "jobs.json"
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; upside-radar/1.0)", "Accept": "application/json"}
-BLOCKED_COMPANIES = re.compile(r"\bamazon\b|\baws\b", re.I)  # never, ever
+# Amazon and anything it owns: never, ever.
+BLOCKED_COMPANIES = re.compile(r"\bamazon\b|\baws\b|\bzoox\b|\btwitch\b|\baudible\b|whole foods|\bimdb\b|\bzappos\b"
+                               r"|one medical|\bwondery\b|goodreads|^ring$", re.I)
 KEEP_CLOSED_DAYS = 60
 
 
@@ -40,13 +42,13 @@ KEEP_CLOSED_DAYS = 60
 #    The description is only used for filtering; it is never saved.
 # ---------------------------------------------------------------------------
 
-def http_json(url, body=None):
+def http_json(url, body=None, timeout=30):
     data = json.dumps(body).encode("utf-8") if body is not None else None
     headers = dict(HEADERS)
     if data is not None:
         headers["Content-Type"] = "application/json"
     req = urllib.request.Request(url, data=data, headers=headers, method="POST" if data else "GET")
-    with urllib.request.urlopen(req, timeout=30) as resp:
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 
@@ -184,6 +186,24 @@ def workday_locations(detail_url):
     return " · ".join(dict.fromkeys(n for n in names if n))
 
 
+def fetch_simplify(feed):
+    """Wider Net: the community-kept list of new-grad roles at every company (github.com/SimplifyJobs).
+    Returns the same job dicts as the board fetchers, plus "company"."""
+    jobs = []
+    for x in http_json(feed["url"], timeout=90):
+        if not x.get("active") or x.get("is_visible") is False:
+            continue
+        posted = x.get("date_posted")
+        job = make_job("sf", "simplify", x.get("id"), x.get("title"), " · ".join(x.get("locations") or []), x.get("url"),
+                       posted * 1000 if isinstance(posted, (int, float)) else None)
+        job["company"] = (x.get("company_name") or "").strip()
+        jobs.append(job)
+    return jobs
+
+
+FEED_FETCHERS = {"simplify": fetch_simplify}
+
+
 FETCHERS = {
     "greenhouse": fetch_greenhouse,
     "lever": fetch_lever,
@@ -234,14 +254,45 @@ def load_json(path, default):
         return default
 
 
-def refresh(config, existing_jobs, fetchers=FETCHERS, now=None):
+def norm_name(name):
+    """'The Boeing Company' -> 'boeing', 'WhatNot' -> 'whatnot'. Used to match feed names to the watchlist."""
+    n = re.sub(r"[^a-z0-9 ]+", " ", (name or "").lower())
+    n = re.sub(r"^the |\b(inc|llc|corp|corporation|company|co)\b", " ", n)
+    return " ".join(n.split())
+
+
+def refresh(config, existing_jobs, fetchers=FETCHERS, now=None, feed_fetchers=FEED_FETCHERS):
     """Pure-ish core: returns (merged_jobs, new_jobs, errors). Easy to test."""
     now = now or datetime.now(timezone.utc)
     stamp = now.strftime("%Y-%m-%dT%H:%M:%SZ")
     filters = config["filters"]
     # If the filters changed, forget saved jobs that no longer fit them.
-    by_id = {j["id"]: dict(j) for j in existing_jobs if is_match(j, filters)}
+    by_id = {j["id"]: dict(j) for j in existing_jobs if is_match(j, filters) and not BLOCKED_COMPANIES.search(j.get("company", ""))}
     new_jobs, errors = [], []
+
+    def upsert(job, name, source=None):
+        """Add a fetched job, or refresh the one we already have. Returns False if it doesn't fit."""
+        if not job["url"].startswith("https://") or not is_match(job, filters):
+            by_id.pop(job["id"], None)  # a saved job that fails the Fit Check is dropped, not "closed"
+            return False
+        job = {k: v for k, v in job.items() if k not in ("description", "company")}
+        if job["id"] in by_id:
+            old = by_id[job["id"]]
+            old.update(title=job["title"], location=job["location"], url=job["url"],
+                       lastSeen=stamp, open=True)
+            old.pop("closedAt", None)
+            # Keep the earliest known posting date (Workday's "30+ days ago" drifts).
+            if job.get("postedAt") and (not old.get("postedAt") or job["postedAt"] < old["postedAt"]):
+                old["postedAt"] = job["postedAt"]
+        else:
+            record = {**job, "company": name, "firstSeen": stamp, "lastSeen": stamp, "open": True}
+            if source:
+                record["source"] = source
+            if not record.get("postedAt"):
+                record.pop("postedAt", None)
+            by_id[job["id"]] = record
+            new_jobs.append(record)
+        return True
 
     for company in config["companies"]:
         name = company["name"]
@@ -256,31 +307,42 @@ def refresh(config, existing_jobs, fetchers=FETCHERS, now=None):
             errors.append(f"{name}: {type(e).__name__}: {e}")
             continue
 
-        seen_here = set()
-        for job in fetched:
-            if not job["url"].startswith("https://") or not is_match(job, filters):
-                by_id.pop(job["id"], None)  # a saved job that fails the Fit Check is dropped, not "closed"
-                continue
-            job = {k: v for k, v in job.items() if k != "description"}
-            seen_here.add(job["id"])
-            if job["id"] in by_id:
-                old = by_id[job["id"]]
-                old.update(title=job["title"], location=job["location"], url=job["url"],
-                           lastSeen=stamp, open=True)
-                old.pop("closedAt", None)
-                # Keep the earliest known posting date (Workday's "30+ days ago" drifts).
-                if job.get("postedAt") and (not old.get("postedAt") or job["postedAt"] < old["postedAt"]):
-                    old["postedAt"] = job["postedAt"]
-            else:
-                record = {**job, "company": name, "firstSeen": stamp, "lastSeen": stamp, "open": True}
-                if not record.get("postedAt"):
-                    record.pop("postedAt", None)
-                by_id[job["id"]] = record
-                new_jobs.append(record)
+        seen_here = {job["id"] for job in fetched if upsert(job, name)}
 
         # Jobs from this company that vanished from its board are closed.
         for record in by_id.values():
-            if record.get("company") == name and record.get("open") and record["id"] not in seen_here:
+            if (record.get("company") == name and not record.get("source") and record.get("open")
+                    and record["id"] not in seen_here):
+                record["open"] = False
+                record["closedAt"] = stamp
+
+    # Wider Net: community feeds list roles at companies beyond the watchlist.
+    # Companies we already read directly are skipped (no duplicates); link-only
+    # watchlist companies (Microsoft, Google, ...) get their roles filled in from the feed.
+    direct = {norm_name(n) for c in config["companies"] if c.get("board") in fetchers
+              for n in [c["name"]] + c.get("aliases", [])}
+    watch = {}
+    for c in config["companies"]:
+        for n in [c["name"]] + c.get("aliases", []):
+            watch[norm_name(n)] = c["name"]
+    for feed in config.get("feeds", []):
+        fetcher = feed_fetchers.get(feed.get("type"))
+        if not fetcher:
+            continue
+        try:
+            fetched = fetcher(feed)
+        except Exception as e:  # a broken feed never stops the run, and closes nothing
+            errors.append(f"{feed['name']}: {type(e).__name__}: {e}")
+            continue
+        seen_here = set()
+        for job in fetched:
+            key = norm_name(job.get("company"))
+            if not key or BLOCKED_COMPANIES.search(job["company"]) or key in direct:
+                continue
+            if upsert(job, watch.get(key, job["company"]), source=feed["name"]):
+                seen_here.add(job["id"])
+        for record in by_id.values():
+            if record.get("source") == feed["name"] and record.get("open") and record["id"] not in seen_here:
                 record["open"] = False
                 record["closedAt"] = stamp
 

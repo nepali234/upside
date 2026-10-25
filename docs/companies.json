@@ -6,6 +6,25 @@
     "location_include": "seattle|bellevue|redmond|kirkland|bothell|everett(?!,? ?ma)|renton|issaquah|sammamish|woodinville|lynnwood|tukwila|tacoma|mercer island|shoreline|kent,? ?wa|\\bSEA\\b|puget sound"
   },
 
+  "feeds": [
+    { "name": "Simplify New Grad", "type": "simplify",
+      "url": "https://raw.githubusercontent.com/SimplifyJobs/New-Grad-Positions/dev/.github/scripts/listings.json" }
+  ],
+
+  "backers": {
+    "Anduril": "Founders Fund, a16z",
+    "Armada": "Founders Fund, Lux",
+    "Aurelian": "NEA, Y Combinator",
+    "BRINC Drones": "Index Ventures",
+    "Collaborative Robotics": "General Catalyst, Sequoia",
+    "Databricks": "a16z",
+    "Dyna Robotics": "CRV, First Round",
+    "K2 Space": "Kleiner Perkins, Lightspeed",
+    "Preference Model": "a16z",
+    "SpaceX": "Founders Fund",
+    "Stripe": "Sequoia"
+  },
+
   "companies": [
     { "name": "Overland AI", "category": "Defense", "tier": "wild", "hq": "Seattle, WA",
       "why": "Off-road autonomy for military ground vehicles. Local and early, so equity still has room to grow.",
