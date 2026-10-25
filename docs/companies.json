@@ -1,6 +1,6 @@
 {
   "filters": {
-    "title_include": "software|developer|\\bSDE\\b|\\bSWE\\b|back[- ]?end|full[- ]?stack|platform engineer|infrastructure engineer|infrastructure systems|cloud engineer|\\bSRE\\b|site reliability|member of technical staff|forward deployed|\\bAI engineer|data engineer|embedded|autonomy",
+    "title_include": "software|developer|\\bSDE\\b|\\bSWE\\b|back[- ]?end|full[- ]?stack|platform engineer|infrastructure engineer|infrastructure systems|cloud engineer|\\bSRE\\b|site reliability|member of technical staff|forward deployed|founding engineer|\\bAI engineer|data engineer|embedded|autonomy",
     "title_exclude": "senior|\\bsr\\.?\\b|(?<!technical )staff|principal|\\blead\\b|manager|director|\\bhead\\b|chief|intern|research scientist|\\bIII\\b|\\bIV\\b|architect|\\bvp\\b|technician|\\bph\\.?\\s?d\\b|active clearance",
     "description_exclude": "(?:(?:\\b(?:[4-9]|1[0-9]|four|five|six|seven|eight|nine|ten)\\s*\\+|\\b(?:at least|a minimum of|minimum of|minimum)\\s+(?:[4-9]|1[0-9]|four|five|six|seven|eight|nine|ten)|\\b(?:[4-9]|1[0-9]|four|five|six|seven|eight|nine|ten)\\s*(?:-|–|to)\\s*\\d+|\\b(?:[4-9]|1[0-9]|four|five|six|seven|eight|nine|ten)\\s+or more)\\s*\\+?\\s*(?:\\(\\d+\\)\\s*)?years?\\b[^.;]{0,40}?\\b(?:experience|building|developing|working|writing|shipping|designing|professional|industry|engineering))|(?:\\b(?:possess|hold|have)\\b(?:(?!obtain|eligib)[^.;]){0,25}\\bactive\\b(?:u\\.s\\.|[^.;]){0,40}\\bclearance|\\b(?:active|current)\\s+(?:u\\.?s\\.?\\s+)?(?:ts|top secret|secret|ts/sci)[^.;]{0,25}clearance\\s+(?:is\\s+)?required|\\bclearance is required)|(?:\\bph\\.?\\s?d\\.?\\b[^.;]{0,60}\\brequired\\b|\\brequires? a ph\\.?\\s?d\\b|\\bmust have a ph\\.?\\s?d\\b)",
     "location_include": "seattle|bellevue|redmond|kirkland|bothell|everett(?!,? ?ma)|renton|issaquah|sammamish|woodinville|lynnwood|tukwila|tacoma|mercer island|shoreline|kent,? ?wa|\\bSEA\\b|puget sound"
@@ -8,7 +8,8 @@
 
   "feeds": [
     { "name": "Simplify New Grad", "type": "simplify",
-      "url": "https://raw.githubusercontent.com/SimplifyJobs/New-Grad-Positions/dev/.github/scripts/listings.json" }
+      "url": "https://raw.githubusercontent.com/SimplifyJobs/New-Grad-Positions/dev/.github/scripts/listings.json" },
+    { "name": "Hacker News Who's Hiring", "type": "hn", "url": "https://hn.algolia.com/api/v1" }
   ],
 
   "backers": {
@@ -40,7 +41,7 @@
       "careersUrl": "https://jobs.ashbyhq.com/saronic", "board": "ashby", "slug": "saronic" },
     { "name": "Helion", "category": "Energy", "tier": "wild", "hq": "Everett, WA",
       "why": "Building a fusion power plant to sell electricity to Microsoft. A moonshot bet on cheap power for data centers.",
-      "careersUrl": "https://www.helionenergy.com/careers/", "board": "link", "slug": "helion" },
+      "careersUrl": "https://jobs.ashbyhq.com/helion", "board": "ashby", "slug": "helion" },
     { "name": "Zap Energy", "category": "Energy", "tier": "wild", "hq": "Everett, WA",
       "why": "A smaller, simpler approach to fusion, built in the Seattle area.",
       "careersUrl": "https://www.zapenergy.com/careers", "board": "link", "slug": "zap-energy" },
@@ -86,6 +87,34 @@
     { "name": "Blue Origin", "category": "Space", "tier": "safe", "hq": "Kent, WA",
       "why": "Big, well-funded rocket company in Kent. Its own careers site has no feed, so check it by hand.",
       "careersUrl": "https://www.blueorigin.com/careers/search", "board": "link", "slug": "blue-origin" },
+    { "name": "Snowflake", "category": "Data & cloud", "tier": "middle", "hq": "Bozeman, MT",
+      "why": "The data warehouse many AI teams feed their models from. Public and growing, with a big Bellevue office.",
+      "careersUrl": "https://jobs.ashbyhq.com/snowflake", "board": "ashby", "slug": "snowflake" },
+    { "name": "Qumulo", "category": "Data & cloud", "tier": "middle", "hq": "Seattle, WA",
+      "why": "Seattle-born file storage for huge datasets, the unglamorous plumbing under AI and research.",
+      "careersUrl": "https://jobs.ashbyhq.com/qumulo", "board": "ashby", "slug": "qumulo" },
+    { "name": "Stackline", "category": "Data & cloud", "tier": "middle", "hq": "Seattle, WA",
+      "why": "Seattle analytics company that helps brands sell on online marketplaces. Small enough to own real work.",
+      "careersUrl": "https://job-boards.greenhouse.io/stackline", "board": "greenhouse", "slug": "stackline" },
+    { "name": "Truveta", "category": "Health tech", "tier": "middle", "hq": "Bellevue, WA",
+      "why": "Bellevue company pooling health-system data for research. Past the risky early years, still private.",
+      "careersUrl": "https://job-boards.greenhouse.io/truveta", "board": "greenhouse", "slug": "truveta" },
+    { "name": "Axon", "category": "Public safety", "tier": "middle", "hq": "Scottsdale, AZ",
+      "why": "Body cameras, drones and the cloud software behind them. Large Seattle engineering hub that hires early-career.",
+      "careersUrl": "https://job-boards.greenhouse.io/axon", "board": "greenhouse", "slug": "axon" },
+    { "name": "Aurora", "category": "Robotics", "tier": "middle", "hq": "Pittsburgh, PA",
+      "why": "Self-driving trucks already hauling freight. Has a Seattle office.",
+      "careersUrl": "https://jobs.ashbyhq.com/aurora-operations-inc", "board": "ashby", "slug": "aurora-operations-inc",
+      "aliases": ["Aurora Innovation"] },
+    { "name": "Whatnot", "category": "Consumer", "tier": "middle", "hq": "Los Angeles, CA",
+      "why": "Fast-growing live-shopping marketplace with Seattle-area engineering roles.",
+      "careersUrl": "https://jobs.ashbyhq.com/whatnot", "board": "ashby", "slug": "whatnot" },
+    { "name": "OfferUp", "category": "Consumer", "tier": "middle", "hq": "Bellevue, WA",
+      "why": "Bellevue's local buy-and-sell app. A mid-size team where one engineer touches a lot.",
+      "careersUrl": "https://job-boards.greenhouse.io/offerup", "board": "greenhouse", "slug": "offerup" },
+    { "name": "Rover", "category": "Consumer", "tier": "middle", "hq": "Seattle, WA",
+      "why": "Seattle pet-care marketplace. Owned by private equity now, so less upside, but steady and local.",
+      "careersUrl": "https://jobs.lever.co/rover", "board": "lever", "slug": "rover" },
     { "name": "Microsoft", "category": "Big tech", "tier": "safe", "hq": "Redmond, WA",
       "why": "Runs Azure, the cloud much of the AI boom is built on. Home turf.",
       "careersUrl": "https://jobs.careers.microsoft.com/global/en/search?q=software%20engineer%20II&lc=Redmond%2C%20Washington%2C%20United%20States&o=Recent",

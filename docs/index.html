@@ -24,6 +24,7 @@
   --warn: #9a5b12;
   --c-defense: #6b7a3a; --c-energy: #b8742b; --c-infra: #6c55a8; --c-dev: #2f7f86;
   --c-fin: #3f7a4e; --c-robot: #a5583a; --c-space: #4a66a0; --c-big: #a8476a; --c-other: #8e8e93;
+  --c-data: #2b6f9e; --c-health: #2c9c6a; --c-safety: #7a5a2e; --c-consumer: #9a7a1c;
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .045 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -37,6 +38,7 @@
   --ok: #7ccf9a; --warn: #e6a95c;
   --c-defense: #b3c27a; --c-energy: #e8a964; --c-infra: #b3a1ec; --c-dev: #79c8cf;
   --c-fin: #8fcf9f; --c-robot: #ec9a7b; --c-space: #9db5e8; --c-big: #ec93b3; --c-other: #a3a3a8;
+  --c-data: #86bfe6; --c-health: #6fd6a6; --c-safety: #d3b07c; --c-consumer: #e3c66a;
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
   color-scheme: dark } }
 
@@ -100,7 +102,7 @@ h1 { font-size: clamp(38px, 7vw, 56px); font-weight: 600; letter-spacing: -0.035
 .picks { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
 .pick { padding: 16px 18px 15px; display: grid; gap: 3px; align-content: start; min-width: 0; }
 .tier { font: 500 19px/1.1 var(--hand); color: var(--lead); }
-.tier.wild, .tier.found { color: var(--graphite); }
+.tier.wild, .tier.found, .tier.middle { color: var(--graphite); }
 .co-line { display: flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--lead); margin-top: 4px; }
 .pick .t { font: 700 19px/1.3 var(--print); color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
 .pick .t:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
@@ -255,7 +257,10 @@ details.box[open] summary::before { content: "– "; }
     <div class="cats" id="cats" role="group" aria-label="Sector"></div>
     <div class="row">
       <label class="field"><input type="search" id="q" placeholder="Search title or company" aria-label="Search jobs"></label>
-      <label class="toggle"><input type="checkbox" id="recent"> Posted this week</label>
+    </div>
+    <div class="row">
+      <div class="cats" id="posted" role="group" aria-label="Posted within"></div>
+      <div class="cats" id="tiers" role="group" aria-label="Kind of bet"></div>
     </div>
   </section>
 
@@ -296,7 +301,8 @@ details.box[open] summary::before { content: "– "; }
 const CAT_COLORS = {
   "AI infrastructure": "var(--c-infra)", "Defense": "var(--c-defense)", "Energy": "var(--c-energy)",
   "Developer tools": "var(--c-dev)", "Fintech": "var(--c-fin)", "Robotics": "var(--c-robot)",
-  "Space": "var(--c-space)", "Big tech": "var(--c-big)",
+  "Space": "var(--c-space)", "Big tech": "var(--c-big)", "Data & cloud": "var(--c-data)",
+  "Health tech": "var(--c-health)", "Public safety": "var(--c-safety)", "Consumer": "var(--c-consumer)",
 };
 const STATUSES = [["new", "To review"], ["applied", "Applied"], ["interviewing", "Interviewing"], ["skipped", "Skipped"], ["all", "All"]];
 const PLACED = ["applied", "interviewing"];
@@ -312,7 +318,10 @@ let store = loadStore();
 function saveStore() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) {} }
 
 let boardJobs = [], companies = [], backers = {}, updatedAt = null, boardErrors = [], loadFailed = false;
-const ui = { tab: store.ui.tab || "new", cats: new Set(), q: "", recent: false };
+// Recent first: by default the list only shows roles posted in the last month.
+const POSTED = [["3", "3 days"], ["7", "week"], ["30", "month"], ["all", "any time"]];
+const ui = { tab: store.ui.tab || "new", cats: new Set(), tiers: new Set(store.ui.tiers || []), q: "",
+  posted: POSTED.some(([k]) => k === store.ui.posted) ? store.ui.posted : "30" };
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -324,7 +333,11 @@ const WIDER = "Wider net";
 const catOf = (name) => companyOf(name).category || WIDER;
 const catColor = (c) => CAT_COLORS[c] || "var(--c-other)";
 const tierOf = (name) => { const c = companyOf(name); return !c.name ? "found" : c.tier || (c.category === "Big tech" ? "safe" : "wild"); };
-const TIER_LABEL = { safe: "safe bet", wild: "wild bet", found: "new find" };
+const TIER_LABEL = { safe: "safe bet", middle: "middle bet", wild: "wild bet", found: "new find" };
+// Three kinds of bet: safe (big, stable), middle (growth-stage: past the risky years, still has upside),
+// wild (startups). New finds from the feeds are mostly small companies, so they count as wild.
+const betOf = (name) => { const t = tierOf(name); return t === "found" ? "wild" : t; };
+const TIER_FILTERS = [["safe", "safe"], ["middle", "middle"], ["wild", "wild"], ["found", "new finds"]];
 // Same idea as norm_name() in scraper.py: "WhatNot" and "Whatnot, Inc." are one company.
 const normName = (n) => String(n || "").toLowerCase().replace(/[^a-z0-9 ]+/g, " ").replace(/^the |\b(inc|llc|corp|corporation|company|co)\b/g, " ").split(/\s+/).filter(Boolean).join(" ");
 const backerOf = (name) => { const k = normName(name); const hit = Object.keys(backers).find(b => normName(b) === k); return hit ? backers[hit] : ""; };
@@ -344,6 +357,8 @@ const DAY_MS = 86400000;
 const ageDays = (j) => { if (!j.postedAt) return null; const t = Date.parse(j.postedAt); return isNaN(t) ? null : Math.max(0, Math.floor((Date.now() - t) / DAY_MS)); };
 const freshRank = (j) => { const d = ageDays(j); return d === null ? 3 : d <= 3 ? 0 : d <= 7 ? 1 : d <= 21 ? 2 : 3; };
 const sortTime = (j) => j.postedAt || j.firstSeen || "";
+// For the "posted within" filter: the posting date, or the day the radar first saw it.
+const seenDays = (j) => { const t = Date.parse(sortTime(j)); return isNaN(t) ? null : Math.max(0, Math.floor((Date.now() - t) / DAY_MS)); };
 function postedTag(j) {
   const d = ageDays(j);
   if (d === null) return j.firstSeen ? `<span class="when">found ${esc(fmtDate(j.firstSeen))}</span>` : "";
@@ -381,25 +396,21 @@ function choosePicks(jobs, n, placedToday) {
   // Freshest first (posted in the last 3 days, then this week...), shuffled daily within each band.
   const pool = jobs.filter(j => j.status === "new" && j.open !== false)
     .sort((a, b) => freshRank(a) - freshRank(b) || hash(day + a.id) - hash(day + b.id));
+  // The day's plan cycles middle, wild, safe: 1 a day = middle, 2 = middle + wild, 3 = one of each.
+  // Bets already placed today use up their slot.
+  const plan = Array.from({ length: n + placedToday.length }, (_, i) => ["middle", "wild", "safe"][i % 3]);
+  placedToday.forEach(j => { const i = plan.indexOf(betOf(j.company)); if (i >= 0) plan.splice(i, 1); else plan.pop(); });
   const usedCo = new Set(placedToday.map(j => j.company));
   const usedCat = new Set(placedToday.map(j => catOf(j.company)));
-  let safeLeft = placedToday.some(j => tierOf(j.company) === "safe") ? 0 : (n + placedToday.length >= 2 ? 1 : 0);
   const out = [];
-  const pass = (strictCat, strictTier) => {
-    for (const j of pool) {
-      if (out.length >= n) return;
-      if (out.includes(j) || usedCo.has(j.company)) continue;
-      const cat = catOf(j.company), tier = tierOf(j.company);
-      if (strictCat && usedCat.has(cat)) continue;
-      if (strictTier) {
-        if (tier === "safe" && safeLeft <= 0) continue;
-        if (tier !== "safe" && n - out.length - safeLeft <= 0) continue;
-      }
-      out.push(j); usedCo.add(j.company); usedCat.add(cat);
-      if (tier === "safe" && safeLeft > 0) safeLeft--;
-    }
-  };
-  pass(true, true); pass(true, false); pass(false, false);
+  const take = (want, strictCat) => pool.find(j => !out.includes(j) && !usedCo.has(j.company)
+    && (!want || betOf(j.company) === want) && (!strictCat || !usedCat.has(catOf(j.company))));
+  for (const want of plan.slice(0, n)) {
+    // Best: the right kind of bet from a new sector. Then any sector. Then any kind.
+    const j = take(want, true) || take(want, false) || take(null, true) || take(null, false);
+    if (!j) break;
+    out.push(j); usedCo.add(j.company); usedCat.add(catOf(j.company));
+  }
   return out;
 }
 
@@ -442,12 +453,12 @@ function renderToday(jobs) {
   $("picks").innerHTML = html;
 
   const placed = jobs.filter(j => placedDay(j));
-  if (!placed.length) { $("spread").innerHTML = `<span>Each day mixes one safe bet with wild ones, every pick from a different sector.</span>`; return; }
-  const byCat = {}, byTier = { safe: 0, wild: 0 };
-  placed.forEach(j => { const c = catOf(j.company); byCat[c] = (byCat[c] || 0) + 1; byTier[tierOf(j.company)]++; });
+  if (!placed.length) { $("spread").innerHTML = `<span>Each day mixes a middle bet, a wild bet and a safe bet, every pick from a different company and sector, freshest first.</span>`; return; }
+  const byCat = {}, byTier = { safe: 0, middle: 0, wild: 0 };
+  placed.forEach(j => { const c = catOf(j.company); byCat[c] = (byCat[c] || 0) + 1; byTier[betOf(j.company)]++; });
   const top = Object.entries(byCat).sort((a, b) => b[1] - a[1]);
   const heavy = placed.length >= 4 && top[0][1] / placed.length > 0.5;
-  $("spread").innerHTML = `<span><b style="color:var(--ink)">${placed.length}</b> bets placed: ${byTier.wild} wild, ${byTier.safe} safe</span>` +
+  $("spread").innerHTML = `<span><b style="color:var(--ink)">${placed.length}</b> bets placed: ${byTier.wild} wild, ${byTier.middle} middle, ${byTier.safe} safe</span>` +
     top.map(([c, n]) => `<span class="lbl"><span class="dot" style="background:${catColor(c)}"></span>${esc(c)} ${n}</span>`).join("") +
     (heavy ? `<span class="warn">over half your bets are in ${esc(top[0][0])}. spread out.</span>` : "");
 }
@@ -468,29 +479,40 @@ function renderStats(jobs) {
   $("checked").title = boardErrors.join("\n");
 }
 
+// Every filter except the status tab. The tab counts use it too, so their numbers match the list.
+function filtered(jobs) {
+  const q = ui.q.trim().toLowerCase();
+  return jobs
+    .filter(isVisible)
+    .filter(j => !ui.cats.size || ui.cats.has(catOf(j.company)))
+    .filter(j => !q || (j.title + " " + j.company).toLowerCase().includes(q))
+    .filter(j => !ui.tiers.size || ui.tiers.has(tierOf(j.company)))
+    // Recent first. Roles you've applied to stay visible however old, so your history never vanishes.
+    .filter(j => ui.posted === "all" || PLACED.includes(j.status) || (seenDays(j) ?? 0) <= Number(ui.posted));
+}
+
 function renderTabs(jobs) {
-  const visible = jobs.filter(isVisible);
+  const visible = filtered(jobs);
   const count = (s) => s === "all" ? visible.length : visible.filter(j => j.status === s).length;
   $("tabs").innerHTML = STATUSES.map(([k, label]) =>
     `<button class="tab" data-tab="${k}" aria-pressed="${ui.tab === k}">${label}<span class="n">${count(k)}</span></button>`).join("");
-  const withJobs = new Set(visible.map(j => catOf(j.company)));
+  const withJobs = new Set(jobs.filter(isVisible).map(j => catOf(j.company)));
   const cats = [...new Set(companies.map(c => c.category).concat(WIDER))].filter(c => withJobs.has(c) || ui.cats.has(c));
   $("cats").innerHTML = cats.map(c =>
     `<button class="chip" data-cat="${esc(c)}" aria-pressed="${ui.cats.has(c)}"><span class="dot" style="background:${catColor(c)}"></span>${esc(c)}</button>`).join("");
+  $("posted").innerHTML = `<span class="msg">posted within</span>` + POSTED.map(([k, l]) =>
+    `<button class="chip" data-posted="${k}" aria-pressed="${ui.posted === k}">${l}</button>`).join("");
+  $("tiers").innerHTML = `<span class="msg">kind of bet</span>` + TIER_FILTERS.map(([k, l]) =>
+    `<button class="chip" data-tier="${k}" aria-pressed="${ui.tiers.has(k)}">${l}</button>`).join("");
 }
 
 function renderQueue(jobs) {
   if (loadFailed) { $("queue").innerHTML = `<div class="empty"><strong>Couldn't load the job list</strong>Make sure jobs.json sits next to this page. If you opened the file directly, serve the folder instead (see the README).</div>`; return; }
-  const q = ui.q.trim().toLowerCase();
-  const list = jobs
-    .filter(isVisible)
+  const list = filtered(jobs)
     .filter(j => ui.tab === "all" || j.status === ui.tab)
-    .filter(j => !ui.cats.size || ui.cats.has(catOf(j.company)))
-    .filter(j => !q || (j.title + " " + j.company).toLowerCase().includes(q))
-    .filter(j => !ui.recent || (ageDays(j) ?? 99) <= 7)
-    .sort((a, b) => (b.postedAt || "").localeCompare(a.postedAt || "") || sortTime(b).localeCompare(sortTime(a)) || a.company.localeCompare(b.company));
+    .sort((a, b) => sortTime(b).localeCompare(sortTime(a)) || a.company.localeCompare(b.company));
   if (!jobs.length) { $("queue").innerHTML = `<div class="empty"><strong>No roles yet</strong>Run the daily workflow once (Actions → Daily job refresh → Run workflow) and reload.</div>`; return; }
-  if (!list.length) { $("queue").innerHTML = `<div class="empty"><strong>Nothing here</strong>Try another tab or clear the filters.</div>`; return; }
+  if (!list.length) { $("queue").innerHTML = `<div class="empty"><strong>Nothing here</strong>Try a longer "posted within", another tab, or clear the filters.</div>`; return; }
   $("queue").innerHTML = list.map((j, i) => {
     const when = j.status !== "new" && j.statusAt ? `${j.status} ${fmtDate(j.statusAt)}` : "";
     return `${i ? `<div class="rule" aria-hidden="true"></div>` : ""}<article class="job">
@@ -525,11 +547,12 @@ function renderAll() {
 }
 
 // ---------- Events ----------
-function saveUi() { store.ui = { tab: ui.tab }; saveStore(); }
+function saveUi() { store.ui = { tab: ui.tab, posted: ui.posted, tiers: [...ui.tiers] }; saveStore(); }
 $("tabs").addEventListener("click", e => { const b = e.target.closest("[data-tab]"); if (!b) return; ui.tab = b.dataset.tab; saveUi(); renderAll(); });
 $("cats").addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if (!b) return; const c = b.dataset.cat; ui.cats.has(c) ? ui.cats.delete(c) : ui.cats.add(c); renderAll(); });
 $("q").addEventListener("input", e => { ui.q = e.target.value; renderAll(); });
-$("recent").addEventListener("change", e => { ui.recent = e.target.checked; renderAll(); });
+$("posted").addEventListener("click", e => { const b = e.target.closest("[data-posted]"); if (!b) return; ui.posted = b.dataset.posted; saveUi(); renderAll(); });
+$("tiers").addEventListener("click", e => { const b = e.target.closest("[data-tier]"); if (!b) return; const t = b.dataset.tier; ui.tiers.has(t) ? ui.tiers.delete(t) : ui.tiers.add(t); saveUi(); renderAll(); });
 // Circle a mark to set it; tap the circled one again to clear it.
 $("queue").addEventListener("click", e => { const b = e.target.closest("button.mark"); if (b) setStatus(b.dataset.id, b.getAttribute("aria-pressed") === "true" ? "new" : b.dataset.set); });
 $("picks").addEventListener("click", e => { const b = e.target.closest("button[data-act]"); if (b) setStatus(b.dataset.id, b.dataset.act); });

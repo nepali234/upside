@@ -201,7 +201,48 @@ def fetch_simplify(feed):
     return jobs
 
 
-FEED_FETCHERS = {"simplify": fetch_simplify}
+HN_ROLE = re.compile(r"engineer|developer|programmer|\bSWE\b|\bSDE\b|software|full[- ]?stack|back[- ]?end", re.I)
+HN_PLACE = re.compile(r"seattle|bellevue|redmond|kirkland|bothell|everett|renton|issaquah|tacoma|\bSEA\b|puget sound"
+                      r"|remote|on-?site|hybrid|in[- ]office|,\s*[A-Za-z]{2}\b", re.I)
+
+
+def hn_job(comment):
+    """One top-level comment in 'Ask HN: Who is hiring?'. Posts start with a header line like
+    'Acme (YC W22) | Software Engineer, Backend | Seattle, WA (ONSITE) | Full-time'.
+    Returns a job dict, or None when the post doesn't follow that shape."""
+    text = comment.get("text") or ""
+    header = plain_text(re.split(r"<p>", text, maxsplit=1, flags=re.I)[0])
+    parts = [p.strip() for p in header.split("|") if p.strip()]
+    if len(parts) < 2:
+        return None
+    company = re.sub(r"https?://\S+|\([^)]*\)", " ", parts[0])
+    company = " ".join(company.split()).strip(" -–:,")
+    roles = [p for p in parts[1:] if HN_ROLE.search(p)]
+    # Usually the place has its own segment; sometimes it hides in the role ("Software Engineer (Seattle)").
+    places = ([p for p in parts[1:] if HN_PLACE.search(p) and p not in roles]
+              or [p for p in roles if HN_PLACE.search(p)])
+    if not company or not roles:
+        return None
+    posted = comment.get("created_at") or (comment["created_at_i"] * 1000 if comment.get("created_at_i") else None)
+    job = make_job("hn", "hn", comment.get("id"), " · ".join(roles[:3]), " · ".join(places),
+                   f"https://news.ycombinator.com/item?id={comment.get('id')}", posted, text)
+    job["company"] = company
+    return job
+
+
+def fetch_hn(feed):
+    """Wider Net, startup edition: this month's 'Ask HN: Who is hiring?' thread, read through the
+    free Hacker News search API (hn.algolia.com, no key). Hundreds of small companies post there."""
+    base = feed["url"].rstrip("/")
+    hits = http_json(f"{base}/search_by_date?tags=story,author_whoishiring&hitsPerPage=10").get("hits", [])
+    thread = next((h for h in hits if "who is hiring" in (h.get("title") or "").lower()), None)
+    if not thread:
+        raise ValueError("no 'Who is hiring?' thread found")
+    item = http_json(f"{base}/items/{thread['objectID']}", timeout=90)
+    return [job for job in (hn_job(c) for c in item.get("children") or []) if job]
+
+
+FEED_FETCHERS = {"simplify": fetch_simplify, "hn": fetch_hn}
 
 
 FETCHERS = {

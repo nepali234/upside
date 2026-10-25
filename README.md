@@ -16,17 +16,17 @@ No AI, no servers, no accounts. It runs free on GitHub Actions and GitHub Pages.
 1. GitHub Actions runs `scraper.py` at 13:36 UTC (6:36am Seattle in summer, 5:36am in winter).
 2. The script asks each watched company's job board for its open jobs over plain HTTP.
 3. It keeps software roles at early-career level in the Greater Seattle Area. Amazon is always excluded.
-   It also casts a **Wider Net**: the community-kept [Simplify New-Grad list](https://github.com/SimplifyJobs/New-Grad-Positions) adds Seattle-area new-grad roles from companies that aren't on the watchlist, and fills in the link-only cards (Microsoft, Google, Blue Origin...).
+   It also casts a **Wider Net**: the community-kept [Simplify New-Grad list](https://github.com/SimplifyJobs/New-Grad-Positions) adds Seattle-area new-grad roles from companies that aren't on the watchlist, and fills in the link-only cards (Microsoft, Google, Blue Origin...). This month's Hacker News **"Ask HN: Who is hiring?"** thread adds Seattle-area roles at small startups that aren't on any list yet, read through the free [HN search API](https://hn.algolia.com/api).
    It also reads each posting's full description and drops roles that ask for 4+ years, an active security clearance, or a PhD (the **Fit Check**).
 4. It merges the results into `docs/jobs.json`: new roles are added, each job's real posting date is saved, and jobs that disappeared are marked closed.
 5. It commits the file. GitHub Pages republishes the site a minute later.
 
 **On the page (you)**
-- **Today's bets:** your daily quota of roles to apply to. Each set mixes one safe bet (big, stable company) with wild bets (startups), every pick from a different company and sector, freshest roles first. Tap **✓ I applied** or **not for me**.
+- **Today's bets:** your daily quota of roles to apply to. The set cycles through three kinds of bet: a **middle** bet (growth-stage company, past the risky years, still has upside), a **wild** bet (startup) and a **safe** bet (big, stable company). 1 a day gets a middle bet, 2 gets middle + wild, 3 gets one of each. Every pick comes from a different company and sector, freshest roles first. Tap **✓ I applied** or **not for me**.
 - **Streak:** days in a row you hit your quota. Use **−** and **+** to change the quota (1–10).
 - **Spread:** where your bets have gone by sector, with a warning if more than half land in one.
 - **The list:** every open role, newest first. Roles posted in the last 3 days are tagged **just posted**. Mark each one by circling **applied**, **interview** or **skip**, and tap again to clear it.
-- **Filters:** status tabs, sector chips, search, and **Posted this week**.
+- **Filters:** status tabs, sector chips, search, **posted within** (3 days, week, month, any time; month by default, so old roles stay out of the way) and **kind of bet** (safe, middle, wild, new finds). Roles you applied to always stay visible. The tab counts follow the filters.
 - **Add a role you found yourself**, for anything spotted elsewhere.
 - **Back up or move your progress:** export and import your marks as a JSON file.
 - **The watchlist:** one card per company, with why it's a bet and a link to its careers page.
@@ -52,7 +52,7 @@ GitHub's guides: [Pages publishing source](https://docs.github.com/en/pages/gett
 2. Preview what it would pick up: `python3 scraper.py check greenhouse acme`
 3. Add an entry to `docs/companies.json` (the full format is under *Data formats* below).
 
-Prefer companies with real Seattle-area offices, and keep sectors balanced. If one sector passes about a third of the list, add elsewhere.
+Prefer companies with real Seattle-area offices, and keep sectors balanced. Set `"tier"` to `"middle"` for growth-stage companies (roughly 200–5,000 people, past product-market fit, hiring early-career): they're the sweet spot between big tech and seed startups, so keep plenty of them. A reliable way to find a slug: search the Simplify listings for the company and read the job-board URL. If one sector passes about a third of the list, add elsewhere.
 
 ## Running locally
 
@@ -83,7 +83,7 @@ Read this before changing anything.
 - **Greater Seattle Area only.** `location_include` in `docs/companies.json` decides this. A multi-city job is kept if any of its cities is in the area. Remote-only and unknown locations are dropped.
 - **Early-career level only.** `title_exclude` drops senior, staff, principal, lead, manager, director, head, intern, level III/IV and similar titles. The owner has about a year of full-time industry experience plus an internship. Target "Software Engineer I/II", roles asking 0–3 years, and new-grad or early-career programs.
 - **Fit Check: judge a job by what it asks for, not what it's called.** Titles hide level ("Software Engineer - GPU Kernels" can mean 5+ years). `description_exclude` in `companies.json` is matched against the full posting text and drops roles asking for 4+ years of experience, an *active* clearance (eligibility to obtain one is fine), or a required PhD. Descriptions come from Greenhouse (`?content=true`), Lever (`descriptionPlain` plus the requirement `lists`) and Ashby (`descriptionHtml`). They're used only for filtering and never saved to `jobs.json`. Workday gives no description in its search results, so Workday roles skip this check. When a rule looks too strict, `python3 scraper.py check <board> <slug>` lists every role the Fit Check dropped and the phrase that dropped it.
-- **Wider Net: more sources, same rules.** `feeds` in `companies.json` lists community feeds (today: Simplify New Grad). Feed roles go through the same title, location and Amazon filters. Companies read directly from their own board are skipped so nothing shows twice; link-only watchlist companies get their roles from the feed (match by name, or add `"aliases"` to the company). Feed roles carry `"source"` and close when they leave the feed; a feed that fails to load closes nothing. Feeds have no descriptions, so the Fit Check can't read them. Companies not on the watchlist show on the page as the sector **Wider net** and the tier **new find**.
+- **Wider Net: more sources, same rules.** `feeds` in `companies.json` lists community feeds (today: Simplify New Grad and Hacker News Who's Hiring). Feed roles go through the same title, location and Amazon filters. Companies read directly from their own board are skipped so nothing shows twice; link-only watchlist companies get their roles from the feed (match by name, or add `"aliases"` to the company). Feed roles carry `"source"` and close when they leave the feed; a feed that fails to load closes nothing. Simplify has no descriptions, so the Fit Check can't read it. Hacker News posts are the description, so they do get the Fit Check. An HN post is kept only if its header line (`Company | Role | Location | ...`) names an engineering role and a Seattle-area place; posts that mix senior and junior roles in one title are dropped by the title rule. HN roles link to the post itself and close when next month's thread replaces this one. Companies not on the watchlist show on the page as the sector **Wider net** and the tier **new find**.
 - **"Backed by" is a badge, never a filter.** `backers` in `companies.json` maps a company name to its top investors, and the page shows "backed by …" next to its roles. Only add backers you've checked in a funding announcement.
 - **The scraper never touches the owner's statuses.** Applied, skipped and interviewing marks live only in the browser's `localStorage`. `jobs.json` is board data only.
 - **One broken board never stops the run.** Each fetch is wrapped in try/except. Errors go into `jobs.json` under `errors`, and the page shows "N boards unreachable".
@@ -96,6 +96,7 @@ Read this before changing anything.
    └─ runs tests, then scraper.py, then commits docs/jobs.json if it changed
 scraper.py
    ├─ fetch_greenhouse / fetch_lever / fetch_ashby / fetch_workday   (one per board type)
+   ├─ fetch_simplify / fetch_hn   (Wider Net feeds)
    ├─ is_match(job, filters)    title include/exclude + location regexes from companies.json
    ├─ refresh(config, existing, fetchers, now)   pure merge logic, easy to test
    ├─ summary_text / notify_phone   optional ntfy push
@@ -112,12 +113,13 @@ tests/test_scraper.py unittest; fakes every network call
 ```json
 {
   "filters": { "title_include": "regex", "title_exclude": "regex", "description_exclude": "regex", "location_include": "regex" },
-  "feeds": [{ "name": "Simplify New Grad", "type": "simplify", "url": "https://raw.githubusercontent.com/..." }],
+  "feeds": [{ "name": "Simplify New Grad", "type": "simplify", "url": "https://raw.githubusercontent.com/..." },
+            { "name": "Hacker News Who's Hiring", "type": "hn", "url": "https://hn.algolia.com/api/v1" }],
   "backers": { "K2 Space": "Kleiner Perkins, Lightspeed" },   // badge text per company
   "companies": [{
     "name": "Baseten",                 // display name; also the join key used by jobs.json "company"
     "category": "AI infrastructure",   // sector, used for colors, chips and the diversity rule
-    "tier": "wild",                    // "safe" (big, stable) or "wild" (startup); defaults by category
+    "tier": "middle",                  // "safe" (big, stable), "middle" (growth-stage) or "wild" (startup); defaults by category
     "hq": "San Francisco, CA",
     "why": "One plain sentence on why it's a bet.",
     "careersUrl": "https://...",       // must be https; shown on the watchlist card
@@ -129,7 +131,7 @@ tests/test_scraper.py unittest; fakes every network call
   }]
 }
 ```
-Regexes are Python `re` with `re.I`. `"board": "link"` means there's no readable feed (Microsoft, Google, Meta, Helion, Zap, Overland, Blue Origin): the company appears as a card for checking by hand and is never fetched.
+Regexes are Python `re` with `re.I`. `"board": "link"` means there's no readable feed (Microsoft, Google, Meta, Zap, Overland, Blue Origin): the company appears as a card for checking by hand and is never fetched.
 
 **`docs/jobs.json`** (written by the scraper)
 ```json
@@ -137,7 +139,7 @@ Regexes are Python `re` with `re.I`. `"board": "link"` means there's no readable
   "updatedAt": "2026-10-22T13:36:00Z",
   "errors": ["NVIDIA: URLError: ..."],
   "jobs": [{
-    "id": "gh-stripe-6042172",   // <prefix>-<slug>-<board job id>; prefixes gh, lv, ab, wd, sf (Simplify feed)
+    "id": "gh-stripe-6042172",   // <prefix>-<slug>-<board job id>; prefixes gh, lv, ab, wd, sf (Simplify feed), hn (Hacker News)
     "company": "Stripe",
     "title": "Backend Engineer, Core Technology",
     "location": "Seattle · US-Remote · Chicago",

@@ -284,9 +284,68 @@ class WiderNetTests(unittest.TestCase):
         self.assertEqual(scraper.norm_name("Stripe, Inc."), "stripe")
 
     def test_watchlist_config_is_valid(self):
+        for c in CONFIG["companies"]:
+            self.assertIn(c.get("tier", "wild"), ("safe", "middle", "wild"), c["name"])
+            self.assertTrue(c["careersUrl"].startswith("https://"), c["name"])
         self.assertTrue(CONFIG["feeds"] and CONFIG["feeds"][0]["url"].startswith("https://"))
         for name, who in CONFIG["backers"].items():
             self.assertTrue(name and who, name)
+
+
+class HackerNewsTests(unittest.TestCase):
+    """'Ask HN: Who is hiring?' through the free Algolia API. Same filters as every other source."""
+    FEED = {"name": "Hacker News Who's Hiring", "type": "hn", "url": "https://hn.test/api/v1"}
+
+    def post(self, cid, header, body="<p>We ship fast. New grads welcome.", **kw):
+        return {"id": cid, "text": header + body, "created_at": "2026-10-01T15:00:00.000Z", **kw}
+
+    def api(self, posts):
+        def fake(url, *a, **kw):
+            if "search_by_date" in url:
+                return {"hits": [{"objectID": "900", "title": "Ask HN: Who wants to be hired? (October 2026)"},
+                                 {"objectID": "901", "title": "Ask HN: Who is hiring? (October 2026)"}]}
+            self.assertTrue(url.endswith("/items/901"), url)
+            return {"id": 901, "children": posts}
+        return fake
+
+    def fetch(self, posts):
+        with mock.patch.object(scraper, "http_json", side_effect=self.api(posts)):
+            return scraper.fetch_hn(self.FEED)
+
+    def test_reads_post_headers(self):
+        jobs = self.fetch([
+            self.post(1, "Acme Robotics (YC W22) | Software Engineer, Backend | Seattle, WA (ONSITE) | Full-time"),
+            self.post(2, "Beta | https:&#x2F;&#x2F;beta.io | Founding Engineer (Bellevue)"),
+            self.post(3, "Just a reply with no header"),
+            {"id": 4, "text": None},                                  # deleted comment
+            self.post(5, "Gamma | Marketing Lead | Seattle"),          # no engineering role
+        ])
+        self.assertEqual([(x["company"], x["title"], x["location"]) for x in jobs], [
+            ("Acme Robotics", "Software Engineer, Backend", "Seattle, WA (ONSITE)"),
+            ("Beta", "Founding Engineer (Bellevue)", "Founding Engineer (Bellevue)")])
+        self.assertEqual(jobs[0]["id"], "hn-hn-1")
+        self.assertEqual(jobs[0]["url"], "https://news.ycombinator.com/item?id=1")
+        self.assertEqual(jobs[0]["postedAt"], "2026-10-01T15:00:00Z")
+        self.assertIn("New grads welcome", jobs[0]["description"])
+
+    def test_same_rules_apply(self):
+        conf = {"filters": FILTERS, "feeds": [self.FEED], "companies": []}
+        posts = [self.post(1, "Acme | Software Engineer | Seattle, WA"),
+                 self.post(2, "Remote Co | Software Engineer | Remote (US)"),                        # not Seattle
+                 self.post(3, "Senior Co | Senior Software Engineer | Seattle"),                    # too senior
+                 self.post(4, "Fit Co | Software Engineer | Seattle", "<p>You have 6+ years of experience building APIs."),
+                 self.post(5, "Amazon | Software Engineer | Seattle, WA")]                          # never
+        with mock.patch.object(scraper, "http_json", side_effect=self.api(posts)):
+            merged, new, errors = scraper.refresh(conf, [], {}, now=datetime(2026, 10, 24, tzinfo=timezone.utc))
+        self.assertEqual(errors, [])
+        self.assertEqual([(r["company"], r["source"]) for r in new], [("Acme", "Hacker News Who's Hiring")])
+        self.assertNotIn("description", merged[0])
+
+    def test_no_thread_is_an_error_not_a_crash(self):
+        conf = {"filters": FILTERS, "feeds": [self.FEED], "companies": []}
+        with mock.patch.object(scraper, "http_json", return_value={"hits": []}):
+            _, _, errors = scraper.refresh(conf, [], {})
+        self.assertIn("Hacker News", errors[0])
 
 
 if __name__ == "__main__":
