@@ -348,5 +348,37 @@ class HackerNewsTests(unittest.TestCase):
         self.assertIn("Hacker News", errors[0])
 
 
+class GoogleTests(unittest.TestCase):
+    """Google has no API: we read job links off its careers search page."""
+    PAGE = (
+        '<a href="jobs/results/84680705375642310-software-engineer-early-career-multiple-teams?q=software">x</a>'
+        '<a href="jobs/results/84680705375642310-software-engineer-early-career-multiple-teams?q=software">dup</a>'
+        '<a href="./jobs/results/123087196289671878-software-engineer-iii-google-cloud">y</a>'
+        '<script>AF_initDataCallback({data:[["123087196289671878","Software Engineer III, Google Cloud",'
+        '"https://www.google.com/about/careers/applications/signin?jobId=123"]]});</script>')
+
+    def test_reads_links_and_titles(self):
+        jobs = scraper.google_jobs(self.PAGE, "Seattle, WA, USA")
+        self.assertEqual([(x["id"], x["title"], x["location"]) for x in jobs], [
+            ("go-google-84680705375642310", "Software Engineer Early Career Multiple Teams", "Seattle, WA, USA"),
+            ("go-google-123087196289671878", "Software Engineer III, Google Cloud", "Seattle, WA, USA")])
+        self.assertTrue(jobs[0]["url"].startswith("https://www.google.com/about/careers/applications/jobs/results/846"))
+        # Same filters: the level-III role is dropped, the early-career one kept.
+        self.assertEqual([x["id"] for x in jobs if scraper.is_match(x, FILTERS)], ["go-google-84680705375642310"])
+
+    def test_searches_each_office_and_fails_loudly_on_a_new_layout(self):
+        urls = []
+        def fake(url, timeout=30):
+            urls.append(url)
+            return self.PAGE if "Seattle" in url else ""
+        with mock.patch.object(scraper, "http_text", side_effect=fake):
+            jobs = scraper.fetch_google({"name": "Google", "slug": "google"})
+        self.assertEqual(len(jobs), 2)
+        self.assertTrue(any("Kirkland" in u for u in urls) and all("target_level=EARLY" in u for u in urls))
+        with mock.patch.object(scraper, "http_text", return_value="<html>nothing</html>"):
+            with self.assertRaises(ValueError):
+                scraper.fetch_google({"name": "Google", "slug": "google"})
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -24,7 +24,7 @@
   --warn: #9a5b12;
   --c-defense: #6b7a3a; --c-energy: #b8742b; --c-infra: #6c55a8; --c-dev: #2f7f86;
   --c-fin: #3f7a4e; --c-robot: #a5583a; --c-space: #4a66a0; --c-big: #a8476a; --c-other: #8e8e93;
-  --c-data: #2b6f9e; --c-health: #2c9c6a; --c-safety: #7a5a2e; --c-consumer: #9a7a1c;
+  --c-data: #2b6f9e; --c-health: #2c9c6a; --c-safety: #7a5a2e; --c-consumer: #9a7a1c; --c-aiapps: #5a4fc4; --c-sec: #4f5d6b;
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .045 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -38,7 +38,7 @@
   --ok: #7ccf9a; --warn: #e6a95c;
   --c-defense: #b3c27a; --c-energy: #e8a964; --c-infra: #b3a1ec; --c-dev: #79c8cf;
   --c-fin: #8fcf9f; --c-robot: #ec9a7b; --c-space: #9db5e8; --c-big: #ec93b3; --c-other: #a3a3a8;
-  --c-data: #86bfe6; --c-health: #6fd6a6; --c-safety: #d3b07c; --c-consumer: #e3c66a;
+  --c-data: #86bfe6; --c-health: #6fd6a6; --c-safety: #d3b07c; --c-consumer: #e3c66a; --c-aiapps: #a9a2f2; --c-sec: #a7b4c2;
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
   color-scheme: dark } }
 
@@ -303,6 +303,7 @@ const CAT_COLORS = {
   "Developer tools": "var(--c-dev)", "Fintech": "var(--c-fin)", "Robotics": "var(--c-robot)",
   "Space": "var(--c-space)", "Big tech": "var(--c-big)", "Data & cloud": "var(--c-data)",
   "Health tech": "var(--c-health)", "Public safety": "var(--c-safety)", "Consumer": "var(--c-consumer)",
+  "AI apps": "var(--c-aiapps)", "Security": "var(--c-sec)",
 };
 const STATUSES = [["new", "To review"], ["applied", "Applied"], ["interviewing", "Interviewing"], ["skipped", "Skipped"], ["all", "All"]];
 const PLACED = ["applied", "interviewing"];

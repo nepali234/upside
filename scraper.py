@@ -20,6 +20,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -176,6 +177,59 @@ def fetch_workday(company):
     return jobs
 
 
+def http_text(url, timeout=30):
+    req = urllib.request.Request(url, headers={**HEADERS, "Accept": "text/html"})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return resp.read().decode("utf-8", "replace")
+
+
+GOOGLE_BASE = "https://www.google.com/about/careers/applications/"
+GOOGLE_LINK = re.compile(r"jobs/results/(\d{12,22})(?:-([a-z0-9-]+))?")
+GOOGLE_DATA = re.compile(r'\["(\d{12,22})","((?:[^"\\]|\\.){3,200})","https://www\.google\.com/about/careers/applications/')
+
+
+def title_from_slug(slug):
+    """'software-engineer-ii-google-cloud' -> 'Software Engineer II Google Cloud'."""
+    words = [w.upper() if re.fullmatch(r"[ivx]+|ai|ml|ii|iii|sre|swe", w) else w.capitalize() for w in slug.split("-")]
+    return " ".join(words)
+
+
+def google_jobs(page, location):
+    """Read job links (and, when present, real titles) off one Google careers results page."""
+    titles = {m.group(1): json.loads(f'"{m.group(2)}"') for m in GOOGLE_DATA.finditer(page)}
+    jobs = {}
+    for m in GOOGLE_LINK.finditer(page):
+        job_id, slug = m.group(1), m.group(2) or ""
+        title = titles.get(job_id) or (title_from_slug(slug) if slug else "")
+        if title and job_id not in jobs:
+            jobs[job_id] = make_job("go", "google", job_id, title, location,
+                                    f"{GOOGLE_BASE}jobs/results/{job_id}" + (f"-{slug}" if slug else ""))
+    return list(jobs.values())
+
+
+def fetch_google(company):
+    """Google has no job-board API, but its careers search page lists each role as a link
+    ('jobs/results/<id>-<title-slug>'). We search each office by name, so every role found is local.
+    No posting date or description, so the Fit Check can't read these (like Workday)."""
+    g = company.get("google", {})
+    found = {}
+    for location in g.get("locations", ["Seattle, WA, USA", "Kirkland, WA, USA"]):
+        query = urllib.parse.urlencode([("q", g.get("search", "software engineer")), ("location", location)]
+                                       + [("target_level", lv) for lv in g.get("levels", ["EARLY", "MID"])])
+        for page_no in range(1, 6):
+            jobs = google_jobs(http_text(f"{GOOGLE_BASE}jobs/results/?{query}&page={page_no}"), location)
+            if page_no == 1 and not jobs and not found:
+                # A page with no job links at all means Google changed its layout. Say so,
+                # instead of quietly closing every Google role.
+                raise ValueError("no job links on the results page (layout may have changed)")
+            new = [j for j in jobs if j["id"] not in found]
+            for j in new:
+                found[j["id"]] = j
+            if len(new) < 10:
+                break
+    return list(found.values())
+
+
 def workday_locations(detail_url):
     """Workday's search shows '3 Locations' for multi-city jobs; the job's detail page names them."""
     try:
@@ -250,6 +304,7 @@ FETCHERS = {
     "lever": fetch_lever,
     "ashby": fetch_ashby,
     "workday": fetch_workday,
+    "google": fetch_google,
     # "link": no feed; the page just shows a link to the careers site.
 }
 
@@ -434,7 +489,7 @@ def check_board(board, slug):
     config = load_json(COMPANIES_FILE, None)
     fetcher = FETCHERS.get(board)
     if not fetcher or board == "workday":
-        sys.exit("Board must be one of: greenhouse, lever, ashby")
+        sys.exit("Board must be one of: greenhouse, lever, ashby, google")
     try:
         jobs = fetcher({"slug": slug, "name": slug})
     except Exception as e:
@@ -453,6 +508,8 @@ def check_board(board, slug):
 
 
 def main():
+    if len(sys.argv) == 3 and sys.argv[1:] == ["check", "google"]:
+        return check_board("google", "google")      # python3 scraper.py check google
     if len(sys.argv) == 4 and sys.argv[1] == "check":
         return check_board(sys.argv[2], sys.argv[3])
     config = load_json(COMPANIES_FILE, None)

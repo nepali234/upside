@@ -60,6 +60,7 @@ Prefer companies with real Seattle-area offices, and keep sectors balanced. Set 
 python3 -m unittest discover tests     # tests use fake board data, no network
 python3 scraper.py                     # real run: fetches boards, rewrites docs/jobs.json
 python3 scraper.py check ashby baseten # preview one board against the filters
+python3 scraper.py check google        # preview Google's Seattle and Kirkland roles
 cd docs && python3 -m http.server      # then open http://localhost:8000
 ```
 
@@ -95,7 +96,7 @@ Read this before changing anything.
 .github/workflows/daily.yml   cron 13:36 UTC + manual "Run workflow"
    └─ runs tests, then scraper.py, then commits docs/jobs.json if it changed
 scraper.py
-   ├─ fetch_greenhouse / fetch_lever / fetch_ashby / fetch_workday   (one per board type)
+   ├─ fetch_greenhouse / fetch_lever / fetch_ashby / fetch_workday / fetch_google   (one per board type)
    ├─ fetch_simplify / fetch_hn   (Wider Net feeds)
    ├─ is_match(job, filters)    title include/exclude + location regexes from companies.json
    ├─ refresh(config, existing, fetchers, now)   pure merge logic, easy to test
@@ -124,14 +125,14 @@ tests/test_scraper.py unittest; fakes every network call
     "why": "One plain sentence on why it's a bet.",
     "careersUrl": "https://...",       // must be https; shown on the watchlist card
     "linkLabel": "optional link text",
-    "board": "greenhouse",             // greenhouse | lever | ashby | workday | link
+    "board": "greenhouse",             // greenhouse | lever | ashby | workday | google | link
     "slug": "baseten",
     "aliases": ["Baseten Labs"],       // optional: other names a feed may use for this company
     "workday": { "host": "...", "tenant": "...", "site": "...", "search": "software engineer" }  // workday only
   }]
 }
 ```
-Regexes are Python `re` with `re.I`. `"board": "link"` means there's no readable feed (Microsoft, Google, Meta, Zap, Overland, Blue Origin): the company appears as a card for checking by hand and is never fetched.
+Regexes are Python `re` with `re.I`. `"board": "google"` reads Google's careers search page (it has no API): it searches each office in `google.locations` at the levels in `google.levels` and picks the job links off the page. No dates or descriptions, so no Fit Check. If the page ever shows no job links, the run reports "Google: … layout may have changed" and closes nothing. Test it with `python3 scraper.py check google`. `"board": "link"` means there's no readable feed (Microsoft, Meta, Zap, Overland, Blue Origin): the company appears as a card for checking by hand and is never fetched.
 
 **`docs/jobs.json`** (written by the scraper)
 ```json
@@ -139,7 +140,7 @@ Regexes are Python `re` with `re.I`. `"board": "link"` means there's no readable
   "updatedAt": "2026-10-22T13:36:00Z",
   "errors": ["NVIDIA: URLError: ..."],
   "jobs": [{
-    "id": "gh-stripe-6042172",   // <prefix>-<slug>-<board job id>; prefixes gh, lv, ab, wd, sf (Simplify feed), hn (Hacker News)
+    "id": "gh-stripe-6042172",   // <prefix>-<slug>-<board job id>; prefixes gh, lv, ab, wd, go (Google), sf (Simplify feed), hn (Hacker News)
     "company": "Stripe",
     "title": "Backend Engineer, Core Technology",
     "location": "Seattle · US-Remote · Chicago",
