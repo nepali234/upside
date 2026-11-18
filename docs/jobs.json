@@ -1,7 +1,18 @@
 {
- "updatedAt": "2026-11-17T21:54:26Z",
+ "updatedAt": "2026-11-18T21:35:12Z",
  "errors": [],
  "jobs": [
+  {
+   "id": "gh-spacex-8948735002",
+   "title": "Software Engineer, Alerts (Starlink)",
+   "location": "Redmond, WA",
+   "url": "https://boards.greenhouse.io/spacex/jobs/8948735002?gh_jid=8948735002",
+   "postedAt": "2026-11-18T20:54:59Z",
+   "company": "SpaceX",
+   "firstSeen": "2026-11-18T21:34:00Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
+   "open": true
+  },
   {
    "id": "gh-stripe-8395851",
    "title": "Forward Deployed AI Accelerator, Marketing",
@@ -11,7 +22,8 @@
    "company": "Stripe",
    "firstSeen": "2026-11-17T21:53:02Z",
    "lastSeen": "2026-11-17T21:53:02Z",
-   "open": true
+   "open": false,
+   "closedAt": "2026-11-18T21:34:00Z"
   },
   {
    "id": "gh-portalspacesystems-4509543009",
@@ -21,7 +33,7 @@
    "postedAt": "2026-11-16T21:43:09Z",
    "company": "Portal Space Systems",
    "firstSeen": "2026-11-17T21:53:02Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -32,7 +44,7 @@
    "postedAt": "2026-11-17T02:49:55Z",
    "company": "Microsoft",
    "firstSeen": "2026-11-17T21:53:02Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -44,7 +56,7 @@
    "postedAt": "2026-11-16T19:39:58Z",
    "company": "SpaceX",
    "firstSeen": "2026-11-16T23:00:26Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -55,7 +67,7 @@
    "postedAt": "2026-11-12T21:33:57Z",
    "company": "Stripe",
    "firstSeen": "2026-11-14T18:50:44Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -67,8 +79,9 @@
    "company": "Microsoft",
    "firstSeen": "2026-11-14T18:50:44Z",
    "lastSeen": "2026-11-17T21:53:02Z",
-   "open": true,
-   "source": "Simplify New Grad"
+   "open": false,
+   "source": "Simplify New Grad",
+   "closedAt": "2026-11-18T21:34:00Z"
   },
   {
    "id": "sf-simplify-970abbb2-7906-4686-914b-09bd6d622dd5",
@@ -78,7 +91,7 @@
    "postedAt": "2026-11-14T02:24:07Z",
    "company": "Microsoft",
    "firstSeen": "2026-11-14T18:50:44Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -90,7 +103,7 @@
    "postedAt": "2026-11-13T23:39:08Z",
    "company": "H2O.ai",
    "firstSeen": "2026-11-14T18:50:44Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -102,7 +115,7 @@
    "postedAt": "2026-11-14T01:13:30Z",
    "company": "Baseten",
    "firstSeen": "2026-11-14T18:50:44Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -113,7 +126,7 @@
    "postedAt": "2026-11-11T00:00:00Z",
    "company": "Salesforce",
    "firstSeen": "2026-11-12T21:04:19Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -125,7 +138,7 @@
    "postedAt": "2026-11-11T00:00:00Z",
    "company": "Salesforce",
    "firstSeen": "2026-11-12T21:04:19Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -138,8 +151,9 @@
    "company": "Microsoft",
    "firstSeen": "2026-11-12T21:04:19Z",
    "lastSeen": "2026-11-17T21:53:02Z",
-   "open": true,
-   "source": "Simplify New Grad"
+   "open": false,
+   "source": "Simplify New Grad",
+   "closedAt": "2026-11-18T21:34:00Z"
   },
   {
    "id": "sf-simplify-5b83878d-7d81-44e4-89ea-10b040471cb7",
@@ -150,8 +164,9 @@
    "company": "Microsoft",
    "firstSeen": "2026-11-12T21:04:19Z",
    "lastSeen": "2026-11-17T21:53:02Z",
-   "open": true,
-   "source": "Simplify New Grad"
+   "open": false,
+   "source": "Simplify New Grad",
+   "closedAt": "2026-11-18T21:34:00Z"
   },
   {
    "id": "sf-simplify-fd3db4d2-9c46-4138-9d5e-f0e0ab109e89",
@@ -174,7 +189,7 @@
    "postedAt": "2026-11-09T23:38:15Z",
    "company": "Microsoft",
    "firstSeen": "2026-11-10T20:35:43Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -199,7 +214,7 @@
    "postedAt": "2026-11-05T23:30:05Z",
    "company": "SpaceX",
    "firstSeen": "2026-11-06T20:04:11Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -210,7 +225,7 @@
    "postedAt": "2026-11-05T23:37:10Z",
    "company": "SpaceX",
    "firstSeen": "2026-11-06T20:04:11Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -234,7 +249,7 @@
    "postedAt": "2026-11-04T00:00:00Z",
    "company": "Nooks",
    "firstSeen": "2026-11-05T20:48:54Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -259,7 +274,7 @@
    "postedAt": "2026-09-15T01:08:52Z",
    "company": "Atlassian",
    "firstSeen": "2026-11-05T20:48:54Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -271,7 +286,7 @@
    "postedAt": "2026-10-05T22:03:59Z",
    "company": "Atlassian",
    "firstSeen": "2026-11-05T20:48:54Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -283,7 +298,7 @@
    "postedAt": "2026-11-03T22:32:39Z",
    "company": "SpaceX",
    "firstSeen": "2026-11-04T20:31:59Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -294,7 +309,7 @@
    "postedAt": "2026-11-02T17:17:31Z",
    "company": "Truveta",
    "firstSeen": "2026-11-03T20:16:39Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -358,7 +373,7 @@
    "postedAt": "2026-11-02T20:33:43Z",
    "company": "SpaceX",
    "firstSeen": "2026-11-02T22:28:07Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -369,7 +384,7 @@
    "postedAt": "2026-11-02T07:11:27Z",
    "company": "Google",
    "firstSeen": "2026-11-02T22:28:07Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -381,7 +396,7 @@
    "postedAt": "2026-06-11T18:02:53Z",
    "company": "Nuance Labs",
    "firstSeen": "2026-10-31T17:54:47Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -393,7 +408,7 @@
    "postedAt": "2026-09-03T15:06:05Z",
    "company": "Anduril",
    "firstSeen": "2026-10-31T17:54:47Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -417,7 +432,7 @@
    "postedAt": "2026-10-28T23:38:42Z",
    "company": "Stripe",
    "firstSeen": "2026-10-29T19:11:35Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -428,7 +443,7 @@
    "postedAt": "2026-10-28T22:31:30Z",
    "company": "Stripe",
    "firstSeen": "2026-10-29T19:11:35Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -440,7 +455,8 @@
    "company": "Databricks",
    "firstSeen": "2026-10-28T19:05:00Z",
    "lastSeen": "2026-11-17T21:53:02Z",
-   "open": true
+   "open": false,
+   "closedAt": "2026-11-18T21:34:00Z"
   },
   {
    "id": "gh-databricks-6865704002",
@@ -451,7 +467,8 @@
    "company": "Databricks",
    "firstSeen": "2026-10-28T19:05:00Z",
    "lastSeen": "2026-11-17T21:53:02Z",
-   "open": true
+   "open": false,
+   "closedAt": "2026-11-18T21:34:00Z"
   },
   {
    "id": "sf-simplify-08793a1b-056f-4a21-9867-6c550f09d1d5",
@@ -474,7 +491,7 @@
    "postedAt": "2026-10-26T22:41:48Z",
    "company": "Microsoft",
    "firstSeen": "2026-10-27T18:55:55Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -486,7 +503,7 @@
    "postedAt": "2026-09-25T22:11:01Z",
    "company": "CoreWeave",
    "firstSeen": "2026-10-27T18:55:55Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -498,7 +515,7 @@
    "postedAt": "2026-08-13T06:24:54Z",
    "company": "Zen3",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -510,7 +527,7 @@
    "postedAt": "2026-09-01T00:58:32Z",
    "company": "WhatNot",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -535,7 +552,7 @@
    "postedAt": "2026-10-14T22:13:09Z",
    "company": "Truveta",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -547,7 +564,7 @@
    "postedAt": "2026-08-03T06:15:12Z",
    "company": "TikTok",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -559,7 +576,7 @@
    "postedAt": "2026-08-03T06:15:11Z",
    "company": "TikTok",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -571,7 +588,7 @@
    "postedAt": "2026-08-03T06:15:11Z",
    "company": "TikTok",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -583,7 +600,7 @@
    "postedAt": "2026-08-03T06:15:10Z",
    "company": "TikTok",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -595,7 +612,7 @@
    "postedAt": "2026-08-04T09:20:11Z",
    "company": "TikTok",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -607,7 +624,7 @@
    "postedAt": "2026-08-04T09:20:13Z",
    "company": "TikTok",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -619,7 +636,7 @@
    "postedAt": "2026-08-06T01:18:29Z",
    "company": "TikTok",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -631,7 +648,7 @@
    "postedAt": "2026-08-06T01:18:25Z",
    "company": "TikTok",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -643,7 +660,7 @@
    "postedAt": "2026-08-06T01:18:29Z",
    "company": "TikTok",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -656,7 +673,8 @@
    "company": "Stripe",
    "firstSeen": "2026-10-25T03:43:46Z",
    "lastSeen": "2026-11-17T21:53:02Z",
-   "open": true
+   "open": false,
+   "closedAt": "2026-11-18T21:34:00Z"
   },
   {
    "id": "sf-simplify-b066e806-d56d-4915-a26e-bd7c3461144f",
@@ -666,7 +684,7 @@
    "postedAt": "2026-10-21T06:15:04Z",
    "company": "Storable",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -678,7 +696,7 @@
    "postedAt": "2026-06-26T22:05:49Z",
    "company": "Sinclair",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -716,7 +734,7 @@
    "postedAt": "2026-09-23T22:21:47Z",
    "company": "Qumulo",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -728,7 +746,7 @@
    "postedAt": "2026-07-04T14:08:12Z",
    "company": "Preference Model",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -741,8 +759,9 @@
    "company": "Microsoft",
    "firstSeen": "2026-10-25T03:43:46Z",
    "lastSeen": "2026-11-17T21:53:02Z",
-   "open": true,
-   "source": "Simplify New Grad"
+   "open": false,
+   "source": "Simplify New Grad",
+   "closedAt": "2026-11-18T21:34:00Z"
   },
   {
    "id": "sf-simplify-8b5d1879-5003-4cf0-aaf6-4a45fdf0a007",
@@ -830,7 +849,7 @@
    "postedAt": "2026-08-10T19:12:03Z",
    "company": "K2 Space",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -842,7 +861,7 @@
    "postedAt": "2026-08-07T22:30:59Z",
    "company": "K2 Space",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -854,7 +873,7 @@
    "postedAt": "2026-08-24T14:35:51Z",
    "company": "Google",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -866,7 +885,7 @@
    "postedAt": "2026-09-16T00:00:00Z",
    "company": "General Motors",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -878,7 +897,7 @@
    "postedAt": "2026-09-16T00:00:00Z",
    "company": "General Motors",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -890,7 +909,7 @@
    "postedAt": "2026-09-04T14:54:29Z",
    "company": "DoorDash",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -902,7 +921,7 @@
    "postedAt": "2026-08-24T00:00:00Z",
    "company": "Crowdstrike",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -914,7 +933,7 @@
    "postedAt": "2026-08-17T00:00:00Z",
    "company": "CACI",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -926,7 +945,7 @@
    "postedAt": "2026-04-27T09:06:58Z",
    "company": "ByteDance",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -938,7 +957,7 @@
    "postedAt": "2026-06-03T06:08:20Z",
    "company": "ByteDance",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -950,7 +969,7 @@
    "postedAt": "2026-06-03T06:08:17Z",
    "company": "ByteDance",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -962,7 +981,7 @@
    "postedAt": "2026-08-03T09:16:45Z",
    "company": "ByteDance",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -974,7 +993,7 @@
    "postedAt": "2026-08-03T09:16:38Z",
    "company": "ByteDance",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -986,7 +1005,7 @@
    "postedAt": "2026-08-14T09:31:10Z",
    "company": "ByteDance",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -998,7 +1017,7 @@
    "postedAt": "2026-08-14T09:31:14Z",
    "company": "ByteDance",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -1010,7 +1029,7 @@
    "postedAt": "2026-08-14T09:31:14Z",
    "company": "ByteDance",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -1022,7 +1041,7 @@
    "postedAt": "2026-08-12T22:43:28Z",
    "company": "ByteDance",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -1034,7 +1053,7 @@
    "postedAt": "2026-09-18T22:20:16Z",
    "company": "ByteDance",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -1046,7 +1065,7 @@
    "postedAt": "2026-08-10T00:00:00Z",
    "company": "Blue Origin",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -1058,7 +1077,7 @@
    "postedAt": "2026-08-10T00:00:00Z",
    "company": "Blue Origin",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -1070,7 +1089,7 @@
    "postedAt": "2026-08-31T00:00:00Z",
    "company": "Blue Origin",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -1082,7 +1101,7 @@
    "postedAt": "2026-08-31T00:00:00Z",
    "company": "Blue Origin",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -1094,7 +1113,7 @@
    "postedAt": "2026-10-09T01:23:12Z",
    "company": "Aurelian",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -1106,7 +1125,7 @@
    "postedAt": "2026-09-24T00:00:00Z",
    "company": "Adobe",
    "firstSeen": "2026-10-25T03:43:46Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "source": "Simplify New Grad"
   },
@@ -1118,7 +1137,7 @@
    "postedAt": "2025-11-18T05:58:19Z",
    "company": "Stoke Space",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1129,7 +1148,7 @@
    "postedAt": "2026-03-20T22:42:51Z",
    "company": "Stoke Space",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1140,7 +1159,7 @@
    "postedAt": "2026-09-01T15:18:56Z",
    "company": "Stoke Space",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1151,7 +1170,7 @@
    "postedAt": "2026-09-17T22:32:33Z",
    "company": "Starfish Space",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1186,7 +1205,7 @@
    "postedAt": "2026-08-11T17:29:55Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1197,7 +1216,7 @@
    "postedAt": "2026-07-30T23:49:33Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1208,7 +1227,7 @@
    "postedAt": "2026-09-11T16:31:22Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1219,7 +1238,7 @@
    "postedAt": "2026-10-21T17:12:59Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1230,7 +1249,7 @@
    "postedAt": "2026-08-18T03:23:04Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1241,7 +1260,7 @@
    "postedAt": "2026-10-22T16:15:36Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1252,7 +1271,7 @@
    "postedAt": "2026-10-22T16:15:39Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1263,7 +1282,7 @@
    "postedAt": "2026-08-27T15:14:20Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1298,7 +1317,7 @@
    "postedAt": "2026-08-11T21:49:07Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1309,7 +1328,7 @@
    "postedAt": "2026-08-12T19:02:26Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1320,7 +1339,7 @@
    "postedAt": "2026-08-25T16:56:56Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1331,7 +1350,7 @@
    "postedAt": "2026-07-29T16:18:33Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1342,7 +1361,7 @@
    "postedAt": "2026-08-18T16:25:11Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1353,7 +1372,7 @@
    "postedAt": "2026-09-04T17:13:43Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1364,7 +1383,7 @@
    "postedAt": "2026-06-25T17:33:45Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1375,7 +1394,7 @@
    "postedAt": "2026-06-04T17:18:59Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1386,7 +1405,7 @@
    "postedAt": "2026-06-23T21:12:17Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1397,7 +1416,7 @@
    "postedAt": "2026-08-14T16:22:04Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1408,7 +1427,7 @@
    "postedAt": "2026-08-14T16:21:23Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1419,7 +1438,7 @@
    "postedAt": "2026-07-28T23:21:50Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1430,7 +1449,7 @@
    "postedAt": "2026-08-27T15:14:22Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1441,7 +1460,7 @@
    "postedAt": "2026-08-11T21:49:08Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1452,7 +1471,7 @@
    "postedAt": "2026-09-30T18:35:41Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1463,7 +1482,7 @@
    "postedAt": "2026-08-14T17:49:35Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1474,7 +1493,7 @@
    "postedAt": "2026-08-26T18:15:09Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1497,7 +1516,7 @@
    "postedAt": "2026-08-18T03:23:12Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1508,7 +1527,7 @@
    "postedAt": "2026-09-15T01:07:19Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1519,7 +1538,7 @@
    "postedAt": "2026-07-01T17:04:20Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1530,7 +1549,7 @@
    "postedAt": "2026-06-17T21:28:40Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1541,7 +1560,7 @@
    "postedAt": "2026-10-01T22:55:43Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1552,7 +1571,7 @@
    "postedAt": "2026-07-19T06:31:00Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1563,7 +1582,7 @@
    "postedAt": "2026-06-09T21:04:25Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1574,7 +1593,7 @@
    "postedAt": "2026-07-29T16:45:00Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1597,7 +1616,7 @@
    "postedAt": "2026-07-19T06:31:02Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1620,7 +1639,7 @@
    "postedAt": "2026-06-03T22:25:23Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1631,7 +1650,7 @@
    "postedAt": "2026-08-26T22:35:05Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1654,7 +1673,7 @@
    "postedAt": "2026-08-26T22:35:07Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1665,7 +1684,7 @@
    "postedAt": "2026-05-27T19:03:51Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1676,7 +1695,7 @@
    "postedAt": "2026-06-09T21:04:27Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1687,7 +1706,7 @@
    "postedAt": "2026-10-22T16:15:44Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1698,7 +1717,7 @@
    "postedAt": "2026-10-22T16:15:41Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1709,7 +1728,7 @@
    "postedAt": "2026-06-09T21:04:29Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1720,7 +1739,7 @@
    "postedAt": "2026-07-19T06:31:02Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1743,7 +1762,7 @@
    "postedAt": "2026-07-28T15:58:05Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1766,7 +1785,7 @@
    "postedAt": "2026-06-18T21:26:13Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1777,7 +1796,7 @@
    "postedAt": "2026-06-01T20:50:35Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1800,7 +1819,7 @@
    "postedAt": "2026-09-25T20:46:12Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1811,7 +1830,7 @@
    "postedAt": "2026-05-28T19:46:49Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1834,7 +1853,7 @@
    "postedAt": "2026-07-19T06:31:03Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1857,7 +1876,7 @@
    "postedAt": "2026-10-22T16:15:46Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1868,7 +1887,7 @@
    "postedAt": "2026-10-22T16:15:50Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1879,7 +1898,7 @@
    "postedAt": "2026-07-29T16:31:31Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1890,7 +1909,7 @@
    "postedAt": "2026-08-11T21:49:09Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1901,7 +1920,7 @@
    "postedAt": "2026-06-04T17:18:58Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1912,7 +1931,7 @@
    "postedAt": "2026-07-20T16:35:18Z",
    "company": "SpaceX",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1959,7 +1978,7 @@
    "postedAt": "2026-10-22T17:54:24Z",
    "company": "Baseten",
    "firstSeen": "2026-10-22T18:09:15Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true
   },
   {
@@ -1969,7 +1988,7 @@
    "url": "https://stripe.com/jobs/search?gh_jid=8301253",
    "company": "Stripe",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-10-19T19:15:39Z"
   },
@@ -1992,7 +2011,7 @@
    "url": "https://stripe.com/jobs/search?gh_jid=8267736",
    "company": "Stripe",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-10-09T16:47:42Z"
   },
@@ -2003,7 +2022,7 @@
    "url": "https://stripe.com/jobs/search?gh_jid=8198280",
    "company": "Stripe",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-09-14T22:11:13Z"
   },
@@ -2014,7 +2033,7 @@
    "url": "https://stripe.com/jobs/search?gh_jid=8212508",
    "company": "Stripe",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-09-17T23:22:32Z"
   },
@@ -2025,7 +2044,7 @@
    "url": "https://stripe.com/jobs/search?gh_jid=8197135",
    "company": "Stripe",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-09-14T21:21:04Z"
   },
@@ -2036,7 +2055,7 @@
    "url": "https://stripe.com/jobs/search?gh_jid=8128744",
    "company": "Stripe",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-08-31T22:22:27Z"
   },
@@ -2047,7 +2066,7 @@
    "url": "https://stripe.com/jobs/search?gh_jid=8197891",
    "company": "Stripe",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-09-11T20:59:16Z"
   },
@@ -2058,7 +2077,7 @@
    "url": "https://stripe.com/jobs/search?gh_jid=8198207",
    "company": "Stripe",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-09-14T21:46:08Z"
   },
@@ -2081,7 +2100,7 @@
    "url": "https://jobs.ashbyhq.com/baseten/ae64d1d4-7b0a-4be4-8d77-7f5ce63849a7",
    "company": "Baseten",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2025-03-09T23:39:59Z"
   },
@@ -2092,7 +2111,7 @@
    "url": "https://jobs.ashbyhq.com/baseten/ddb5bc98-6116-49a2-802e-1c05398663f1",
    "company": "Baseten",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2025-07-17T22:46:46Z"
   },
@@ -2115,7 +2134,7 @@
    "url": "https://jobs.ashbyhq.com/baseten/75d7beac-0298-40fa-b206-2e0c0c08a64f",
    "company": "Baseten",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-01-07T02:00:15Z"
   },
@@ -2126,7 +2145,7 @@
    "url": "https://jobs.ashbyhq.com/baseten/1f7d7fda-5540-4205-890b-cdbf774f0814",
    "company": "Baseten",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-02-23T20:22:25Z"
   },
@@ -2137,7 +2156,7 @@
    "url": "https://jobs.ashbyhq.com/baseten/6e396eb7-acb3-436a-89ec-05e755c477f2",
    "company": "Baseten",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-04-23T23:48:25Z"
   },
@@ -2148,7 +2167,7 @@
    "url": "https://jobs.ashbyhq.com/baseten/3e925ab1-2089-4a79-989e-50479b546eda",
    "company": "Baseten",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-08-10T20:38:17Z"
   },
@@ -2159,7 +2178,7 @@
    "url": "https://jobs.ashbyhq.com/baseten/fb886b59-fdc3-4315-a9b3-c49808bcd2ce",
    "company": "Baseten",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-08-11T21:51:26Z"
   },
@@ -2170,7 +2189,7 @@
    "url": "https://jobs.ashbyhq.com/baseten/78028a72-2431-4373-aaec-d6e2c9a1cc7d",
    "company": "Baseten",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-08-11T21:57:58Z"
   },
@@ -2192,7 +2211,7 @@
    "url": "https://jobs.ashbyhq.com/baseten/7cb19a05-8e5b-44cf-b3e7-19949e2eff04",
    "company": "Baseten",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-10-05T23:25:08Z"
   },
@@ -2203,7 +2222,7 @@
    "url": "https://jobs.ashbyhq.com/baseten/14c4a663-0b1f-4c11-93ff-1359741ee456",
    "company": "Baseten",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-10-05T23:30:18Z"
   },
@@ -2214,7 +2233,7 @@
    "url": "https://boards.greenhouse.io/andurilindustries/jobs/4672911007?gh_jid=4672911007",
    "company": "Anduril",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-04-15T16:17:41Z"
   },
@@ -2225,7 +2244,7 @@
    "url": "https://boards.greenhouse.io/andurilindustries/jobs/5009240007?gh_jid=5009240007",
    "company": "Anduril",
    "firstSeen": "2026-10-22T04:58:52Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-04-15T13:18:16Z"
   },
@@ -2258,7 +2277,7 @@
    "url": "https://jobs.ashbyhq.com/baseten/84c1801c-1a65-49fb-aaaa-beeafd530e7e",
    "company": "Baseten",
    "firstSeen": "2026-10-22T04:10:00Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2024-03-28T21:00:55Z"
   },
@@ -2269,7 +2288,7 @@
    "url": "https://jobs.ashbyhq.com/baseten/916e9d62-492a-4562-971f-3e97e3868392",
    "company": "Baseten",
    "firstSeen": "2026-10-22T04:10:00Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2025-10-09T18:05:02Z"
   },
@@ -2280,7 +2299,7 @@
    "url": "https://jobs.ashbyhq.com/baseten/fc6e5f2e-eb2d-4a6c-8a51-8422e8662bde",
    "company": "Baseten",
    "firstSeen": "2026-10-22T04:10:00Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2024-07-09T17:24:19Z"
   },
@@ -2303,7 +2322,7 @@
    "url": "https://boards.greenhouse.io/andurilindustries/jobs/5162263007?gh_jid=5162263007",
    "company": "Anduril",
    "firstSeen": "2026-10-22T04:10:00Z",
-   "lastSeen": "2026-11-17T21:53:02Z",
+   "lastSeen": "2026-11-18T21:34:00Z",
    "open": true,
    "postedAt": "2026-06-11T16:31:23Z"
   }
