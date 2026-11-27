@@ -23,6 +23,7 @@ No AI, no servers, no accounts. It runs free on GitHub Actions and GitHub Pages.
 
 **On the page (you)**
 - **Today's bets:** your daily quota of roles to apply to. The set cycles through three kinds of bet: a **middle** bet (growth-stage company, past the risky years, still has upside), a **wild** bet (startup) and a **safe** bet (big, stable company). 1 a day gets a middle bet, 2 gets middle + wild, 3 gets one of each. Every pick comes from a different company and sector. Freshly seeded startups come first, then the freshest roles. Tap **✓ I applied** or **not for me**.
+- **Seeded startups:** its own section right under Today's bets. It lists every new open role at a freshly seeded startup (it ignores the list filters, so none get missed), then a card for each seeded startup with its round and careers link, newest seed first.
 - **Streak:** days in a row you hit your quota. Use **−** and **+** to change the quota (1–10).
 - **Spread:** where your bets have gone by sector, with a warning if more than half land in one.
 - **The list:** every open role, spread out so no company floods it: each company's newest role first, then everyone's second role, and so on, with freshly seeded startups first in each round. Past two roles, a company's rest folds behind **+ N more from …** (searching unfolds everything). Roles posted in the last 3 days are tagged **just posted**. Mark each one by circling **applied**, **interview** or **skip**, and tap again to clear it.
@@ -182,6 +183,7 @@ Posting-date sources: Greenhouse `first_published`, Lever `createdAt` (epoch ms)
 ### Page logic (`docs/index.html`)
 
 - **Today's picks** (`choosePicks`): the pool is open roles still at `new`, sorted by seed band (`seedRank`: seeded ≤2 years, ≤5 years, other), then by freshness band (posted ≤3 days, ≤7, ≤21, older or unknown) and then by a hash of the date plus the job id, so picks are stable through the day and change daily. Three passes fill the quota: first a strict pass (a new sector per pick, one safe bet, the rest wild), then one that relaxes the safe/wild split, then one that relaxes sectors. A company is never picked twice in a day.
+- **Seeded startups section** (`renderSeeded`): roles are open, still `new`, at companies where `isSeeded()` is true, ignoring `filtered()`. Its buttons use the same `setStatus` as Today's bets.
 - **Visibility:** closed postings are hidden unless the owner marked them applied or interviewing (`isVisible`).
 - **Sorting** (`spreadOut`): jobs are ranked within their company by `postedAt` (or `firstSeen`), newest first, then listed round by round: every company's 1st role, then every 2nd, and so on, seeded startups first within a round. With no search typed, roles past `PER_COMPANY` fold behind a **+ N more** button; `ui.open` remembers which companies are unfolded.
 - **`shortLoc`** shortens long city lists to the Seattle-area city plus a count. Its `AREA` regex mirrors `location_include`, so keep the two in sync.
