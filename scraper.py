@@ -370,7 +370,7 @@ def with_leads(config, leads_data):
     known = {norm_name(n) for c in companies for n in [c["name"]] + c.get("aliases", [])}
     for lead in (leads_data or {}).get("leads", []):
         if lead.get("board") in FETCHERS and norm_name(lead["name"]) not in known:
-            companies.append({"name": lead["name"], "category": "New seed lead", "tier": "wild",
+            companies.append({"name": lead["name"], "category": "Found in news", "tier": "wild",
                               "board": lead["board"], "slug": lead["slug"], "careersUrl": lead.get("careersUrl", "")})
             known.add(norm_name(lead["name"]))
     return {**config, "companies": companies}

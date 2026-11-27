@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
-Seed Finder: finds Seattle-area startups that just raised early money, and their job boards.
+Seed Finder: finds Seattle-area private companies that just raised money, and their job boards.
 
 The whole idea in four steps:
   1. Read funding news feeds (RSS, free, no key). Today: GeekWire's funding and seed-round tags.
-  2. Keep stories about a Seattle-area company raising a pre-seed, seed or Series A round,
-     and pull out the company's name, the round, the amount and the date.
+  2. Keep stories about a Seattle-area company raising a private round (pre-seed, seed, Series A,
+     B, C and later: anything before an IPO), and pull out the company's name, the round, the
+     amount and the date. IPOs, acquisitions and public companies are skipped: the point is
+     stock that can still grow before it goes public.
   3. Look for each company's job board on Greenhouse, Ashby and Lever by trying slugs made from
      its name, and accept a board only when it clearly belongs to that company.
   4. Save everything to docs/leads.json. scraper.py then reads those boards every morning like
@@ -78,8 +80,11 @@ def read_news(feed, pages, fetch=http_text, pause=1.0):
 # 2. Is it a Seattle-area early round, and who raised it?
 # ---------------------------------------------------------------------------
 
-LATER = re.compile(r"\bseries\s+[b-k]\b|\bipo\b|\bacquir|\bgrowth round\b", re.I)
-SERIES_A = re.compile(r"\bseries\s+a\b", re.I)
+# Not a private round: going public, being bought, or already public.
+NOT_PRIVATE = re.compile(r"\bipo\b|initial public offering|\bspac\b|goes public|going public|\bacquir|\bbuys\b|"
+                         r"\bmerg(?:e|er|es|ing)\b|\bnasdaq\b|\bnyse\b|publicly traded|\blayoffs?\b", re.I)
+SERIES = re.compile(r"\bseries\s+([a-k])\b", re.I)
+RAISED = re.compile(r"\b(?:rais\w*|lands?|landed|secur\w*|clos\w*|nabs?|reels? in|funding|financing|round|backed|invest\w*)\b", re.I)
 PRE_SEED = re.compile(r"\bpre-?\s?seed\b", re.I)
 SEED = re.compile(r"\bseed\b", re.I)
 AMOUNT = re.compile(r"\$\s?(\d+(?:\.\d+)?)\s?(million|billion|thousand|[MBK])\b", re.I)
@@ -87,17 +92,19 @@ BASED = re.compile(r"([A-Z][\w.' ]{1,40}?(?:,\s*[A-Z][\w.]+)?)-based\b")
 
 
 def stage_of(text):
-    """'pre-seed', 'seed', 'Series A', or None when it's later or unclear.
-    Reads only the headline and opening, where the round being announced is named."""
-    if LATER.search(text):
+    """The round being announced: 'pre-seed', 'seed', 'Series A' ... 'Series K', 'funding' when the
+    story names no stage, or None when it isn't a private round. Reads only the headline and opening,
+    where the round being announced is named; with several stages there, the latest is the new one."""
+    if NOT_PRIVATE.search(text) or not AMOUNT.search(text) or not RAISED.search(text):
         return None
-    if SERIES_A.search(text):
-        return "Series A"
+    series = sorted({m.upper() for m in SERIES.findall(text)})
+    if series:
+        return f"Series {series[-1]}"
     if PRE_SEED.search(text):
         return "pre-seed"
     if SEED.search(text):
         return "seed"
-    return None
+    return "funding"
 
 
 def amount_of(text):

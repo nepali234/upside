@@ -57,8 +57,17 @@ class ReadingNewsTests(unittest.TestCase):
             lead = discover.lead_from(item(title, text), AREA)
             self.assertEqual((lead["name"], lead["stage"], lead["amount"]), (name, stage, amount), title)
 
-    def test_skips_later_rounds_and_other_cities(self):
-        self.assertIsNone(discover.lead_from(item("Helion raises $425M", "Helion, a Seattle-area fusion company, raised a Series F."), AREA))
+    def test_any_private_round_counts(self):
+        cases = [("Helion raises $425M", "Helion, a Seattle-area fusion company, raised a $425 million Series F.", "Series F"),
+                 ("Seattle startup Kapta Space raises $24M", "Seattle startup Kapta Space raised a $24 million Series A, after an initial $5 million seed round.", "Series A"),
+                 ("Seattle startup Tally raises $60M Series B", "Seattle startup Tally raised $60 million.", "Series B"),
+                 ("Seattle startup Quill raises $9M", "Seattle startup Quill raised $9 million from Madrona.", "funding")]
+        for title, text, stage in cases:
+            self.assertEqual(discover.lead_from(item(title, text), AREA)["stage"], stage, title)
+
+    def test_skips_ipos_buyouts_and_other_cities(self):
+        self.assertIsNone(discover.lead_from(item("Seattle startup Bolt files for IPO", "Seattle startup Bolt raised $300 million in its IPO."), AREA))
+        self.assertIsNone(discover.lead_from(item("Microsoft acquires Seattle startup Nimbus", "Seattle startup Nimbus, which raised a $5 million seed round, was acquired."), AREA))
         self.assertIsNone(discover.lead_from(item("SenseNet lands $43M", "Vancouver, B.C.-based SenseNet announced a $43 million seed round led by Seattle investors."), AREA))
         self.assertIsNone(discover.lead_from(item("Austin startup Foo raises $3M", "Foo, an Austin startup, raised a $3 million seed round."), AREA))
         self.assertIsNone(discover.lead_from(item("Seattle startup Bar opens an office", "Seattle startup Bar opened an office."), AREA))

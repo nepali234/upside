@@ -284,16 +284,16 @@ details.box[open] summary::before { content: "– "; }
 
   <section class="seeded sk" aria-labelledby="seeded-h">
     <div class="seeded-head">
-      <div class="note">hiring with fresh seed money</div>
-      <h2 id="seeded-h">Seeded startups</h2>
-      <p>Startups that raised a pre-seed, seed or Series A round in the last 5 years: early enough that equity has room to grow, and hiring with the new cash. New ones are found in funding news every morning. Apply here first.</p>
+      <div class="note">pre-IPO · hiring with fresh money</div>
+      <h2 id="seeded-h">Recently funded startups</h2>
+      <p>Private Seattle-area companies that raised money in the last 5 years, from pre-seed to Series C and later, and haven't gone public: their stock can still grow, and they're hiring with the new cash. New ones are found in funding news every morning. Open roles come first; everyone else is in <b>Email them</b>.</p>
     </div>
     <div class="seed-sub" id="seed-roles-h"></div>
     <div class="seed-roles" id="seed-roles"></div>
     <div class="seed-sub" id="seed-cos-h"></div>
     <div class="seed-tools">
       <div class="cats" id="seed-view" role="group" aria-label="Which startups"></div>
-      <label class="field"><input type="search" id="seed-q" placeholder="Search startups" aria-label="Search seeded startups"></label>
+      <label class="field"><input type="search" id="seed-q" placeholder="Search startups" aria-label="Search funded startups"></label>
     </div>
     <div class="seed-cos" id="seed-cos"></div>
     <div id="seed-more"></div>
@@ -359,7 +359,7 @@ const CAT_COLORS = {
   "Developer tools": "var(--c-dev)", "Fintech": "var(--c-fin)", "Robotics": "var(--c-robot)",
   "Space": "var(--c-space)", "Big tech": "var(--c-big)", "Data & cloud": "var(--c-data)",
   "Health tech": "var(--c-health)", "Public safety": "var(--c-safety)", "Consumer": "var(--c-consumer)",
-  "AI apps": "var(--c-aiapps)", "Security": "var(--c-sec)", "New seed lead": "var(--ok)",
+  "AI apps": "var(--c-aiapps)", "Security": "var(--c-sec)", "Found in news": "var(--ok)",
 };
 const STATUSES = [["new", "To review"], ["applied", "Applied"], ["interviewing", "Interviewing"], ["skipped", "Skipped"], ["all", "All"]];
 const PLACED = ["applied", "interviewing"];
@@ -396,7 +396,7 @@ const TIER_LABEL = { safe: "safe bet", middle: "middle bet", wild: "wild bet", f
 // Three kinds of bet: safe (big, stable), middle (growth-stage: past the risky years, still has upside),
 // wild (startups). New finds from the feeds are mostly small companies, so they count as wild.
 const betOf = (name) => { const t = tierOf(name); return t === "found" ? "wild" : t; };
-const TIER_FILTERS = [["safe", "safe"], ["middle", "middle"], ["wild", "wild"], ["found", "new finds"], ["seeded", "fresh seed"]];
+const TIER_FILTERS = [["safe", "safe"], ["middle", "middle"], ["wild", "wild"], ["found", "new finds"], ["seeded", "recently funded"]];
 // ---------- Fresh seed money: startups that raised a seed or pre-seed round recently ----------
 // "seed": {"round": "$15M seed", "date": "2026-05"} in companies.json. Recent seed money means
 // the company is early (equity has room to grow) and is hiring with the new cash.
@@ -410,11 +410,11 @@ const seedMonths = (name) => {
 // 0 = seeded in the last 2 years, 1 = in the last 5, 2 = not a recent seed.
 const seedRank = (name) => { const m = seedMonths(name); return m === null ? 2 : m <= 24 ? 0 : m <= SEED_YEARS * 12 ? 1 : 2; };
 const isSeeded = (name) => seedRank(name) < 2;
-const betLabel = (name) => isSeeded(name) ? "seed bet" : TIER_LABEL[tierOf(name)];
+const betLabel = (name) => isSeeded(name) ? "pre-IPO bet" : TIER_LABEL[tierOf(name)];
 const seedTag = (name) => {
   if (!isSeeded(name)) return "";
   const s = seedOf(name), y = String(s.date).slice(0, 4);
-  return `<span class="seed" title="Raised early money recently, so it is hiring and early">fresh seed · ${esc(s.round)}, ${esc(y)}</span>`;
+  return `<span class="seed" title="Raised money recently and still private: hiring, and the stock can still grow">fresh funding · ${esc(s.round)}, ${esc(y)}</span>`;
 };
 // Same idea as norm_name() in scraper.py: "WhatNot" and "Whatnot, Inc." are one company.
 const normName = (n) => String(n || "").toLowerCase().replace(/[^a-z0-9 ]+/g, " ").replace(/^the |\b(inc|llc|corp|corporation|company|co)\b/g, " ").split(/\s+/).filter(Boolean).join(" ");
@@ -533,7 +533,7 @@ function renderToday(jobs) {
   $("picks").innerHTML = html;
 
   const placed = jobs.filter(j => placedDay(j));
-  if (!placed.length) { $("spread").innerHTML = `<span>Each day mixes a middle bet, a wild bet and a safe bet, every pick from a different company and sector, freshly seeded startups first.</span>`; return; }
+  if (!placed.length) { $("spread").innerHTML = `<span>Each day mixes a middle bet, a wild bet and a safe bet, every pick from a different company and sector, recently funded startups first.</span>`; return; }
   const byCat = {}, byTier = { safe: 0, middle: 0, wild: 0 };
   placed.forEach(j => { const c = catOf(j.company); byCat[c] = (byCat[c] || 0) + 1; byTier[betOf(j.company)]++; });
   const top = Object.entries(byCat).sort((a, b) => b[1] - a[1]);
@@ -664,7 +664,7 @@ Would you be open to a 15-minute chat? My LinkedIn: [link]
 Thanks,
 [Your name]`;
 const SEED_PAGE = 24;
-const seedUi = { view: "all", q: "", all: false };
+const seedUi = { view: "todo", q: "", all: false };
 const roundText = (c) => c.seed ? `${c.seed.round}, ${String(c.seed.date).slice(0, 4)}` : "";
 function fillNote(c) {
   const what = (c.why || "").split(/(?<=\.)\s/)[0];  // the first sentence of the watchlist's "why", if any
@@ -679,30 +679,32 @@ function renderSeeded(jobs) {
     .sort((a, b) => seedRank(a.company) - seedRank(b.company) || sortTime(b).localeCompare(sortTime(a)));
   $("seed-roles-h").textContent = roles.length ? `${roles.length} open role${roles.length > 1 ? "s" : ""} to review` : "No new roles from them right now: check their careers pages below";
   $("seed-roles").innerHTML = roles.map(j => `<article class="pick sk soft">
-      <span class="tier">seed bet · ${esc(catOf(j.company).toLowerCase())}</span>
+      <span class="tier">pre-IPO bet · ${esc(catOf(j.company).toLowerCase())}</span>
       ${coLine(j.company)}
       ${seedTag(j.company)}
       ${postedTag(j)}
       <a class="t" href="${esc(safeUrl(j.url))}" target="_blank" rel="noopener">${esc(j.title)}</a>
       <span class="m" title="${esc(j.location || "")}">${esc(shortLoc(j.location))}</span>
-      <div class="acts"><button type="button" class="pb go" data-act="applied" data-id="${esc(j.id)}"><span class="tick">✓</span> I applied</button><button type="button" class="skip" data-act="skipped" data-id="${esc(j.id)}">not for me</button></div>
+      <div class="acts"><button type="button" class="pb go" data-act="applied" data-id="${esc(j.id)}"><span class="tick">✓</span> I applied</button><button type="button" class="skip" data-act="skipped" data-id="${esc(j.id)}">not for me</button><button type="button" class="linkish" data-note="${esc(j.company)}">copy note</button></div>
     </article>`).join("");
 
-  const reachedN = all.filter(c => store.reached[c.name]).length;
-  $("seed-cos-h").textContent = `${all.length} seeded startups · ${leadCos.length} found in funding news · you've reached out to ${reachedN}`;
-  const VIEWS = [["all", "all"], ["roles", "has roles"], ["todo", "not contacted"], ["new", "found in news"]];
+  // Email them: every funded company with no open role here. No posting doesn't mean no hiring.
+  const noPosting = all.filter(c => !openAt(c.name));
+  const reachedNo = noPosting.filter(c => store.reached[c.name]).length;
+  $("seed-cos-h").innerHTML = `<b style="color:var(--ink)">Email them</b> · ${noPosting.length} funded startups with no open posting here · you've reached out to ${reachedNo}` +
+    `<br><span style="font-size:16px">${all.length} funded startups in all, ${leadCos.length} found in funding news</span>`;
+  const VIEWS = [["todo", "not contacted"], ["all", "all"], ["new", "found in news"]];
   $("seed-view").innerHTML = VIEWS.map(([k, l]) => `<button class="chip" data-view="${k}" aria-pressed="${seedUi.view === k}">${l}</button>`).join("");
   const q = seedUi.q.trim().toLowerCase();
-  const shown = all
-    .filter(c => seedUi.view !== "roles" || openAt(c.name))
+  const shown = noPosting
     .filter(c => seedUi.view !== "todo" || !store.reached[c.name])
     .filter(c => seedUi.view !== "new" || c.lead)
     .filter(c => !q || (c.name + " " + (c.category || "") + " " + (c.why || "")).toLowerCase().includes(q));
   const page = seedUi.all ? shown : shown.slice(0, SEED_PAGE);
   $("seed-cos").innerHTML = page.map(c => {
-    const open = openAt(c.name), reached = store.reached[c.name];
-    const foot = open ? `${open} open here` : c.board === "link" ? "check by hand" : "no roles yet";
-    return `<article class="seed-co sk soft ${open ? "has-roles" : ""} ${reached ? "reached" : ""}">
+    const reached = store.reached[c.name];
+    const foot = c.board === "link" ? "no job board found" : "no matching role";
+    return `<article class="seed-co sk soft ${reached ? "reached" : ""}">
       <span class="co-line" style="margin:0"><span class="dot" style="background:${catColor(c.category)}"></span>${esc(c.category)}</span>
       <span class="nm">${esc(c.name)}</span>
       <span class="rd">${esc(roundText(c))}</span>
@@ -745,17 +747,19 @@ $("seed-view").addEventListener("click", e => { const b = e.target.closest("[dat
 $("seed-q").addEventListener("input", e => { seedUi.q = e.target.value; renderAll(); });
 $("seed-more").addEventListener("click", e => { if (e.target.closest("#seed-all")) { seedUi.all = !seedUi.all; renderAll(); } });
 $("note").addEventListener("input", e => { store.note = e.target.value; saveStore(); });
-$("seed-cos").addEventListener("click", async e => {
-  const r = e.target.closest("[data-reach]");
-  if (r) { const n = r.dataset.reach; store.reached[n] ? delete store.reached[n] : (store.reached[n] = new Date().toISOString()); saveStore(); renderAll(); return; }
-  const b = e.target.closest("[data-note]");
-  if (!b) return;
+async function copyNote(b) {
   const text = fillNote(companyOf(b.dataset.note));
   try { await navigator.clipboard.writeText(text); b.textContent = "copied ✓"; }
   catch (err) { window.prompt("Copy your note:", text); }
   setTimeout(() => { b.textContent = "copy note"; }, 1500);
+}
+$("seed-cos").addEventListener("click", e => {
+  const r = e.target.closest("[data-reach]");
+  if (r) { const n = r.dataset.reach; store.reached[n] ? delete store.reached[n] : (store.reached[n] = new Date().toISOString()); saveStore(); renderAll(); return; }
+  const b = e.target.closest("[data-note]");
+  if (b) copyNote(b);
 });
-$("seed-roles").addEventListener("click", e => { const b = e.target.closest("button[data-act]"); if (b) setStatus(b.dataset.id, b.dataset.act); });
+$("seed-roles").addEventListener("click", e => { const n = e.target.closest("[data-note]"); if (n) return copyNote(n); const b = e.target.closest("button[data-act]"); if (b) setStatus(b.dataset.id, b.dataset.act); });
 $("t-minus").addEventListener("click", () => { store.target = Math.max(1, store.target - 1); saveStore(); renderAll(); });
 $("t-plus").addEventListener("click", () => { store.target = Math.min(10, store.target + 1); saveStore(); renderAll(); });
 
@@ -810,7 +814,7 @@ $("import").addEventListener("change", async e => {
       ? { ...c, board: found[c.name].board, careersUrl: found[c.name].careersUrl, linkLabel: "Careers" } : c);
     const known = new Set(companies.map(c => normName(c.name)));
     leadCos = (ld.leads || []).filter(l => l.name && !known.has(normName(l.name))).map(l => ({
-      name: l.name, category: "New seed lead", tier: "wild", lead: true, board: l.board || "link",
+      name: l.name, category: "Found in news", tier: "wild", lead: true, board: l.board || "link",
       careersUrl: l.careersUrl || `https://www.google.com/search?q=${encodeURIComponent(l.name + " careers")}`,
       linkLabel: l.careersUrl ? "Careers" : "Find careers page",
       seed: { round: [l.amount, l.stage].filter(Boolean).join(" "), date: (l.date || "").slice(0, 7) },
