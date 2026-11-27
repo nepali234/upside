@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T04:43:54Z",
+ "updatedAt": "2026-11-27T22:18:38Z",
  "backfilled": true,
  "errors": [],
  "leads": [
@@ -879,7 +879,8 @@
    "date": "2025-02-11T18:57:51Z",
    "sourceTitle": "Wildfire recovery and carbon capture company Mast Reforestation lands $25M",
    "sourceUrl": "https://www.geekwire.com/2025/mast-reforestation-lands-25m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Official AI",
@@ -888,7 +889,8 @@
    "date": "2025-02-11T16:00:00Z",
    "sourceTitle": "Official AI raises $2M for platform that enables authentic AI content creation for brands and talent",
    "sourceUrl": "https://www.geekwire.com/2025/official-ai-raises-2m-for-platform-that-enables-authentic-ai-content-creation-for-brands-and-talent/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Dopl Technologies",
@@ -897,7 +899,8 @@
    "date": "2025-02-05T23:11:16Z",
    "sourceTitle": "Dopl Technologies raises $1.5M to fuel mission of delivering telerobotic care to underserved areas",
    "sourceUrl": "https://www.geekwire.com/2025/dopl-technologies-raises-1-5m-to-fuel-mission-of-delivering-telerobotic-care-to-underserved-areas/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Atomo",
@@ -906,7 +909,8 @@
    "date": "2025-01-15T22:32:31Z",
    "sourceTitle": "Beanless coffee maker Atomo raises $7.8M to fuel collaborations with new partners",
    "sourceUrl": "https://www.geekwire.com/2025/beanless-coffee-maker-atomo-raises-7-8m-to-fuel-collaborations-with-new-partners/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Umoja Biopharma",
@@ -915,7 +919,11 @@
    "date": "2025-01-14T16:55:02Z",
    "sourceTitle": "Seattle immunotherapy startup Umoja Biopharma raises $100M",
    "sourceUrl": "https://www.geekwire.com/2025/seattle-immunotherapy-startup-umoja-biopharma-raises-100m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "umojabiopharma",
+   "careersUrl": "https://boards.greenhouse.io/umojabiopharma",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Tune Therapeutics",
@@ -924,7 +932,11 @@
    "date": "2025-01-13T01:00:00Z",
    "sourceTitle": "Seattle biotech startup Tune Therapeutics lands $175M to support clinical research",
    "sourceUrl": "https://www.geekwire.com/2025/seattle-biotech-startup-tune-therapeutics-lands-175m-to-support-clinical-research/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "tunetherapeutics",
+   "careersUrl": "https://boards.greenhouse.io/tunetherapeutics",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Pipe17",
@@ -933,7 +945,11 @@
    "date": "2025-01-10T17:05:12Z",
    "sourceTitle": "E-commerce logistics startup Pipe17 lands $15.5M and hires its first COO",
    "sourceUrl": "https://www.geekwire.com/2025/e-commerce-logistics-startup-pipe17-lands-15-5m-and-hires-its-first-coo/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "pipe17",
+   "careersUrl": "https://boards.greenhouse.io/pipe17",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Joylux",
@@ -942,7 +958,8 @@
    "date": "2024-12-16T21:59:08Z",
    "sourceTitle": "Joylux lands $4.5M to grow women’s sexual health product company backed by Halle Berry",
    "sourceUrl": "https://www.geekwire.com/2024/joylux-lands-4-5m-to-grow-womens-sexual-health-product-company-backed-by-halle-berry/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Modern Hydrogen",
@@ -951,7 +968,8 @@
    "date": "2024-12-12T19:40:20Z",
    "sourceTitle": "Seattle-area startup Modern Hydrogen raises $25M to fuel clean energy efforts",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-area-startup-modern-hydrogen-raises-25m-to-fuel-clean-energy-efforts/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Lumen Orbit",
@@ -960,7 +978,8 @@
    "date": "2024-12-11T19:47:19Z",
    "sourceTitle": "Lumen Orbit, a Seattle-area startup that wants to put data centers in space, raises $11M",
    "sourceUrl": "https://www.geekwire.com/2024/lumen-orbit-a-seattle-area-startup-that-wants-to-put-data-centers-in-space-raises-11m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Inflection",
@@ -969,7 +988,8 @@
    "date": "2024-12-05T15:14:48Z",
    "sourceTitle": "Inflection, a Seattle startup that automates marketing for B2B companies, raises $7.6M",
    "sourceUrl": "https://www.geekwire.com/2024/inflection-a-seattle-startup-that-automates-marketing-for-b2b-companies-raises-7-6m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Seasalt",
@@ -978,7 +998,8 @@
    "date": "2024-11-18T16:20:12Z",
    "sourceTitle": "Seattle startup Seasalt raises $4.2M to help businesses answer customer messages with AI",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-seasalt-raises-4-2m-to-help-businesses-answer-customer-messages-with-ai/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Osyte",
@@ -987,7 +1008,8 @@
    "date": "2024-11-14T21:02:34Z",
    "sourceTitle": "Osyte, a Seattle startup that helps multi-asset investors optimize portfolios, raises $4M",
    "sourceUrl": "https://www.geekwire.com/2024/osyte-a-seattle-startup-that-helps-multi-asset-investors-optimize-portfolios-raises-4m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "MIND",
@@ -996,7 +1018,8 @@
    "date": "2024-11-14T05:27:18Z",
    "sourceTitle": "Seattle startup MIND raises $11M to help companies protect data and prevent leaks",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-mind-raises-11m-to-help-companies-protect-data-and-prevent-leaks/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Starform",
@@ -1005,7 +1028,8 @@
    "date": "2024-11-12T18:20:06Z",
    "sourceTitle": "Seattle indie game studio Starform raises $6M to bolster aerial combat sim ‘Metalstorm’",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-indie-game-studio-starform-raises-6m-to-bolster-aerial-combat-sim-metalstorm/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Inspectify",
@@ -1014,7 +1038,8 @@
    "date": "2024-10-30T22:25:38Z",
    "sourceTitle": "Seattle home-inspection services startup Inspectify raises $5.3M",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-home-inspection-services-startup-inspectify-raises-5-3m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Picnic",
@@ -1023,7 +1048,8 @@
    "date": "2024-10-29T22:06:28Z",
    "sourceTitle": "Pizza robot maker Picnic raises $5M as Seattle investor Andy Liu joins board",
    "sourceUrl": "https://www.geekwire.com/2024/pizza-robot-maker-picnic-raises-5m-as-seattle-investor-andy-liu-joins-board/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Read AI",
@@ -1032,7 +1058,11 @@
    "date": "2024-10-28T12:00:00Z",
    "sourceTitle": "Seattle startup Read AI raises $50M to fuel ‘copilot everywhere’ vision for enterprise software",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-read-ai-raises-50m-to-fuel-copilot-everywhere-vision-for-enterprise-software/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "ashby",
+   "slug": "read-ai",
+   "careersUrl": "https://jobs.ashbyhq.com/read-ai",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Carbon Robotics",
@@ -1041,7 +1071,11 @@
    "date": "2024-10-21T11:30:00Z",
    "sourceTitle": "Future of farming? Carbon Robotics raises $70M for AI robots that blast weeds with lasers",
    "sourceUrl": "https://www.geekwire.com/2024/future-of-farming-carbon-robotics-raises-70m-for-ai-robots-that-blast-weeds-with-lasers/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "ashby",
+   "slug": "carbon-robotics",
+   "careersUrl": "https://jobs.ashbyhq.com/carbon-robotics",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Live Aware Labs",
@@ -1050,7 +1084,8 @@
    "date": "2024-10-16T16:01:19Z",
    "sourceTitle": "Seattle startup Live Aware raises $4.8M for new AI-powered game developer feedback system",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-live-aware-raises-4-8m-for-new-ai-powered-game-developer-feedback-system/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Fairway Bikes",
@@ -1059,7 +1094,8 @@
    "date": "2024-10-15T16:00:00Z",
    "sourceTitle": "Seattle startup raises $1.25M for electric bike used on golf courses",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-raises-1-25m-for-electric-bike-used-on-golf-courses/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Vieu",
@@ -1068,7 +1104,8 @@
    "date": "2024-10-03T12:00:00Z",
    "sourceTitle": "Seattle startup Vieu raises $11M to reimagine B2B sales outreach, with help from AI",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-vieu-raises-11m-to-reimagine-b2b-sales-outreach-with-help-from-ai/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Outgo",
@@ -1077,7 +1114,8 @@
    "date": "2024-09-24T13:00:00Z",
    "sourceTitle": "Freight fintech startup Outgo raises $15M to help trucking carriers access cash quickly",
    "sourceUrl": "https://www.geekwire.com/2024/freight-fintech-startup-outgo-raises-15m-to-help-trucking-carriers-access-cash-quickly/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Arzeda",
@@ -1086,7 +1124,8 @@
    "date": "2024-09-17T13:00:00Z",
    "sourceTitle": "Seattle startup Arzeda raises $38M to create proteins for food, pharma, and other industries",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-arzeda-raises-38m-to-create-proteins-for-food-pharma-and-other-industries/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Viome",
@@ -1095,7 +1134,11 @@
    "date": "2024-09-10T13:00:00Z",
    "sourceTitle": "Microbiome and diagnostics startup Viome lands $25M and hires former Amazon leader as COO",
    "sourceUrl": "https://www.geekwire.com/2024/viome-a-microbiome-and-diagnostics-startup-lands-25m-and-hires-former-amazon-leader-as-coo/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "lever",
+   "slug": "viome",
+   "careersUrl": "https://jobs.lever.co/viome",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "ZipBio",
@@ -1104,7 +1147,8 @@
    "date": "2024-09-05T16:13:03Z",
    "sourceTitle": "ZipBio, a new Seattle biotech startup aiming to compress proteins, raises $4M",
    "sourceUrl": "https://www.geekwire.com/2024/zipbio-a-new-seattle-biotech-startup-aiming-to-compress-proteins-raises-4m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Revefi",
@@ -1113,7 +1157,11 @@
    "date": "2024-09-04T13:00:00Z",
    "sourceTitle": "Data observability startup Revefi raises $20M to fuel new ‘AI data engineer’ product",
    "sourceUrl": "https://www.geekwire.com/2024/data-observability-startup-revefi-raises-20m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "lever",
+   "slug": "revefi",
+   "careersUrl": "https://jobs.lever.co/revefi",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Seeq",
@@ -1122,7 +1170,8 @@
    "date": "2024-08-06T16:59:34Z",
    "sourceTitle": "Industrial analytics startup Seeq lands $50M to continue its growth",
    "sourceUrl": "https://www.geekwire.com/2024/industrial-analytics-startup-seeq-lands-50m-to-continue-its-growth/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Outpace",
@@ -1131,7 +1180,8 @@
    "date": "2024-08-01T13:00:00Z",
    "sourceTitle": "Protein design startup Outpace lands $144M to test treatments that target solid tumors",
    "sourceUrl": "https://www.geekwire.com/2024/protein-design-startup-outpace-lands-144m-to-test-treatments-that-target-solid-tumors/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Terrantic",
@@ -1140,7 +1190,8 @@
    "date": "2024-07-26T14:15:00Z",
    "sourceTitle": "Agtech startup Terrantic raises $3.5M to help food growers optimize yield and quality",
    "sourceUrl": "https://www.geekwire.com/2024/agtech-startup-terrantic-raises-3-5m-to-help-food-growers-optimize-yield-and-quality/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Archera",
@@ -1149,7 +1200,11 @@
    "date": "2024-07-25T13:00:00Z",
    "sourceTitle": "Archera raises $17M to help companies get cloud discounts without long-term commitments",
    "sourceUrl": "https://www.geekwire.com/2024/archera-raises-17m-to-help-companies-get-cloud-discounts-without-long-term-commitments/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "archera",
+   "careersUrl": "https://boards.greenhouse.io/archera",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Kestra Medical Technologies",
@@ -1158,7 +1213,8 @@
    "date": "2024-07-24T15:26:15Z",
    "sourceTitle": "Kestra Medical Technologies lands $196M to boost commercialization of wearable defibrillator",
    "sourceUrl": "https://www.geekwire.com/2024/kestra-medical-technologies-lands-196m-to-boost-commercialization-of-wearable-defibrillator/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Deako",
@@ -1167,7 +1223,8 @@
    "date": "2024-07-23T21:42:27Z",
    "sourceTitle": "Smart light switch startup Deako raises $3.4M to meet growing market demand",
    "sourceUrl": "https://www.geekwire.com/2024/smart-light-switch-startup-deako-raises-3-4m-to-meet-growing-market-demand/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "QA Wolf",
@@ -1176,7 +1233,8 @@
    "date": "2024-07-23T15:42:16Z",
    "sourceTitle": "Seattle startup QA Wolf raises $36M to help companies spot bugs in software code",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-qa-wolf-raises-36m-to-help-companies-spot-bugs-in-software-code/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "LevelTen",
@@ -1185,7 +1243,8 @@
    "date": "2024-07-16T10:00:00Z",
    "sourceTitle": "LevelTen lands $65M from Microsoft, Google to expand clean energy marketplace services",
    "sourceUrl": "https://www.geekwire.com/2024/levelten-lands-65m-to-expand-its-clean-energy-marketplaces-services-and-geographic-reach/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "RareCyte",
@@ -1194,7 +1253,8 @@
    "date": "2024-06-27T19:07:14Z",
    "sourceTitle": "Seattle-based RareCyte raises $20M for cell analysis products",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-based-rarecyte-raises-20m-for-cell-analysis-products/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "TraceAir",
@@ -1203,7 +1263,8 @@
    "date": "2024-05-29T17:37:13Z",
    "sourceTitle": "TraceAir, a construction software startup targeting land development projects, raises $25M",
    "sourceUrl": "https://www.geekwire.com/2024/traceair-a-construction-software-startup-targeting-land-development-projects-raises-25m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Abett",
@@ -1212,7 +1273,8 @@
    "date": "2024-05-21T15:00:00Z",
    "sourceTitle": "Seattle startup Abett lands $11.6M to help companies manage healthcare expenses",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-abett-lands-11-6m-to-help-companies-manage-healthcare-expenses/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "A-Alpha Bio",
@@ -1221,7 +1283,11 @@
    "date": "2024-05-21T14:42:23Z",
    "sourceTitle": "A-Alpha Bio lands $14.5M from Department of Defense to prep for future biological threats",
    "sourceUrl": "https://www.geekwire.com/2024/a-alpha-bio-lands-14-5m-from-department-of-defense-to-prep-for-future-biological-threats/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "aalphabio",
+   "careersUrl": "https://boards.greenhouse.io/aalphabio",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Tidal Vision",
@@ -1230,7 +1296,8 @@
    "date": "2024-05-17T15:41:21Z",
    "sourceTitle": "Tidal Vision, a startup turning crab shells into a green industrial chemical, is raising fresh cash",
    "sourceUrl": "https://www.geekwire.com/2024/tidal-vision-a-startup-turning-crab-shells-into-a-green-industrial-chemical-is-raising-fresh-cash/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Aerial",
@@ -1239,7 +1306,8 @@
    "date": "2024-05-13T15:10:09Z",
    "sourceTitle": "QuickBooks for legal docs: Seattle startup Aerial raises $2M to help companies organize key data",
    "sourceUrl": "https://www.geekwire.com/2024/quickbooks-for-legal-docs-seattle-startup-aerial-raises-2m-to-help-companies-organize-key-data/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "PairTree",
@@ -1248,7 +1316,8 @@
    "date": "2024-04-09T15:29:48Z",
    "sourceTitle": "PairTree, a Seattle startup that facilitates adoptions, raises more cash to fuel expansion",
    "sourceUrl": "https://www.geekwire.com/2024/pairtree-a-seattle-startup-that-facilitates-adoptions-raises-more-cash-to-fuel-expansion/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Pollen Systems",
@@ -1257,7 +1326,8 @@
    "date": "2024-04-02T18:33:12Z",
    "sourceTitle": "Pollen Systems raises $2.4M and expands global reach of its crop analysis platform",
    "sourceUrl": "https://www.geekwire.com/2024/pollen-systems-raises-2-4m-and-expands-global-reach-of-its-crop-analysis-platform/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "TerraClear",
@@ -1266,7 +1336,11 @@
    "date": "2024-04-01T15:09:30Z",
    "sourceTitle": "Ag-tech startup TerraClear raises $15M to grow its end-to-end solution for ridding fields of rocks",
    "sourceUrl": "https://www.geekwire.com/2024/ag-tech-startup-terraclear-raises-15m-to-grow-its-end-to-end-solution-for-ridding-fields-of-rocks/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "terraclear",
+   "careersUrl": "https://boards.greenhouse.io/terraclear",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Goodbill",
@@ -1275,7 +1349,8 @@
    "date": "2024-03-26T22:11:15Z",
    "sourceTitle": "Goodbill raises $2M and expands customer base to unearth and challenge medical billing errors",
    "sourceUrl": "https://www.geekwire.com/2024/goodbill-raises-2m-and-expands-customer-base-to-unearth-and-challenge-medical-billing-errors/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "OpenPipe",
@@ -1284,7 +1359,8 @@
    "date": "2024-03-26T11:30:00Z",
    "sourceTitle": "Seattle startup OpenPipe raises $6.7M to help companies reduce costs for LLM models",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-openpipe-raises-6-7m-to-help-companies-reduce-costs-for-llm-development/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Pandion",
@@ -1293,7 +1369,8 @@
    "date": "2024-03-22T14:10:34Z",
    "sourceTitle": "Pandion, an e-commerce delivery startup led by Amazon Air founder, lands $41.5M",
    "sourceUrl": "https://www.geekwire.com/2024/pandion-an-e-commerce-delivery-startup-led-by-amazon-air-founder-lands-41-5m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Enzzo",
@@ -1302,7 +1379,8 @@
    "date": "2024-03-05T16:24:29Z",
    "sourceTitle": "Enzzo, a PSL spinout led by Seattle startup vet, raises $3M to use AI for hardware development",
    "sourceUrl": "https://www.geekwire.com/2024/enzzo-a-psl-spinout-led-by-seattle-startup-vet-raises-3m-to-use-ai-for-hardware-development/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Healionics",
@@ -1311,7 +1389,8 @@
    "date": "2024-02-23T00:10:51Z",
    "sourceTitle": "Healionics lands $5.5M to complete human trial of artificial blood vessel for dialysis patients",
    "sourceUrl": "https://www.geekwire.com/2024/healionics-lands-5-5m-to-complete-human-trial-of-artificial-blood-vessel-for-dialysis-patients/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Finpilot",
@@ -1320,7 +1399,8 @@
    "date": "2024-02-22T18:30:00Z",
    "sourceTitle": "Finpilot, a Seattle startup using generative AI to help financial analysts with research, raises $4M",
    "sourceUrl": "https://www.geekwire.com/2024/finpilot-a-seattle-startup-using-generative-ai-to-help-financial-analysts-with-research-raises-4m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Planette",
@@ -1329,7 +1409,8 @@
    "date": "2024-02-14T21:31:09Z",
    "sourceTitle": "Techstars Seattle startup Planette raises $2.4M for AI-boosted climate prediction tech",
    "sourceUrl": "https://www.geekwire.com/2024/techstars-seattle-startup-planette-raises-2-4m-for-ai-boosted-weather-and-climate-prediction-tech/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "ProfoundBio",
@@ -1338,7 +1419,8 @@
    "date": "2024-02-13T17:51:22Z",
    "sourceTitle": "ProfoundBio raises $112M to support clinical-stage oncology pipeline",
    "sourceUrl": "https://www.geekwire.com/2024/profoundbio-raises-112m-to-support-clinical-stage-oncology-pipeline/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Validated",
@@ -1347,7 +1429,8 @@
    "date": "2024-02-06T16:28:36Z",
    "sourceTitle": "Validated, a Seattle startup that uses AI to generate ads for product insights, raises $1.2M",
    "sourceUrl": "https://www.geekwire.com/2024/validated-a-seattle-startup-that-uses-ai-to-generate-ads-for-product-insights-raises-1-2m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Cimba.ai",
@@ -1356,7 +1439,8 @@
    "date": "2024-02-06T15:40:57Z",
    "sourceTitle": "Ex-Amazon and Airbnb engineers raise $1.25M for enterprise AI agent developer Cimba.ai",
    "sourceUrl": "https://www.geekwire.com/2024/ex-amazon-and-airbnb-engineers-raise-1-25m-for-enterprise-ai-agent-developer-cimba-ai/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Medsense Health",
@@ -1365,7 +1449,8 @@
    "date": "2024-02-02T15:56:07Z",
    "sourceTitle": "Medsense Health, which sells sensors for remote medication management, raises $500K",
    "sourceUrl": "https://www.geekwire.com/2024/medsense-health-which-sells-sensors-for-remote-medication-management-raises-500k/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Nomad Go",
@@ -1374,7 +1459,8 @@
    "date": "2024-01-24T20:45:29Z",
    "sourceTitle": "Nomad Go raises $1.5M to power computer vision software that automatically counts inventory",
    "sourceUrl": "https://www.geekwire.com/2024/nomad-go-raises-1-5m-to-power-computer-vision-software-that-automatically-counts-inventory/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Steller",
@@ -1383,7 +1469,8 @@
    "date": "2024-01-11T16:03:36Z",
    "sourceTitle": "Travel planning startup led by longtime tech investor combines human insight and AI",
    "sourceUrl": "https://www.geekwire.com/2024/travel-planning-startup-led-by-longtime-tech-investor-combines-human-insight-and-ai/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Symbiosys",
@@ -1392,7 +1479,8 @@
    "date": "2024-01-09T22:52:18Z",
    "sourceTitle": "Symbiosys, an adtech startup led by former Google and Microsoft exec, raises $9M",
    "sourceUrl": "https://www.geekwire.com/2024/symbiosys-an-adtech-startup-led-by-former-google-and-microsoft-exec-raises-9m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Charmed",
@@ -1401,7 +1489,8 @@
    "date": "2024-01-09T18:00:00Z",
    "sourceTitle": "Seattle gaming startup Charmed lands $500K and reveals new 3D character design tool",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-gaming-startup-charmed-lands-500k-and-reveals-new-3d-character-design-tool/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Recurrent",
@@ -1410,7 +1499,11 @@
    "date": "2024-01-08T14:00:00Z",
    "sourceTitle": "Seattle startup Recurrent raises $16M, aims to be standard for scoring used EV batteries",
    "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-recurrent-raises-16m-aims-to-be-standard-for-scoring-used-ev-batteries/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "recurrent",
+   "careersUrl": "https://boards.greenhouse.io/recurrent",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Strike Graph",
@@ -1419,7 +1512,8 @@
    "date": "2023-12-18T14:00:00Z",
    "sourceTitle": "Compliance software startup Strike Graph raises more cash",
    "sourceUrl": "https://www.geekwire.com/2023/compliance-software-startup-strike-graph-raises-more-cash/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Parse Biosciences",
@@ -1428,7 +1522,11 @@
    "date": "2023-12-14T13:00:00Z",
    "sourceTitle": "Parse Biosciences raises $50M for single cell sequencing tech",
    "sourceUrl": "https://www.geekwire.com/2023/parse-biosciences-raises-50m-for-single-cell-sequencing-tech/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "parsebiosciences",
+   "careersUrl": "https://boards.greenhouse.io/parsebiosciences",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Zuper",
@@ -1437,7 +1535,8 @@
    "date": "2023-12-13T15:58:48Z",
    "sourceTitle": "Field operations software startup Zuper raises $32M",
    "sourceUrl": "https://www.geekwire.com/2023/field-operations-software-startup-zuper-raises-32m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Carbon",
@@ -1446,7 +1545,8 @@
    "date": "2023-12-08T15:36:10Z",
    "sourceTitle": "Seattle startup Carbon raises $1.3M to help developers manage external data for LLMs",
    "sourceUrl": "https://www.geekwire.com/2023/seattle-startup-carbon-raises-1-3m-to-help-developers-manage-external-data-for-llms/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Center",
@@ -1455,7 +1555,8 @@
    "date": "2023-12-05T13:00:00Z",
    "sourceTitle": "Center lands $30M to bolster corporate expense software, explore potential bank partnerships",
    "sourceUrl": "https://www.geekwire.com/2023/center-lands-30m-to-bolster-corporate-expense-software-explore-potential-bank-partnerships/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Joon Care",
@@ -1464,7 +1565,8 @@
    "date": "2023-12-04T16:41:42Z",
    "sourceTitle": "Seattle startup Joon raises $6M to expand online mental health therapy for youth",
    "sourceUrl": "https://www.geekwire.com/2023/seattle-startup-joon-raises-6m-to-expand-online-mental-health-therapy-for-youth/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Levanta",
@@ -1473,7 +1575,11 @@
    "date": "2023-12-01T20:13:36Z",
    "sourceTitle": "Levanta, which connects influencers and Amazon sellers for affiliate partnerships, raises $1M",
    "sourceUrl": "https://www.geekwire.com/2023/levanta-a-startup-that-connects-influencers-and-amazon-sellers-for-affiliate-partnerships-raises-1m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "levanta",
+   "careersUrl": "https://boards.greenhouse.io/levanta",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Retrocausal",
@@ -1482,7 +1588,8 @@
    "date": "2023-11-30T16:02:11Z",
    "sourceTitle": "Manufacturing software startup Retrocausal raises $5.3M to help workers assemble products",
    "sourceUrl": "https://www.geekwire.com/2023/manufacturing-software-startup-retrocasual-raises-5-3m-to-help-workers-assemble-products/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Tola Capital",
@@ -1491,7 +1598,8 @@
    "date": "2023-11-29T16:50:42Z",
    "sourceTitle": "Tola Capital raises $230M for third fund to help Seattle firm back enterprise software startups",
    "sourceUrl": "https://www.geekwire.com/2023/tola-capital-raises-230m-for-third-fund-to-help-seattle-area-firm-back-enterprise-software-startups/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Expanso",
@@ -1500,7 +1608,8 @@
    "date": "2023-11-21T15:24:34Z",
    "sourceTitle": "Expanso, a distributed data processing startup led by Google and Microsoft vets, raises $7.5M",
    "sourceUrl": "https://www.geekwire.com/2023/expanso-a-distributed-data-processing-startup-led-by-google-and-microsoft-vets-raises-7-5m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Zuplo",
@@ -1509,7 +1618,8 @@
    "date": "2023-11-08T16:00:00Z",
    "sourceTitle": "Seattle-area startup Zuplo lands $9M to help companies launch and manage their APIs",
    "sourceUrl": "https://www.geekwire.com/2023/seattle-area-startup-zuplo-lands-9m-to-help-companies-launch-and-manage-their-apis/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "KeySavvy",
@@ -1518,7 +1628,8 @@
    "date": "2023-11-06T19:22:21Z",
    "sourceTitle": "Porsche invests in Seattle startup KeySavvy, which aims to safeguard used car sales",
    "sourceUrl": "https://www.geekwire.com/2023/porsche-invests-in-seattle-startup-keysavvy-which-aims-to-safeguard-used-car-sales/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Skytap",
@@ -1527,7 +1638,8 @@
    "date": "2023-10-19T15:48:47Z",
    "sourceTitle": "Seattle cloud company Skytap lands $18M",
    "sourceUrl": "https://www.geekwire.com/2023/seattle-cloud-company-skytap-lands-18m/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Pulumi",
@@ -1536,7 +1648,8 @@
    "date": "2023-10-03T12:00:00Z",
    "sourceTitle": "Cloud startup Pulumi raises $41M from Madrona, NEA to grow ‘infrastructure as code’ platform",
    "sourceUrl": "https://www.geekwire.com/2023/cloud-startup-pulumi-raises-41m-from-madrona-nea-to-grow-infrastructure-as-code-platform/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "PortX",
@@ -1545,7 +1658,8 @@
    "date": "2023-09-27T13:00:00Z",
    "sourceTitle": "Fintech startup PortX raises $16.5M and forms new subsidiary to serve credit unions",
    "sourceUrl": "https://www.geekwire.com/2023/fintech-startup-portx-raises-16-5m-and-forms-new-subsidiary-to-serve-credit-unions/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "MotherDuck",
@@ -1554,7 +1668,11 @@
    "date": "2023-09-20T14:18:32Z",
    "sourceTitle": "Seattle startup MotherDuck raises $52.5M at a $400M valuation to fuel DuckDB analytics platform",
    "sourceUrl": "https://www.geekwire.com/2023/seattle-startup-motherduck-raises-52-5m-at-a-400m-valuation-to-fuel-duckdb-analytics-platform/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "ashby",
+   "slug": "motherduck",
+   "careersUrl": "https://jobs.ashbyhq.com/motherduck",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Gable.ai",
@@ -1563,7 +1681,8 @@
    "date": "2023-09-12T19:45:05Z",
    "sourceTitle": "‘GitHub for data’: Convoy vets land $7M for data collaboration platform",
    "sourceUrl": "https://www.geekwire.com/2023/github-for-data-convoy-vets-land-7m-for-data-collaboration-platform/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Sironix Renewables",
@@ -1572,7 +1691,8 @@
    "date": "2023-08-30T19:31:00Z",
    "sourceTitle": "Seattle clean tech startup lands $1.4M for eco-friendly soy-based suds for shampoos, detergents",
    "sourceUrl": "https://www.geekwire.com/2023/seattle-clean-tech-startup-lands-1-4m-for-eco-friendly-soy-based-suds-for-shampoos-detergents/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Hyperproof",
@@ -1581,7 +1701,11 @@
    "date": "2023-08-30T15:08:43Z",
    "sourceTitle": "Seattle-area startup Hyperproof lands $40M for risk and compliance software",
    "sourceUrl": "https://www.geekwire.com/2023/seattle-area-startup-hyperproof-lands-40m-for-risk-and-compliance-software/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "hyperproof",
+   "careersUrl": "https://boards.greenhouse.io/hyperproof",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Electric Era",
@@ -1590,7 +1714,8 @@
    "date": "2023-08-22T18:07:53Z",
    "sourceTitle": "EV charging startup Electric Era lands $11.5M to deploy AI- and battery-supported stations",
    "sourceUrl": "https://www.geekwire.com/2023/ev-charging-startup-electric-era-lands-11-5m-to-deploy-ai-and-battery-supported-stations/",
-   "firstSeen": "2026-11-27T04:43:54Z"
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T22:18:38Z"
   },
   {
    "name": "Viome Life Sciences",
