@@ -291,6 +291,16 @@ class WiderNetTests(unittest.TestCase):
         for name, who in CONFIG["backers"].items():
             self.assertTrue(name and who, name)
 
+    def test_seed_dates_are_readable(self):
+        # The page ranks freshly seeded startups first; it reads "seed": {"round", "date": "YYYY" or "YYYY-MM"}.
+        names = [c["name"] for c in CONFIG["companies"]]
+        self.assertEqual(len(names), len(set(names)), "duplicate company name")
+        for c in CONFIG["companies"]:
+            seed = c.get("seed")
+            if seed:
+                self.assertTrue(seed.get("round"), c["name"])
+                self.assertRegex(seed.get("date", ""), r"^20\d\d(-(0[1-9]|1[0-2]))?$", c["name"])
+
 
 class HackerNewsTests(unittest.TestCase):
     """'Ask HN: Who is hiring?' through the free Algolia API. Same filters as every other source."""

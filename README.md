@@ -22,11 +22,11 @@ No AI, no servers, no accounts. It runs free on GitHub Actions and GitHub Pages.
 5. It commits the file. GitHub Pages republishes the site a minute later.
 
 **On the page (you)**
-- **Today's bets:** your daily quota of roles to apply to. The set cycles through three kinds of bet: a **middle** bet (growth-stage company, past the risky years, still has upside), a **wild** bet (startup) and a **safe** bet (big, stable company). 1 a day gets a middle bet, 2 gets middle + wild, 3 gets one of each. Every pick comes from a different company and sector, freshest roles first. Tap **✓ I applied** or **not for me**.
+- **Today's bets:** your daily quota of roles to apply to. The set cycles through three kinds of bet: a **middle** bet (growth-stage company, past the risky years, still has upside), a **wild** bet (startup) and a **safe** bet (big, stable company). 1 a day gets a middle bet, 2 gets middle + wild, 3 gets one of each. Every pick comes from a different company and sector. Freshly seeded startups come first, then the freshest roles. Tap **✓ I applied** or **not for me**.
 - **Streak:** days in a row you hit your quota. Use **−** and **+** to change the quota (1–10).
 - **Spread:** where your bets have gone by sector, with a warning if more than half land in one.
-- **The list:** every open role, newest first. Roles posted in the last 3 days are tagged **just posted**. Mark each one by circling **applied**, **interview** or **skip**, and tap again to clear it.
-- **Filters:** status tabs, sector chips, search, **posted within** (3 days, week, month, any time; month by default, so old roles stay out of the way) and **kind of bet** (safe, middle, wild, new finds). Roles you applied to always stay visible. The tab counts follow the filters.
+- **The list:** every open role, spread out so no company floods it: each company's newest role first, then everyone's second role, and so on, with freshly seeded startups first in each round. Past two roles, a company's rest folds behind **+ N more from …** (searching unfolds everything). Roles posted in the last 3 days are tagged **just posted**. Mark each one by circling **applied**, **interview** or **skip**, and tap again to clear it.
+- **Filters:** status tabs, sector chips, search, **posted within** (3 days, week, month, any time; month by default, so old roles stay out of the way) and **kind of bet** (safe, middle, wild, new finds, fresh seed). Roles you applied to always stay visible. The tab counts follow the filters.
 - **Add a role you found yourself**, for anything spotted elsewhere.
 - **Back up or move your progress:** export and import your marks as a JSON file.
 - **The watchlist:** one card per company, with why it's a bet and a link to its careers page.
@@ -85,6 +85,8 @@ Read this before changing anything.
 - **Early-career level only.** `title_exclude` drops senior, staff, principal, lead, manager, director, head, intern, level III/IV and similar titles. The owner has about a year of full-time industry experience plus an internship. Target "Software Engineer I/II", roles asking 0–3 years, and new-grad or early-career programs.
 - **Fit Check: judge a job by what it asks for, not what it's called.** Titles hide level ("Software Engineer - GPU Kernels" can mean 5+ years). `description_exclude` in `companies.json` is matched against the full posting text and drops roles asking for 4+ years of experience, an *active* clearance (eligibility to obtain one is fine), or a required PhD. Descriptions come from Greenhouse (`?content=true`), Lever (`descriptionPlain` plus the requirement `lists`) and Ashby (`descriptionHtml`). They're used only for filtering and never saved to `jobs.json`. Workday gives no description in its search results, so Workday roles skip this check. When a rule looks too strict, `python3 scraper.py check <board> <slug>` lists every role the Fit Check dropped and the phrase that dropped it.
 - **Wider Net: more sources, same rules.** `feeds` in `companies.json` lists community feeds (today: Simplify New Grad and Hacker News Who's Hiring). Feed roles go through the same title, location and Amazon filters. Companies read directly from their own board are skipped so nothing shows twice; link-only watchlist companies get their roles from the feed (match by name, or add `"aliases"` to the company). Feed roles carry `"source"` and close when they leave the feed; a feed that fails to load closes nothing. Simplify has no descriptions, so the Fit Check can't read it. Hacker News posts are the description, so they do get the Fit Check. An HN post is kept only if its header line (`Company | Role | Location | ...`) names an engineering role and a Seattle-area place; posts that mix senior and junior roles in one title are dropped by the title rule. HN roles link to the post itself and close when next month's thread replaces this one. Companies not on the watchlist show on the page as the sector **Wider net** and the tier **new find**.
+- **Fresh seed ranks, it never hides.** A company's `"seed"` (`{"round": "$15M seed", "date": "2026-05"}`, date as `YYYY` or `YYYY-MM`) makes the page put it first in Today's bets and in each round of the list when the round is within 5 years (`SEED_YEARS`); its roles show a **fresh seed** note. Only add a seed you've checked in a funding announcement. Most newly seeded startups have no Greenhouse/Lever/Ashby board yet, so they start as `"board": "link"`; once a board shows up, check it with `scraper.py check` and switch the entry over.
+- **No pile-ups.** The list spreads companies out and folds anything past `PER_COMPANY` (2) roles per company behind a button. Nothing is dropped or capped in `jobs.json`.
 - **"Backed by" is a badge, never a filter.** `backers` in `companies.json` maps a company name to its top investors, and the page shows "backed by …" next to its roles. Only add backers you've checked in a funding announcement.
 - **The scraper never touches the owner's statuses.** Applied, skipped and interviewing marks live only in the browser's `localStorage`. `jobs.json` is board data only.
 - **One broken board never stops the run.** Each fetch is wrapped in try/except. Errors go into `jobs.json` under `errors`, and the page shows "N boards unreachable".
@@ -128,6 +130,7 @@ tests/test_scraper.py unittest; fakes every network call
     "board": "greenhouse",             // greenhouse | lever | ashby | workday | google | link
     "slug": "baseten",
     "aliases": ["Baseten Labs"],       // optional: other names a feed may use for this company
+    "seed": { "round": "$15M seed", "date": "2026-05" },  // optional: recent seed/pre-seed; ranks the company first
     "workday": { "host": "...", "tenant": "...", "site": "...", "search": "software engineer" }  // workday only
   }]
 }
@@ -173,9 +176,9 @@ Posting-date sources: Greenhouse `first_published`, Lever `createdAt` (epoch ms)
 
 ### Page logic (`docs/index.html`)
 
-- **Today's picks** (`choosePicks`): the pool is open roles still at `new`, sorted by freshness band (posted ≤3 days, ≤7, ≤21, older or unknown) and then by a hash of the date plus the job id, so picks are stable through the day and change daily. Three passes fill the quota: first a strict pass (a new sector per pick, one safe bet, the rest wild), then one that relaxes the safe/wild split, then one that relaxes sectors. A company is never picked twice in a day.
+- **Today's picks** (`choosePicks`): the pool is open roles still at `new`, sorted by seed band (`seedRank`: seeded ≤2 years, ≤5 years, other), then by freshness band (posted ≤3 days, ≤7, ≤21, older or unknown) and then by a hash of the date plus the job id, so picks are stable through the day and change daily. Three passes fill the quota: first a strict pass (a new sector per pick, one safe bet, the rest wild), then one that relaxes the safe/wild split, then one that relaxes sectors. A company is never picked twice in a day.
 - **Visibility:** closed postings are hidden unless the owner marked them applied or interviewing (`isVisible`).
-- **Sorting:** by `postedAt` newest first. Jobs with no posting date sort after dated ones.
+- **Sorting** (`spreadOut`): jobs are ranked within their company by `postedAt` (or `firstSeen`), newest first, then listed round by round: every company's 1st role, then every 2nd, and so on, seeded startups first within a round. With no search typed, roles past `PER_COMPANY` fold behind a **+ N more** button; `ui.open` remembers which companies are unfolded.
 - **`shortLoc`** shortens long city lists to the Seattle-area city plus a count. Its `AREA` regex mirrors `location_include`, so keep the two in sync.
 - Sector chips only show sectors that currently have roles.
 
@@ -193,6 +196,8 @@ Minimal, Apple-like layout drawn as if in pencil on paper. Keep this direction u
 |---|---|
 | Add or remove a company | `docs/companies.json` (check with `scraper.py check` first) |
 | Add a "backed by" badge | Add the company to `backers` in `docs/companies.json` |
+| Mark a startup as freshly seeded | Add `"seed": {"round": "…", "date": "YYYY-MM"}` to its entry |
+| Show more or fewer roles per company before folding | `PER_COMPANY` in `index.html` |
 | Add another community feed | Write `fetch_<type>()` returning `make_job(...)` dicts with `"company"`, register it in `FEED_FETCHERS`, add it to `feeds` |
 | Include remote roles again | Add `\|remote` to `location_include`, and to `AREA` in `index.html` |
 | Change seniority | `title_exclude` / `title_include`, and the years part of `description_exclude`, then run the tests |
