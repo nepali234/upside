@@ -208,6 +208,17 @@ details.box[open] summary::before { content: "– "; }
 .seed-co .ft a { color: var(--ink); font-weight: 500; text-decoration: none; }
 .seed-co .ft a:hover { text-decoration: underline; }
 .seed-co.has-roles .ft span { color: var(--ok); }
+.seed-tools { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.seed-co .acts2 { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 13px; margin-top: 2px; }
+.seed-co .acts2 a, .linkish { color: var(--ink); font-weight: 500; text-decoration: none; background: none; border: 0; padding: 0; font-size: 13px; cursor: pointer; font-family: var(--sans); }
+.seed-co .acts2 a:hover, .linkish:hover { text-decoration: underline; }
+.seed-co .src { font-size: 12px; color: var(--lead); overflow-wrap: anywhere; }
+.seed-co.reached { opacity: .55; }
+.reach { font: 500 16px/1 var(--hand); color: var(--lead); }
+.reach.on { color: var(--ok); }
+.note-box textarea { width: 100%; min-height: 170px; font: 14px/1.45 var(--sans); color: var(--ink); background: transparent; border: 1px solid var(--hair); border-radius: 10px; padding: 10px 12px; box-sizing: border-box; }
+.unnamed-list { margin: 8px 0 0; padding-left: 18px; font-size: 14px; color: var(--lead); }
+.unnamed-list a { color: var(--ink); }
 .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
 .section-head h2 { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; }
 .cos { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
@@ -275,12 +286,26 @@ details.box[open] summary::before { content: "– "; }
     <div class="seeded-head">
       <div class="note">hiring with fresh seed money</div>
       <h2 id="seeded-h">Seeded startups</h2>
-      <p>Startups that raised a seed or pre-seed round in the last 5 years: early enough that equity has room to grow, and hiring with the new cash. Apply here first.</p>
+      <p>Startups that raised a pre-seed, seed or Series A round in the last 5 years: early enough that equity has room to grow, and hiring with the new cash. New ones are found in funding news every morning. Apply here first.</p>
     </div>
     <div class="seed-sub" id="seed-roles-h"></div>
     <div class="seed-roles" id="seed-roles"></div>
     <div class="seed-sub" id="seed-cos-h"></div>
+    <div class="seed-tools">
+      <div class="cats" id="seed-view" role="group" aria-label="Which startups"></div>
+      <label class="field"><input type="search" id="seed-q" placeholder="Search startups" aria-label="Search seeded startups"></label>
+    </div>
     <div class="seed-cos" id="seed-cos"></div>
+    <div id="seed-more"></div>
+    <details class="box sk dash note-box">
+      <summary>your outreach note</summary>
+      <p class="msg">Write it once; <b>copy note</b> on any card fills in <code>{company}</code>, <code>{round}</code> and <code>{what}</code>. The founders are usually named in the funding story (<b>news ↗</b>). Send each note yourself, and make the first line about them. Saved only in this browser.</p>
+      <textarea id="note" spellcheck="true"></textarea>
+    </details>
+    <details class="box sk dash" id="unnamed-box">
+      <summary id="unnamed-h"></summary>
+      <ul class="unnamed-list" id="unnamed"></ul>
+    </details>
   </section>
 
   <section class="controls" aria-label="Filters">
@@ -334,7 +359,7 @@ const CAT_COLORS = {
   "Developer tools": "var(--c-dev)", "Fintech": "var(--c-fin)", "Robotics": "var(--c-robot)",
   "Space": "var(--c-space)", "Big tech": "var(--c-big)", "Data & cloud": "var(--c-data)",
   "Health tech": "var(--c-health)", "Public safety": "var(--c-safety)", "Consumer": "var(--c-consumer)",
-  "AI apps": "var(--c-aiapps)", "Security": "var(--c-sec)",
+  "AI apps": "var(--c-aiapps)", "Security": "var(--c-sec)", "New seed lead": "var(--ok)",
 };
 const STATUSES = [["new", "To review"], ["applied", "Applied"], ["interviewing", "Interviewing"], ["skipped", "Skipped"], ["all", "All"]];
 const PLACED = ["applied", "interviewing"];
@@ -343,13 +368,15 @@ const MARKS = [["applied", "applied"], ["interviewing", "interview"], ["skipped"
 // ---------- Local storage: your progress lives in this browser ----------
 const STORE_KEY = "upside-radar-v1";
 function loadStore() {
-  try { const s = JSON.parse(localStorage.getItem(STORE_KEY) || "{}"); return { statuses: s.statuses || {}, manual: s.manual || [], target: s.target || 3, ui: s.ui || {} }; }
-  catch (e) { return { statuses: {}, manual: [], target: 3, ui: {} }; }
+  try { const s = JSON.parse(localStorage.getItem(STORE_KEY) || "{}"); return { statuses: s.statuses || {}, manual: s.manual || [], target: s.target || 3, ui: s.ui || {}, reached: s.reached || {}, note: s.note || "" }; }
+  catch (e) { return { statuses: {}, manual: [], target: 3, ui: {}, reached: {}, note: "" }; }
 }
 let store = loadStore();
 function saveStore() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) {} }
 
 let boardJobs = [], companies = [], backers = {}, updatedAt = null, boardErrors = [], loadFailed = false;
+// From discover.py (docs/leads.json): newly seeded startups found in funding news, not on the watchlist.
+let leadCos = [], unnamedLeads = [];
 // Recent first: by default the list only shows roles posted in the last month.
 const POSTED = [["3", "3 days"], ["7", "week"], ["30", "month"], ["all", "any time"]];
 const ui = { tab: store.ui.tab || "new", cats: new Set(), tiers: new Set(store.ui.tiers || []), q: "", open: new Set(),
@@ -359,7 +386,7 @@ const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const safeUrl = (u) => /^https:\/\//i.test(u || "") ? u : "#";
 const fmtDate = (iso) => { if (!iso) return ""; const d = new Date(iso); return isNaN(d) ? "" : d.toLocaleDateString(undefined, { month: "short", day: "numeric" }); };
-const companyOf = (name) => companies.find(c => c.name === name) || {};
+const companyOf = (name) => companies.find(c => c.name === name) || leadCos.find(c => c.name === name) || {};
 // Companies found through the Wider Net feed aren't on the watchlist: they get their own sector and tier.
 const WIDER = "Wider net";
 const catOf = (name) => companyOf(name).category || WIDER;
@@ -623,11 +650,31 @@ function renderCompanies(jobs) {
 }
 
 // ---------- Seeded startups: their own section, right under Today's bets ----------
-// Shows every open role at a freshly seeded startup (whatever the filters below say, so none get
-// missed), then a card for every seeded startup with its careers link, newest seed first.
+// Every open role at a freshly seeded startup (whatever the filters below say, so none get missed),
+// then a card for every seeded startup: the watchlist's, plus the leads discover.py found in
+// funding news. Each card has its careers page, the funding story, and outreach tools.
+const DEFAULT_NOTE = `Hi {company} team,
+
+Congrats on the {round}. I'm a software engineer in Seattle and I'd love to help build {company} while it's early.
+
+[One line on something you shipped that fits what they're building.]
+
+Would you be open to a 15-minute chat? My LinkedIn: [link]
+
+Thanks,
+[Your name]`;
+const SEED_PAGE = 24;
+const seedUi = { view: "all", q: "", all: false };
+const roundText = (c) => c.seed ? `${c.seed.round}, ${String(c.seed.date).slice(0, 4)}` : "";
+function fillNote(c) {
+  const what = (c.why || "").split(/(?<=\.)\s/)[0];  // the first sentence of the watchlist's "why", if any
+  return (store.note || DEFAULT_NOTE).replaceAll("{company}", c.name).replaceAll("{round}", c.seed ? c.seed.round : "new round")
+    .replaceAll("{what}", what);
+}
 function renderSeeded(jobs) {
-  const seeded = companies.filter(c => isSeeded(c.name))
-    .sort((a, b) => seedRank(a.name) - seedRank(b.name) || (seedMonths(a.name) ?? 999) - (seedMonths(b.name) ?? 999));
+  const all = companies.filter(c => isSeeded(c.name)).concat(leadCos.filter(c => isSeeded(c.name)))
+    .sort((a, b) => (seedMonths(a.name) ?? 999) - (seedMonths(b.name) ?? 999) || a.name.localeCompare(b.name));
+  const openAt = (name) => jobs.filter(j => j.company === name && j.open !== false && j.status === "new").length;
   const roles = jobs.filter(j => isSeeded(j.company) && j.open !== false && j.status === "new")
     .sort((a, b) => seedRank(a.company) - seedRank(b.company) || sortTime(b).localeCompare(sortTime(a)));
   $("seed-roles-h").textContent = roles.length ? `${roles.length} open role${roles.length > 1 ? "s" : ""} to review` : "No new roles from them right now: check their careers pages below";
@@ -640,17 +687,40 @@ function renderSeeded(jobs) {
       <span class="m" title="${esc(j.location || "")}">${esc(shortLoc(j.location))}</span>
       <div class="acts"><button type="button" class="pb go" data-act="applied" data-id="${esc(j.id)}"><span class="tick">✓</span> I applied</button><button type="button" class="skip" data-act="skipped" data-id="${esc(j.id)}">not for me</button></div>
     </article>`).join("");
-  $("seed-cos-h").textContent = `${seeded.length} seeded startups on the watchlist`;
-  $("seed-cos").innerHTML = seeded.map(c => {
-    const open = jobs.filter(j => j.company === c.name && j.open !== false && j.status === "new").length;
+
+  const reachedN = all.filter(c => store.reached[c.name]).length;
+  $("seed-cos-h").textContent = `${all.length} seeded startups · ${leadCos.length} found in funding news · you've reached out to ${reachedN}`;
+  const VIEWS = [["all", "all"], ["roles", "has roles"], ["todo", "not contacted"], ["new", "found in news"]];
+  $("seed-view").innerHTML = VIEWS.map(([k, l]) => `<button class="chip" data-view="${k}" aria-pressed="${seedUi.view === k}">${l}</button>`).join("");
+  const q = seedUi.q.trim().toLowerCase();
+  const shown = all
+    .filter(c => seedUi.view !== "roles" || openAt(c.name))
+    .filter(c => seedUi.view !== "todo" || !store.reached[c.name])
+    .filter(c => seedUi.view !== "new" || c.lead)
+    .filter(c => !q || (c.name + " " + (c.category || "") + " " + (c.why || "")).toLowerCase().includes(q));
+  const page = seedUi.all ? shown : shown.slice(0, SEED_PAGE);
+  $("seed-cos").innerHTML = page.map(c => {
+    const open = openAt(c.name), reached = store.reached[c.name];
     const foot = open ? `${open} open here` : c.board === "link" ? "check by hand" : "no roles yet";
-    return `<article class="seed-co sk soft ${open ? "has-roles" : ""}">
+    return `<article class="seed-co sk soft ${open ? "has-roles" : ""} ${reached ? "reached" : ""}">
       <span class="co-line" style="margin:0"><span class="dot" style="background:${catColor(c.category)}"></span>${esc(c.category)}</span>
       <span class="nm">${esc(c.name)}</span>
-      <span class="rd">${esc(c.seed.round)}, ${esc(String(c.seed.date).slice(0, 4))}</span>
+      <span class="rd">${esc(roundText(c))}</span>
+      ${c.lead ? `<span class="src">found in news · ${esc(fmtDate(c.newsDate))}</span>` : ""}
       <div class="ft"><span>${esc(foot)}</span><a href="${esc(safeUrl(c.careersUrl))}" target="_blank" rel="noopener">${esc(c.linkLabel || "Careers")} ↗</a></div>
+      <div class="acts2">
+        ${c.sourceUrl ? `<a href="${esc(safeUrl(c.sourceUrl))}" target="_blank" rel="noopener" title="${esc(c.sourceTitle || "")}">news ↗</a>` : ""}
+        <button type="button" class="linkish" data-note="${esc(c.name)}">copy note</button>
+        <button type="button" class="reach ${reached ? "on" : ""} linkish" data-reach="${esc(c.name)}">${reached ? `reached ✓ ${esc(fmtDate(reached))}` : "mark reached"}</button>
+      </div>
     </article>`;
-  }).join("");
+  }).join("") || `<div class="empty"><strong>None here</strong>Try another view or clear the search.</div>`;
+  $("seed-more").innerHTML = shown.length > SEED_PAGE
+    ? `<button type="button" class="more-co" id="seed-all">${seedUi.all ? "show fewer" : `show all ${shown.length}`}</button>` : "";
+  if (document.activeElement !== $("note")) $("note").value = store.note || DEFAULT_NOTE;
+  $("unnamed-box").hidden = !unnamedLeads.length;
+  $("unnamed-h").textContent = `${unnamedLeads.length} funding ${unnamedLeads.length === 1 ? "story" : "stories"} where the company's name couldn't be read`;
+  $("unnamed").innerHTML = unnamedLeads.map(u => `<li><a href="${esc(safeUrl(u.sourceUrl))}" target="_blank" rel="noopener">${esc(u.sourceTitle)}</a> · ${esc([u.amount, u.stage].filter(Boolean).join(" "))}, ${esc(fmtDate(u.date))}</li>`).join("");
 }
 
 function renderAll() {
@@ -671,6 +741,20 @@ $("queue").addEventListener("click", e => {
   if (f) { const c = f.dataset.co; ui.open.has(c) ? ui.open.delete(c) : ui.open.add(c); renderAll(); return; }
   const b = e.target.closest("button.mark"); if (b) setStatus(b.dataset.id, b.getAttribute("aria-pressed") === "true" ? "new" : b.dataset.set); });
 $("picks").addEventListener("click", e => { const b = e.target.closest("button[data-act]"); if (b) setStatus(b.dataset.id, b.dataset.act); });
+$("seed-view").addEventListener("click", e => { const b = e.target.closest("[data-view]"); if (!b) return; seedUi.view = b.dataset.view; seedUi.all = false; renderAll(); });
+$("seed-q").addEventListener("input", e => { seedUi.q = e.target.value; renderAll(); });
+$("seed-more").addEventListener("click", e => { if (e.target.closest("#seed-all")) { seedUi.all = !seedUi.all; renderAll(); } });
+$("note").addEventListener("input", e => { store.note = e.target.value; saveStore(); });
+$("seed-cos").addEventListener("click", async e => {
+  const r = e.target.closest("[data-reach]");
+  if (r) { const n = r.dataset.reach; store.reached[n] ? delete store.reached[n] : (store.reached[n] = new Date().toISOString()); saveStore(); renderAll(); return; }
+  const b = e.target.closest("[data-note]");
+  if (!b) return;
+  const text = fillNote(companyOf(b.dataset.note));
+  try { await navigator.clipboard.writeText(text); b.textContent = "copied ✓"; }
+  catch (err) { window.prompt("Copy your note:", text); }
+  setTimeout(() => { b.textContent = "copy note"; }, 1500);
+});
 $("seed-roles").addEventListener("click", e => { const b = e.target.closest("button[data-act]"); if (b) setStatus(b.dataset.id, b.dataset.act); });
 $("t-minus").addEventListener("click", () => { store.target = Math.max(1, store.target - 1); saveStore(); renderAll(); });
 $("t-plus").addEventListener("click", () => { store.target = Math.min(10, store.target + 1); saveStore(); renderAll(); });
@@ -703,6 +787,8 @@ $("import").addEventListener("change", async e => {
     }
     const known = new Set(store.manual.map(m => m.id));
     (data.manual || []).forEach(m => { if (!known.has(m.id)) store.manual.push(m); });
+    for (const [n, at] of Object.entries(data.reached || {})) if (!store.reached[n] || at > store.reached[n]) store.reached[n] = at;
+    if (data.note && !store.note) store.note = data.note;
     saveStore(); renderAll(); $("io-msg").textContent = "Progress imported.";
   } catch (err) { $("io-msg").textContent = "That file isn't an Upside Radar backup."; }
   e.target.value = "";
@@ -717,6 +803,20 @@ $("import").addEventListener("change", async e => {
     companies = coData.companies || [];
     backers = coData.backers || {};
   } catch (e) { loadFailed = true; }
+  try {  // optional: written by discover.py
+    const ld = await (await fetch("leads.json", { cache: "no-cache" })).json();
+    const found = ld.boards || {};
+    companies = companies.map(c => found[c.name] && found[c.name].board && c.board === "link"
+      ? { ...c, board: found[c.name].board, careersUrl: found[c.name].careersUrl, linkLabel: "Careers" } : c);
+    const known = new Set(companies.map(c => normName(c.name)));
+    leadCos = (ld.leads || []).filter(l => l.name && !known.has(normName(l.name))).map(l => ({
+      name: l.name, category: "New seed lead", tier: "wild", lead: true, board: l.board || "link",
+      careersUrl: l.careersUrl || `https://www.google.com/search?q=${encodeURIComponent(l.name + " careers")}`,
+      linkLabel: l.careersUrl ? "Careers" : "Find careers page",
+      seed: { round: [l.amount, l.stage].filter(Boolean).join(" "), date: (l.date || "").slice(0, 7) },
+      newsDate: l.date, sourceUrl: l.sourceUrl, sourceTitle: l.sourceTitle }));
+    unnamedLeads = ld.unnamed || [];
+  } catch (e) { /* no leads yet */ }
   renderAll();
 })();
 </script>

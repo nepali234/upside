@@ -13,7 +13,7 @@ No AI, no servers, no accounts. It runs free on GitHub Actions and GitHub Pages.
 ## What it does
 
 **Every morning (automatic)**
-1. GitHub Actions runs `scraper.py` at 13:36 UTC (6:36am Seattle in summer, 5:36am in winter).
+1. GitHub Actions runs `discover.py` (the **Seed Finder**, below), then `scraper.py` at 13:36 UTC (6:36am Seattle in summer, 5:36am in winter).
 2. The script asks each watched company's job board for its open jobs over plain HTTP.
 3. It keeps software roles at early-career level in the Greater Seattle Area. Amazon is always excluded.
    It also casts a **Wider Net**: the community-kept [Simplify New-Grad list](https://github.com/SimplifyJobs/New-Grad-Positions) adds Seattle-area new-grad roles from companies that aren't on the watchlist, and fills in the link-only cards (Microsoft, Google, Blue Origin...). This month's Hacker News **"Ask HN: Who is hiring?"** thread adds Seattle-area roles at small startups that aren't on any list yet, read through the free [HN search API](https://hn.algolia.com/api).
@@ -23,7 +23,8 @@ No AI, no servers, no accounts. It runs free on GitHub Actions and GitHub Pages.
 
 **On the page (you)**
 - **Today's bets:** your daily quota of roles to apply to. The set cycles through three kinds of bet: a **middle** bet (growth-stage company, past the risky years, still has upside), a **wild** bet (startup) and a **safe** bet (big, stable company). 1 a day gets a middle bet, 2 gets middle + wild, 3 gets one of each. Every pick comes from a different company and sector. Freshly seeded startups come first, then the freshest roles. Tap **✓ I applied** or **not for me**.
-- **Seeded startups:** its own section right under Today's bets. It lists every new open role at a freshly seeded startup (it ignores the list filters, so none get missed), then a card for each seeded startup with its round and careers link, newest seed first.
+- **Seed Finder (`discover.py`):** every morning it reads funding news (GeekWire's funding and seed-round feeds, set in `news` in `companies.json`), keeps Seattle-area companies that just raised a pre-seed, seed or Series A round, and looks for each one's job board on Greenhouse, Ashby and Lever. Boards it finds are read like any watchlist company, so their roles show up on their own. Results go to `docs/leads.json`. The first run reads about 40 pages of each feed to catch up on older rounds.
+- **Seeded startups:** its own section right under Today's bets. It lists every new open role at a freshly seeded startup (it ignores the list filters, so none get missed), then a card for each seeded startup (the watchlist's plus every lead from funding news) with its round, careers link and the funding story. Each card has **copy note** (your outreach note, filled in for that company) and **mark reached** to track who you've emailed; views: all, has roles, not contacted, found in news. Funding stories where the company's name couldn't be read are listed at the bottom so you can check them by hand.
 - **Streak:** days in a row you hit your quota. Use **−** and **+** to change the quota (1–10).
 - **Spread:** where your bets have gone by sector, with a warning if more than half land in one.
 - **The list:** every open role, spread out so no company floods it: each company's newest role first, then everyone's second role, and so on, with freshly seeded startups first in each round. Past two roles, a company's rest folds behind **+ N more from …** (searching unfolds everything). Roles posted in the last 3 days are tagged **just posted**. Mark each one by circling **applied**, **interview** or **skip**, and tap again to clear it.
@@ -98,11 +99,18 @@ Read this before changing anything.
 - **One broken board never stops the run.** Each fetch is wrapped in try/except. Errors go into `jobs.json` under `errors`, and the page shows "N boards unreachable".
 - **Never invent jobs or dates.** Every job comes from a board feed or from the owner's manual entry.
 
+- **Seed Finder rules.** A lead is a funding story whose headline and opening name a pre-seed, seed or Series A round (Series B and later, IPOs and acquisitions are skipped), for a company in the Seattle area (an "X-based" phrase must name an area city), dated within `seedFinder.years`. Watchlist companies are never duplicated as leads; the watchlist entry, checked by hand, wins. A board counts only when it clearly belongs to the company: Greenhouse must report the same company name, and Ashby or Lever only count for the company's whole name as the slug with roles open. Boards not found are looked for again every `recheckDays`, at most `maxChecksPerRun` companies a run. Names the parser gets wrong go in `seedFinder.ignore`. The Seed Finder only ever links to the company's own careers page and the news story: it doesn't collect people's contact details, and the outreach note is sent by hand, one company at a time.
+
 ### How the pieces fit
 
 ```
 .github/workflows/daily.yml   cron 13:36 UTC + manual "Run workflow"
-   └─ runs tests, then scraper.py, then commits docs/jobs.json if it changed
+   └─ runs tests, then discover.py, then scraper.py, then commits docs/jobs.json and docs/leads.json
+discover.py                   Seed Finder: funding news -> docs/leads.json (leads, their boards, unreadable stories)
+   ├─ parse_rss / read_news      RSS 2.0, paged with ?paged=N
+   ├─ lead_from / name_of        stage, amount, area and company name from headline + opening
+   ├─ find_board                 Greenhouse / Ashby / Lever lookups with proof of ownership
+   └─ discover(config, saved)    pure merge logic, easy to test
 scraper.py
    ├─ fetch_greenhouse / fetch_lever / fetch_ashby / fetch_workday / fetch_google   (one per board type)
    ├─ fetch_simplify / fetch_hn   (Wider Net feeds)
@@ -114,6 +122,7 @@ docs/companies.json   watchlist + filter regexes (edited by hand)
 docs/jobs.json        generated each morning; never hand-edit except to repair
 docs/index.html       the whole front end: CSS, markup and JS in one file
 tests/test_scraper.py unittest; fakes every network call
+tests/test_discover.py Seed Finder tests with fake news feeds and fake boards
 ```
 
 ### Data formats
@@ -202,6 +211,8 @@ Minimal, Apple-like layout drawn as if in pencil on paper. Keep this direction u
 | Want to… | Change |
 |---|---|
 | Add or remove a company | `docs/companies.json` (check with `scraper.py check` first) |
+| Add a funding-news feed | Add `{"name", "url"}` to `news` in `docs/companies.json` (any RSS 2.0 feed) |
+| Hide a lead the Seed Finder got wrong | Add its name to `seedFinder.ignore` |
 | Add a "backed by" badge | Add the company to `backers` in `docs/companies.json` |
 | Mark a startup as freshly seeded | Add `"seed": {"round": "…", "date": "YYYY-MM"}` to its entry |
 | Show more or fewer roles per company before folding | `PER_COMPANY` in `index.html` |

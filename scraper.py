@@ -357,6 +357,25 @@ def norm_name(name):
     return " ".join(n.split())
 
 
+def with_leads(config, leads_data):
+    """Add what discover.py found (docs/leads.json): newly seeded startups with a job board become
+    companies to read, and watchlist companies still checked by hand get the board found for them."""
+    found = (leads_data or {}).get("boards", {})
+    companies = []
+    for c in config["companies"]:
+        hit = found.get(c["name"]) or {}
+        if c.get("board") == "link" and hit.get("board") in FETCHERS:
+            c = {**c, "board": hit["board"], "slug": hit["slug"]}
+        companies.append(c)
+    known = {norm_name(n) for c in companies for n in [c["name"]] + c.get("aliases", [])}
+    for lead in (leads_data or {}).get("leads", []):
+        if lead.get("board") in FETCHERS and norm_name(lead["name"]) not in known:
+            companies.append({"name": lead["name"], "category": "New seed lead", "tier": "wild",
+                              "board": lead["board"], "slug": lead["slug"], "careersUrl": lead.get("careersUrl", "")})
+            known.add(norm_name(lead["name"]))
+    return {**config, "companies": companies}
+
+
 def refresh(config, existing_jobs, fetchers=FETCHERS, now=None, feed_fetchers=FEED_FETCHERS):
     """Pure-ish core: returns (merged_jobs, new_jobs, errors). Easy to test."""
     now = now or datetime.now(timezone.utc)
@@ -516,6 +535,7 @@ def main():
     if not config:
         sys.exit(f"Missing or invalid {COMPANIES_FILE}")
     existing = load_json(JOBS_FILE, {}).get("jobs", [])
+    config = with_leads(config, load_json(DOCS / "leads.json", {}))  # boards found by discover.py
 
     merged, new_jobs, errors = refresh(config, existing)
     JOBS_FILE.write_text(json.dumps({

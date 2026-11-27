@@ -12,6 +12,13 @@
     { "name": "Hacker News Who's Hiring", "type": "hn", "url": "https://hn.algolia.com/api/v1" }
   ],
 
+  "news": [
+    { "name": "GeekWire funding", "url": "https://www.geekwire.com/tag/funding/feed/" },
+    { "name": "GeekWire seed rounds", "url": "https://www.geekwire.com/tag/seed-round/feed/" }
+  ],
+
+  "seedFinder": { "years": 5, "backfillPages": 40, "recheckDays": 7, "maxChecksPerRun": 80, "ignore": [] },
+
   "backers": {
     "Anduril": "Founders Fund, a16z",
     "Armada": "Founders Fund, Lux",
