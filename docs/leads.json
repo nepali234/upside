@@ -1,0 +1,2676 @@
+{
+ "updatedAt": "2026-11-27T04:43:54Z",
+ "backfilled": true,
+ "errors": [],
+ "leads": [
+  {
+   "name": "Zin Boats",
+   "stage": "funding",
+   "amount": "$5M",
+   "date": "2026-11-24T17:58:19Z",
+   "sourceTitle": "Electric boat maker Zin Boats raises $5M and launches propulsion business beyond the water",
+   "sourceUrl": "https://www.geekwire.com/2026/electric-boat-maker-zin-boats-raises-5m-and-launches-propulsion-business-beyond-the-water/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Group14",
+   "stage": "funding",
+   "amount": "$169M",
+   "date": "2026-10-29T12:00:00Z",
+   "sourceTitle": "Seattle-area startup Group14 raises $169M, plans battery materials factory in Spain",
+   "sourceUrl": "https://www.geekwire.com/2026/seattle-area-startup-group14-raises-169m-plans-battery-materials-factory-in-spain/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Avante",
+   "stage": "Series A",
+   "amount": "$30M",
+   "date": "2026-10-27T16:03:21Z",
+   "sourceTitle": "Seattle startup Avante raises $30M to bring AI agents to corporate benefits teams",
+   "sourceUrl": "https://www.geekwire.com/2026/seattle-startup-avante-raises-30m-to-bring-ai-agents-to-corporate-benefits-teams/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "avante",
+   "careersUrl": "https://boards.greenhouse.io/avante",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Strella",
+   "stage": "Series A",
+   "amount": "$4.25M",
+   "date": "2026-10-23T16:23:23Z",
+   "sourceTitle": "Watching fruit ripen pays off: Seattle ag-tech startup Strella lands $4.25M",
+   "sourceUrl": "https://www.geekwire.com/2026/watching-fruit-ripen-pays-off-seattle-ag-tech-startup-strella-lands-4-25m/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "ashby",
+   "slug": "strella",
+   "careersUrl": "https://jobs.ashbyhq.com/strella",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Chiplytics",
+   "stage": "funding",
+   "amount": "$4.5M",
+   "date": "2026-10-06T14:00:00Z",
+   "sourceTitle": "Seattle startup Chiplytics lands $4.5M to catch fake and flawed chips before they hit the market",
+   "sourceUrl": "https://www.geekwire.com/2026/seattle-startup-chiplytics-lands-4-5m-to-catch-fake-and-flawed-chips-before-they-hit-the-market/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Hubble Network",
+   "stage": "Series C",
+   "amount": "$200M",
+   "date": "2026-09-23T16:01:54Z",
+   "sourceTitle": "Hubble Network raises $200M to reach $1.6B valuation as startup expands satellite Bluetooth network",
+   "sourceUrl": "https://www.geekwire.com/2026/hubble-network-raises-200m-to-reach-1-6b-valuation-as-startup-expands-satellite-bluetooth-network/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "hubblenetwork",
+   "careersUrl": "https://boards.greenhouse.io/hubblenetwork",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Startup Ravel",
+   "stage": "seed",
+   "amount": "$8.2M",
+   "date": "2026-09-17T17:33:57Z",
+   "sourceTitle": "Startup Ravel raises $8.2M to help solve clothing recycling’s spandex problem",
+   "sourceUrl": "https://www.geekwire.com/2026/startup-ravel-raises-8-2m-to-help-solve-clothing-recyclings-spandex-problem/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Temporal",
+   "stage": "Series E",
+   "amount": "$550M",
+   "date": "2026-09-14T17:08:21Z",
+   "sourceTitle": "Temporal raises $550M, hits $12.55B valuation as agentic AI wave fuels massive growth",
+   "sourceUrl": "https://www.geekwire.com/2026/temporal-raises-550m-hits-12-55b-valuation-as-agentic-ai-wave-fuels-massive-growth/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "ashby",
+   "slug": "temporal",
+   "careersUrl": "https://jobs.ashbyhq.com/temporal",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "NewDays",
+   "stage": "seed",
+   "amount": "$16M",
+   "date": "2026-09-02T14:00:00Z",
+   "sourceTitle": "NewDays brings its AI-driven dementia care platform to Nevada, expands seed round to $16M",
+   "sourceUrl": "https://www.geekwire.com/2026/newdays-brings-its-ai-driven-dementia-care-platform-to-nevada-expands-seed-round-to-16m/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "InduPro",
+   "stage": "Series B",
+   "amount": "$77M",
+   "date": "2026-08-14T13:33:34Z",
+   "sourceTitle": "InduPro raises $77M, begins first human trial of cancer drug",
+   "sourceUrl": "https://www.geekwire.com/2026/indupro-raises-77m-begins-first-human-trial-of-cancer-drug/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Accipiter Bio",
+   "stage": "seed",
+   "amount": "$10.5M",
+   "date": "2026-07-31T16:15:13Z",
+   "sourceTitle": "Moving faster than planned, AI drug developer Accipiter Bio quietly tops up seed round with $10.5M",
+   "sourceUrl": "https://www.geekwire.com/2026/moving-faster-than-planned-ai-drug-developer-accipiter-bio-quietly-tops-up-seed-round-with-10-5m/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Dopl",
+   "stage": "funding",
+   "amount": "$6.3M",
+   "date": "2026-07-27T13:00:00Z",
+   "sourceTitle": "Dopl raises $6.3M to bring remote robotic ultrasounds to rural patients as it pursues FDA clearance",
+   "sourceUrl": "https://www.geekwire.com/2026/dopl-raises-6-3m-to-bring-remote-robotic-ultrasounds-to-rural-patients-as-it-pursues-fda-clearance/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Augmodo",
+   "stage": "funding",
+   "amount": "$21M",
+   "date": "2026-07-13T11:00:00Z",
+   "sourceTitle": "Augmodo raises $21M to push its spatial AI beyond just retail toward the broader physical workforce",
+   "sourceUrl": "https://www.geekwire.com/2026/augmodo-raises-21m-to-push-its-spatial-ai-beyond-just-retail-toward-the-broader-physical-workforce/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "ashby",
+   "slug": "augmodo",
+   "careersUrl": "https://jobs.ashbyhq.com/augmodo",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "KredosAI",
+   "stage": "funding",
+   "amount": "$7M",
+   "date": "2026-07-02T13:23:00Z",
+   "sourceTitle": "KredosAI raises $7M, led by BMW’s venture arm, to use AI to help companies collect late payments",
+   "sourceUrl": "https://www.geekwire.com/2026/kredosai-raises-7m-led-by-bmws-venture-arm-using-ai-to-help-companies-collect-late-payments/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Gradial",
+   "stage": "Series C",
+   "amount": "$65M",
+   "date": "2026-06-18T15:50:41Z",
+   "sourceTitle": "Gradial raises $65M as startup sees rapid growth around agentic tools for enterprise marketing",
+   "sourceUrl": "https://www.geekwire.com/2026/gradial-raises-65m-as-startup-sees-rapid-growth-around-agentic-tools-for-enterprise-marketing/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "gradial",
+   "careersUrl": "https://boards.greenhouse.io/gradial",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Emphere",
+   "stage": "pre-seed",
+   "amount": "$2.1M",
+   "date": "2026-06-04T17:11:47Z",
+   "sourceTitle": "Find it, fix it: Seattle startup Emphere raises $2.1M to automate software vulnerability patching",
+   "sourceUrl": "https://www.geekwire.com/2026/find-it-fix-it-seattle-startup-emphere-raises-2-1m-to-automate-software-vulnerability-patching/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Humanly",
+   "stage": "funding",
+   "amount": "$25M",
+   "date": "2026-04-08T15:15:05Z",
+   "sourceTitle": "Humanly raises $25M to put AI to work for job seekers, not just the companies hiring them",
+   "sourceUrl": "https://www.geekwire.com/2026/humanly-raises-25m-to-put-ai-to-work-for-job-seekers-not-just-the-companies-hiring-them/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "ashby",
+   "slug": "humanly",
+   "careersUrl": "https://jobs.ashbyhq.com/humanly",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Confido Legal",
+   "stage": "funding",
+   "amount": "$9M",
+   "date": "2026-02-26T21:50:26Z",
+   "sourceTitle": "Seattle fintech startup Confido Legal raises fresh cash",
+   "sourceUrl": "https://www.geekwire.com/2026/seattle-fintech-startup-confido-legal-raises-fresh-cash/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Union.ai",
+   "stage": "Series A",
+   "amount": "$19M",
+   "date": "2026-02-25T16:57:15Z",
+   "sourceTitle": "Seattle-area startup Union.ai raises $19M to fuel AI workflow platform",
+   "sourceUrl": "https://www.geekwire.com/2026/seattle-area-startup-union-ai-raises-19m-to-fuel-ai-workflow-platform/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Adronite",
+   "stage": "Series A",
+   "amount": "$5M",
+   "date": "2026-02-19T14:31:07Z",
+   "sourceTitle": "Seattle startup Adronite raises $5M to help enterprises understand their codebases",
+   "sourceUrl": "https://www.geekwire.com/2026/seattle-startup-adronite-raises-5m-to-help-enterprises-understand-their-codebases/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Ironwood Studios",
+   "stage": "seed",
+   "amount": "$4M",
+   "date": "2026-02-11T21:42:19Z",
+   "sourceTitle": "Seattle gaming startup Ironwood Studios raises $4 million for its next project",
+   "sourceUrl": "https://www.geekwire.com/2026/seattle-gaming-startup-ironwood-studios-raises-4-million-for-its-next-project/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Integrate",
+   "stage": "funding",
+   "amount": "$17M",
+   "date": "2026-02-11T17:02:39Z",
+   "sourceTitle": "Seattle startup Integrate lands $17M to expand its super-secure project management tool for defense tech",
+   "sourceUrl": "https://www.geekwire.com/2026/seattle-startup-integrate-lands-17m-to-expand-its-super-secure-project-management-tool-for-defense-tech/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "ashby",
+   "slug": "integrate",
+   "careersUrl": "https://jobs.ashbyhq.com/integrate",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Sound Games",
+   "stage": "seed",
+   "amount": "$6.5M",
+   "date": "2026-01-29T15:15:09Z",
+   "sourceTitle": "Seattle startup Sound Games raises $6.5M to rethink how premium games are sold",
+   "sourceUrl": "https://www.geekwire.com/2026/seattle-startup-sound-games-raises-6-5m-to-rethink-how-premium-games-are-sold/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Emerald Battery Labs",
+   "stage": "pre-seed",
+   "amount": "$1.1M",
+   "date": "2026-01-22T16:00:00Z",
+   "sourceTitle": "The race to replace lithium: Seattle startup lands funding for salt-powered battery technology",
+   "sourceUrl": "https://www.geekwire.com/2026/the-race-to-replace-lithium-seattle-startup-lands-funding-for-salt-powered-battery-technology/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "MontyCloud",
+   "stage": "Series B",
+   "amount": "$11.4M",
+   "date": "2026-01-15T17:02:36Z",
+   "sourceTitle": "Seattle-area startup MontyCloud raises Series B round to boost cloud operations software",
+   "sourceUrl": "https://www.geekwire.com/2026/seattle-area-startup-montycloud-raises-series-b-round-to-boost-cloud-operations-software/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Ambassador",
+   "stage": "funding",
+   "amount": "$7M",
+   "date": "2025-12-24T15:50:04Z",
+   "sourceTitle": "Seattle startup Ambassador raises $7M to help companies analyze customer feedback with help from AI",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-ambassador-raises-7m-to-help-companies-analyze-customer-feedback-with-help-from-ai/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Scowtt",
+   "stage": "Series A",
+   "amount": "$12M",
+   "date": "2025-12-08T15:19:33Z",
+   "sourceTitle": "Seattle startup Scowtt raises $12M to turn CRM data into better ad campaigns",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-adtech-startup-scowtt-raises-12m-to-turn-crm-data-into-better-ad-campaigns/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "scowtt",
+   "careersUrl": "https://boards.greenhouse.io/scowtt",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Curi Bio",
+   "stage": "funding",
+   "amount": "$10M",
+   "date": "2025-12-02T16:54:58Z",
+   "sourceTitle": "Seattle biotech startup Curi Bio lands $10M to expand its R&D support for drug discovery",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-biotech-startup-curi-bio-lands-10m-to-expands-its-rd-support-for-drug-discovery/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Yoodli",
+   "stage": "Series B",
+   "amount": "$40M",
+   "date": "2025-12-02T16:53:15Z",
+   "sourceTitle": "AI roleplay startup Yoodli raises $40M, reports 900% revenue growth",
+   "sourceUrl": "https://www.geekwire.com/2025/ai-roleplay-startup-yoodli-raises-40m-reports-900-revenue-growth/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "BluePill",
+   "stage": "seed",
+   "amount": "$6M",
+   "date": "2025-11-12T18:00:00Z",
+   "sourceTitle": "Disrupting focus groups: Seattle AI startup BluePill raises $6M to help brands simulate consumer behavior",
+   "sourceUrl": "https://www.geekwire.com/2025/disrupting-focus-groups-seattle-ai-startup-bluepill-raises-6m-to-help-brands-simulate-consumer-behavior/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Arrived",
+   "stage": "funding",
+   "amount": "$27M",
+   "date": "2025-11-11T16:38:01Z",
+   "sourceTitle": "Bezos-backed real estate startup Arrived raises $27M to help fuel new ‘stock market’ for rental properties",
+   "sourceUrl": "https://www.geekwire.com/2025/bezos-backed-real-estate-startup-arrived-raises-27m-to-help-fuel-new-stock-market-for-rental-properties/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Oleria",
+   "stage": "funding",
+   "amount": "$19M",
+   "date": "2025-11-07T14:54:08Z",
+   "sourceTitle": "Seattle security startup Oleria lands $19M in latest funding round",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-security-startup-oleria-lands-19m-in-latest-funding-round/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Upward",
+   "stage": "funding",
+   "amount": "$8M",
+   "date": "2025-11-07T14:42:04Z",
+   "sourceTitle": "Upward, a Seattle fintech startup led by former Remitly execs, raises $8M and partners with Mastercard",
+   "sourceUrl": "https://www.geekwire.com/2025/upward-a-seattle-fintech-startup-led-by-former-remitly-execs-raises-8m-and-partners-with-mastercard/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Hearvana",
+   "stage": "pre-seed",
+   "amount": "$6M",
+   "date": "2025-11-05T18:40:05Z",
+   "sourceTitle": "Seattle startup Hearvana raises $6M for AI-powered sound enhancement",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-hearvana-raises-6m-for-ai-powered-sound-enhancement/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "TestSprite",
+   "stage": "seed",
+   "amount": "$6.7M",
+   "date": "2025-10-29T11:00:00Z",
+   "sourceTitle": "Seattle startup TestSprite raises $6.7M to become ‘testing backbone’ for AI-generated code",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-testsprite-raises-6-7m-to-become-testing-backbone-for-ai-generated-code/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Chainguard",
+   "stage": "Series D",
+   "amount": "$280M",
+   "date": "2025-10-23T16:37:44Z",
+   "sourceTitle": "Chainguard lands $280M to help scale cybersecurity startup’s open source software protections",
+   "sourceUrl": "https://www.geekwire.com/2025/chainguard-lands-280m-to-help-scale-cybersecurity-startups-open-source-software-protections/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "chainguard",
+   "careersUrl": "https://boards.greenhouse.io/chainguard",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Hest",
+   "stage": "Series A",
+   "amount": "$2.7M",
+   "date": "2025-10-22T16:06:44Z",
+   "sourceTitle": "Outdoor sleeping gear maker Hest raises $2.7M as product line and partnerships drive growth",
+   "sourceUrl": "https://www.geekwire.com/2025/outdoor-sleeping-gear-maker-hest-raises-2-7m-as-product-line-and-partnerships-drive-growth/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Silkline",
+   "stage": "seed",
+   "amount": "$4M",
+   "date": "2025-10-22T13:00:00Z",
+   "sourceTitle": "Seattle startup Silkline raises $4M to expand AI tools for manufacturing supply chains",
+   "sourceUrl": "https://www.geekwire.com/2025/supply-chain-optimization-startup-silkline-raises-4m-to-grow-suite-of-ai-capabilities/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Brook.ai",
+   "stage": "Series B",
+   "amount": "$28M",
+   "date": "2025-10-16T15:04:59Z",
+   "sourceTitle": "Seattle startup Brook.ai raises $28M to expand remote care platform",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-brook-ai-raises-28m-to-expand-remote-care-platform/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Aarden AI",
+   "stage": "funding",
+   "amount": "$4M",
+   "date": "2025-10-09T13:00:00Z",
+   "sourceTitle": "Aarden AI emerges from stealth with $4M to help landowners navigate data center, clean energy deals",
+   "sourceUrl": "https://www.geekwire.com/2025/aarden-ai-emerges-from-stealth-with-4m-to-help-landowners-navigate-data-center-clean-energy-deals/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Lumen Bioscience",
+   "stage": "Series C",
+   "amount": "$30M",
+   "date": "2025-10-08T14:41:53Z",
+   "sourceTitle": "Fresh off $30M round, Seattle startup Lumen Bioscience adds Microsoft vet Jeff Raikes to board",
+   "sourceUrl": "https://www.geekwire.com/2025/fresh-off-30m-round-seattle-startup-lumen-bioscience-adds-microsoft-vet-jeff-raikes-to-board/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "lumenbioscience",
+   "careersUrl": "https://boards.greenhouse.io/lumenbioscience",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Membrion",
+   "stage": "funding",
+   "amount": "$20M",
+   "date": "2025-10-07T21:58:18Z",
+   "sourceTitle": "Seattle startup Membrion raises $20M to deploy industrial wastewater treatment units",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-membrion-raises-20m-to-deploy-industrial-wastewater-treatment-units/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Phaidra",
+   "stage": "funding",
+   "amount": "$50M",
+   "date": "2025-10-01T16:09:37Z",
+   "sourceTitle": "Phaidra raises $50M to help AI data centers ‘run smarter, not just harder’ by boosting energy efficiency",
+   "sourceUrl": "https://www.geekwire.com/2025/phaidra-raises-50m-to-help-ai-data-centers-run-smarter-not-just-harder-by-boosting-energy-efficiency/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "phaidra",
+   "careersUrl": "https://boards.greenhouse.io/phaidra",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Actual AI",
+   "stage": "seed",
+   "amount": "$3.2M",
+   "date": "2025-09-29T16:30:16Z",
+   "sourceTitle": "Seattle startup Actual AI raises $3.2M to build AI agents for engineering managers",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-actual-ai-raises-3-2m-to-build-ai-agents-for-engineering-managers/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Vouched",
+   "stage": "Series A",
+   "amount": "$17M",
+   "date": "2025-09-04T10:00:00Z",
+   "sourceTitle": "ID verification startup Vouched raises $17M as it builds AI tools for ‘new future of identity’",
+   "sourceUrl": "https://www.geekwire.com/2025/id-verification-startup-vouched-raises-17m-as-it-builds-ai-tools-for-new-future-of-identity/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "TeamSense",
+   "stage": "funding",
+   "amount": "$19.5M",
+   "date": "2025-08-20T15:52:47Z",
+   "sourceTitle": "TeamSense, a Seattle-area startup that helps track employee absences, raises more cash",
+   "sourceUrl": "https://www.geekwire.com/2025/teamsense-a-seattle-area-startup-that-helps-track-employee-absences-raises-more-cash/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "teamsense",
+   "careersUrl": "https://boards.greenhouse.io/teamsense",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Loopr",
+   "stage": "funding",
+   "amount": "$5.4M",
+   "date": "2025-08-08T14:15:00Z",
+   "sourceTitle": "Seattle startup Loopr raises cash for AI software that aims to boost quality control in manufacturing",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-loopr-raises-cash-for-ai-software-that-aims-to-boost-quality-control-in-manufacturing/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Flyhomes",
+   "stage": "funding",
+   "amount": "$15M",
+   "date": "2025-07-30T14:27:05Z",
+   "sourceTitle": "Seattle-area real estate startup Flyhomes raises $15M as it pivots to ‘Buy Before You Sell’ model",
+   "sourceUrl": "https://www.geekwire.com/2025/flyhomes-raises-15m-as-seattle-startup-pivots-real-estate-business-to-buy-before-you-sell-model/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Dropzone AI",
+   "stage": "Series B",
+   "amount": "$37M",
+   "date": "2025-07-28T14:30:00Z",
+   "sourceTitle": "Seattle startup Dropzone AI raises $37M to supercharge its ‘AI SOC analyst’ security software",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-dropzone-raises-37m-to-supercharge-its-ai-soc-analyst-security-software/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "dropzoneai",
+   "careersUrl": "https://boards.greenhouse.io/dropzoneai",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Zucca",
+   "stage": "funding",
+   "amount": "$5M",
+   "date": "2025-07-15T15:00:00Z",
+   "sourceTitle": "Seattle startup Zucca raises $5M to help food brands launch products faster with AI",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-zucca-raises-5m-to-help-food-brands-launch-products-faster-with-ai/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Duranta",
+   "stage": "seed",
+   "amount": "$7M",
+   "date": "2025-07-15T14:57:59Z",
+   "sourceTitle": "Software for landscapers: Seattle startup Duranta lands $7M to help lawn care companies",
+   "sourceUrl": "https://www.geekwire.com/2025/software-for-landscapers-seattle-startup-duranta-lands-7m-to-help-lawn-care-companies/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Pokee AI",
+   "stage": "seed",
+   "amount": "$12M",
+   "date": "2025-07-08T15:00:00Z",
+   "sourceTitle": "Pokee AI, a new AI agent startup led by ex-Meta manager, lands $12M to automate online workflows",
+   "sourceUrl": "https://www.geekwire.com/2025/point72-ventures-leads-12m-seed-round-for-a-new-ai-agent-startup-founded-by-ex-meta-manager/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Circulate Health",
+   "stage": "seed",
+   "amount": "$12M",
+   "date": "2025-07-01T15:00:00Z",
+   "sourceTitle": "Seattle startup Circulate Health raises $12M for pricey ‘blood-cleaning’ longevity service",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-circulate-health-raises-12m-for-pricey-blood-cleaning-longevity-service/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "MediScan AI",
+   "stage": "funding",
+   "amount": "$1.4M",
+   "date": "2025-06-27T14:45:00Z",
+   "sourceTitle": "MediScan AI raises $1.4M to help medical professionals evaluate patient records",
+   "sourceUrl": "https://www.geekwire.com/2025/mediscan-ai-raises-1-4m-for-platform-that-helps-medical-professionals-evaluate-patient-records/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Klutch",
+   "stage": "seed",
+   "amount": "$8M",
+   "date": "2025-06-26T16:00:00Z",
+   "sourceTitle": "Seattle startup Klutch raises $8M to bring AI coworkers to construction sites",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-klutch-raises-8m-to-bring-ai-coworkers-to-construction-sites/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Centific",
+   "stage": "Series A",
+   "amount": "$60M",
+   "date": "2025-06-26T14:47:00Z",
+   "sourceTitle": "Centific, a Seattle-area AI services startup and Nvidia partner, lands $60M",
+   "sourceUrl": "https://www.geekwire.com/2025/centific-a-seattle-area-ai-services-startup-and-nvidia-partner-lands-60m/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "CalmWave",
+   "stage": "seed",
+   "amount": "$4.4M",
+   "date": "2025-06-26T13:00:00Z",
+   "sourceTitle": "CalmWave raises $4.4M for tech that targets non-actionable patient alarms in hospital ICUs",
+   "sourceUrl": "https://www.geekwire.com/2025/calmwave-raises-4-4m-for-tech-that-targets-non-actionable-patient-alarms-in-hospital-icus/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Clarify",
+   "stage": "funding",
+   "amount": "$15M",
+   "date": "2025-06-25T16:00:00Z",
+   "sourceTitle": "Seattle startup Clarify lands $15M to take on Salesforce with AI-native ‘autonomous CRM’",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-clarify-lands-15m-to-take-on-salesforce-with-ai-native-autonomous-crm/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "ashby",
+   "slug": "clarify",
+   "careersUrl": "https://jobs.ashbyhq.com/clarify",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "AIM",
+   "stage": "funding",
+   "amount": "$50M",
+   "date": "2025-06-10T17:35:48Z",
+   "sourceTitle": "AIM raises $50M to retrofit bulldozers and excavators to operate autonomously",
+   "sourceUrl": "https://www.geekwire.com/2025/aim-raises-50m-to-retrofit-bulldozers-and-excavators-to-operate-autonomously/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "ashby",
+   "slug": "aim",
+   "careersUrl": "https://jobs.ashbyhq.com/aim",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Nectar",
+   "stage": "funding",
+   "amount": "$10.6M",
+   "date": "2025-06-05T17:17:38Z",
+   "sourceTitle": "Sister-led social commerce startup Nectar lands $10.6M, reveals more about marketing tech",
+   "sourceUrl": "https://www.geekwire.com/2025/sister-led-social-commerce-startup-nectar-lands-10-6m-reveals-more-about-marketing-tech/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "ashby",
+   "slug": "nectar",
+   "careersUrl": "https://jobs.ashbyhq.com/nectar",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "CueZen",
+   "stage": "funding",
+   "amount": "$5M",
+   "date": "2025-05-07T17:16:07Z",
+   "sourceTitle": "Seattle startup CueZen raises $5M for personalized health coaching software",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-cuezen-raises-5m-for-personalized-health-coaching-software/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Supio",
+   "stage": "Series B",
+   "amount": "$60M",
+   "date": "2025-04-30T14:13:30Z",
+   "sourceTitle": "Seattle legal tech startup Supio lands $60M to help lawyers streamline data analysis",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-legal-tech-startup-supio-lands-60m-to-help-lawyers-streamline-data-analysis/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "EDEN",
+   "stage": "funding",
+   "amount": "$3.7M",
+   "date": "2025-04-29T22:23:11Z",
+   "sourceTitle": "Seattle startup EDEN raises $3.7M to help residential contractors generate instant quotes",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-eden-raises-3-7m-to-help-residential-contractors-generate-instant-quotes/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Omnidian",
+   "stage": "funding",
+   "amount": "$87M",
+   "date": "2025-04-23T15:16:48Z",
+   "sourceTitle": "Solar power servicing company Omnidian raises $87M to spark growth",
+   "sourceUrl": "https://www.geekwire.com/2025/solar-power-servicing-company-omnidian-raises-87m-to-spark-growth/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "lever",
+   "slug": "omnidian",
+   "careersUrl": "https://jobs.lever.co/omnidian",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Ravenna",
+   "stage": "funding",
+   "amount": "$15M",
+   "date": "2025-04-23T13:00:00Z",
+   "sourceTitle": "Khosla and Madrona back a Seattle startup reimagining internal help desk support",
+   "sourceUrl": "https://www.geekwire.com/2025/khosla-and-madrona-back-a-seattle-startup-reimagining-internal-help-desk-support/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "ashby",
+   "slug": "ravenna",
+   "careersUrl": "https://jobs.ashbyhq.com/ravenna",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Loti",
+   "stage": "Series A",
+   "amount": "$16.2M",
+   "date": "2025-04-15T15:00:00Z",
+   "sourceTitle": "Detecting deepfakes: Seattle startup Loti lands $16.2M to give celebs, consumers digital protection",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-loti-lands-16m-to-help-celebs-politicians-and-ceos-detect-deepfakes/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Potato",
+   "stage": "funding",
+   "amount": "$4.5M",
+   "date": "2025-04-15T13:00:00Z",
+   "sourceTitle": "Seattle startup Potato lands $4.5M to automate science experiments using AI assistants and robots",
+   "sourceUrl": "https://www.geekwire.com/2025/startup-aiming-to-revolutionize-research-with-fully-automated-science-experimentation-lands-4-5m/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "potato",
+   "careersUrl": "https://boards.greenhouse.io/potato",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "IUNU",
+   "stage": "Series B",
+   "amount": "$20M",
+   "date": "2025-04-15T13:00:00Z",
+   "sourceTitle": "AI for greenhouses: Seattle startup IUNU raises $20M for tech that monitors plants",
+   "sourceUrl": "https://www.geekwire.com/2025/ai-for-greenhouses-seattle-startup-iunu-raises-20m-for-tech-that-monitors-plants/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Brinc",
+   "stage": "funding",
+   "amount": "$75M",
+   "date": "2025-04-08T13:34:52Z",
+   "sourceTitle": "Public safety drone maker Brinc raises $75M, forms strategic alliance with Motorola",
+   "sourceUrl": "https://www.geekwire.com/2025/public-safety-drone-maker-brinc-raises-75m-forms-strategic-alliance-with-motorola/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "ashby",
+   "slug": "brinc",
+   "careersUrl": "https://jobs.ashbyhq.com/brinc",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "OpenTug",
+   "stage": "funding",
+   "amount": "$2.2M",
+   "date": "2025-04-01T15:24:09Z",
+   "sourceTitle": "Maritime logistics startup OpenTug raises $2.2M",
+   "sourceUrl": "https://www.geekwire.com/2025/maritime-logistics-startup-opentug-raises-2-2m/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Gable",
+   "stage": "Series A",
+   "amount": "$20M",
+   "date": "2025-03-31T11:00:00Z",
+   "sourceTitle": "Seattle startup Gable lands $20M to coordinate data changes between teams",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-gable-lands-20m-to-coordinate-data-changes-between-teams/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Opanga Networks",
+   "stage": "funding",
+   "amount": "$15.9M",
+   "date": "2025-03-27T15:26:26Z",
+   "sourceTitle": "Mobile network optimization startup Opanga Networks raises $15.9M",
+   "sourceUrl": "https://www.geekwire.com/2025/mobile-network-optimization-startup-opanga-networks-raises-15-9m/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Xealth",
+   "stage": "Series B",
+   "amount": "$24M",
+   "date": "2025-03-25T16:04:49Z",
+   "sourceTitle": "Seattle startup Xealth lands investment to grow its digital healthcare delivery platform",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-xealth-lands-investment-to-grow-its-digital-healthcare-delivery-platform/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "xealth",
+   "careersUrl": "https://boards.greenhouse.io/xealth",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Cardiac Dimensions",
+   "stage": "funding",
+   "amount": "$53M",
+   "date": "2025-03-24T16:15:06Z",
+   "sourceTitle": "Cardiac Dimensions lands $53M to fund research and expansion of heart valve technology",
+   "sourceUrl": "https://www.geekwire.com/2025/cardiac-dimensions-lands-53m-to-fund-research-and-expansion-of-heart-valve-technology/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Workflow Labs",
+   "stage": "funding",
+   "amount": "$1M",
+   "date": "2025-03-19T19:30:11Z",
+   "sourceTitle": "Seattle startup Workflow Labs raises $1M to help automate tasks for Amazon sellers",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-workflow-labs-raises-1m-to-help-automate-tasks-for-amazon-sellers/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Icertis",
+   "stage": "funding",
+   "amount": "$50M",
+   "date": "2025-03-19T16:08:52Z",
+   "sourceTitle": "Contract management software company Icertis lands $50M",
+   "sourceUrl": "https://www.geekwire.com/2025/contract-management-software-company-icertis-lands-50m/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Curevo",
+   "stage": "Series B",
+   "amount": "$110M",
+   "date": "2025-03-17T16:49:55Z",
+   "sourceTitle": "Shingles vaccine maker Curevo lands $110M, adds biotech vets to board",
+   "sourceUrl": "https://www.geekwire.com/2025/shingles-vaccine-maker-curevo-lands-110m-adds-biotech-vets-to-board/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Callio Therapeutics",
+   "stage": "Series A",
+   "amount": "$187M",
+   "date": "2025-03-03T18:58:29Z",
+   "sourceTitle": "Newly launched Seattle cancer therapy startup Callio Therapeutics raises $187M",
+   "sourceUrl": "https://www.geekwire.com/2025/newly-launched-seattle-cancer-therapy-startup-callio-therapeutics-raises-187m/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Bridgetown",
+   "stage": "Series A",
+   "amount": "$19M",
+   "date": "2025-02-26T13:00:00Z",
+   "sourceTitle": "Bridgetown, a Seattle startup that uses AI agents to automate research tasks, raises $19M",
+   "sourceUrl": "https://www.geekwire.com/2025/bridgetown-a-seattle-startup-that-uses-ai-agents-to-automate-research-tasks-raises-19m/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "SingleFile",
+   "stage": "funding",
+   "amount": "$9M",
+   "date": "2025-02-19T16:56:32Z",
+   "sourceTitle": "Compliance software startup SingleFile raises $9M",
+   "sourceUrl": "https://www.geekwire.com/2025/compliance-software-startup-singlefile-raises-9m/",
+   "firstSeen": "2026-11-27T04:43:54Z",
+   "board": "greenhouse",
+   "slug": "singlefile",
+   "careersUrl": "https://boards.greenhouse.io/singlefile",
+   "checkedAt": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Mast Reforestation",
+   "stage": "funding",
+   "amount": "$25M",
+   "date": "2025-02-11T18:57:51Z",
+   "sourceTitle": "Wildfire recovery and carbon capture company Mast Reforestation lands $25M",
+   "sourceUrl": "https://www.geekwire.com/2025/mast-reforestation-lands-25m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Official AI",
+   "stage": "seed",
+   "amount": "$2M",
+   "date": "2025-02-11T16:00:00Z",
+   "sourceTitle": "Official AI raises $2M for platform that enables authentic AI content creation for brands and talent",
+   "sourceUrl": "https://www.geekwire.com/2025/official-ai-raises-2m-for-platform-that-enables-authentic-ai-content-creation-for-brands-and-talent/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Dopl Technologies",
+   "stage": "pre-seed",
+   "amount": "$1.5M",
+   "date": "2025-02-05T23:11:16Z",
+   "sourceTitle": "Dopl Technologies raises $1.5M to fuel mission of delivering telerobotic care to underserved areas",
+   "sourceUrl": "https://www.geekwire.com/2025/dopl-technologies-raises-1-5m-to-fuel-mission-of-delivering-telerobotic-care-to-underserved-areas/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Atomo",
+   "stage": "funding",
+   "amount": "$7.8M",
+   "date": "2025-01-15T22:32:31Z",
+   "sourceTitle": "Beanless coffee maker Atomo raises $7.8M to fuel collaborations with new partners",
+   "sourceUrl": "https://www.geekwire.com/2025/beanless-coffee-maker-atomo-raises-7-8m-to-fuel-collaborations-with-new-partners/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Umoja Biopharma",
+   "stage": "Series C",
+   "amount": "$100M",
+   "date": "2025-01-14T16:55:02Z",
+   "sourceTitle": "Seattle immunotherapy startup Umoja Biopharma raises $100M",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-immunotherapy-startup-umoja-biopharma-raises-100m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Tune Therapeutics",
+   "stage": "funding",
+   "amount": "$175M",
+   "date": "2025-01-13T01:00:00Z",
+   "sourceTitle": "Seattle biotech startup Tune Therapeutics lands $175M to support clinical research",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-biotech-startup-tune-therapeutics-lands-175m-to-support-clinical-research/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Pipe17",
+   "stage": "Series A",
+   "amount": "$15.5M",
+   "date": "2025-01-10T17:05:12Z",
+   "sourceTitle": "E-commerce logistics startup Pipe17 lands $15.5M and hires its first COO",
+   "sourceUrl": "https://www.geekwire.com/2025/e-commerce-logistics-startup-pipe17-lands-15-5m-and-hires-its-first-coo/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Joylux",
+   "stage": "funding",
+   "amount": "$4.5M",
+   "date": "2024-12-16T21:59:08Z",
+   "sourceTitle": "Joylux lands $4.5M to grow women’s sexual health product company backed by Halle Berry",
+   "sourceUrl": "https://www.geekwire.com/2024/joylux-lands-4-5m-to-grow-womens-sexual-health-product-company-backed-by-halle-berry/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Modern Hydrogen",
+   "stage": "funding",
+   "amount": "$25M",
+   "date": "2024-12-12T19:40:20Z",
+   "sourceTitle": "Seattle-area startup Modern Hydrogen raises $25M to fuel clean energy efforts",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-area-startup-modern-hydrogen-raises-25m-to-fuel-clean-energy-efforts/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Lumen Orbit",
+   "stage": "pre-seed",
+   "amount": "$11M",
+   "date": "2024-12-11T19:47:19Z",
+   "sourceTitle": "Lumen Orbit, a Seattle-area startup that wants to put data centers in space, raises $11M",
+   "sourceUrl": "https://www.geekwire.com/2024/lumen-orbit-a-seattle-area-startup-that-wants-to-put-data-centers-in-space-raises-11m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Inflection",
+   "stage": "funding",
+   "amount": "$7.6M",
+   "date": "2024-12-05T15:14:48Z",
+   "sourceTitle": "Inflection, a Seattle startup that automates marketing for B2B companies, raises $7.6M",
+   "sourceUrl": "https://www.geekwire.com/2024/inflection-a-seattle-startup-that-automates-marketing-for-b2b-companies-raises-7-6m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Seasalt",
+   "stage": "seed",
+   "amount": "$4.2M",
+   "date": "2024-11-18T16:20:12Z",
+   "sourceTitle": "Seattle startup Seasalt raises $4.2M to help businesses answer customer messages with AI",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-seasalt-raises-4-2m-to-help-businesses-answer-customer-messages-with-ai/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Osyte",
+   "stage": "seed",
+   "amount": "$4M",
+   "date": "2024-11-14T21:02:34Z",
+   "sourceTitle": "Osyte, a Seattle startup that helps multi-asset investors optimize portfolios, raises $4M",
+   "sourceUrl": "https://www.geekwire.com/2024/osyte-a-seattle-startup-that-helps-multi-asset-investors-optimize-portfolios-raises-4m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "MIND",
+   "stage": "seed",
+   "amount": "$11M",
+   "date": "2024-11-14T05:27:18Z",
+   "sourceTitle": "Seattle startup MIND raises $11M to help companies protect data and prevent leaks",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-mind-raises-11m-to-help-companies-protect-data-and-prevent-leaks/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Starform",
+   "stage": "funding",
+   "amount": "$6M",
+   "date": "2024-11-12T18:20:06Z",
+   "sourceTitle": "Seattle indie game studio Starform raises $6M to bolster aerial combat sim ‘Metalstorm’",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-indie-game-studio-starform-raises-6m-to-bolster-aerial-combat-sim-metalstorm/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Inspectify",
+   "stage": "funding",
+   "amount": "$5.3M",
+   "date": "2024-10-30T22:25:38Z",
+   "sourceTitle": "Seattle home-inspection services startup Inspectify raises $5.3M",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-home-inspection-services-startup-inspectify-raises-5-3m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Picnic",
+   "stage": "funding",
+   "amount": "$5M",
+   "date": "2024-10-29T22:06:28Z",
+   "sourceTitle": "Pizza robot maker Picnic raises $5M as Seattle investor Andy Liu joins board",
+   "sourceUrl": "https://www.geekwire.com/2024/pizza-robot-maker-picnic-raises-5m-as-seattle-investor-andy-liu-joins-board/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Read AI",
+   "stage": "Series B",
+   "amount": "$50M",
+   "date": "2024-10-28T12:00:00Z",
+   "sourceTitle": "Seattle startup Read AI raises $50M to fuel ‘copilot everywhere’ vision for enterprise software",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-read-ai-raises-50m-to-fuel-copilot-everywhere-vision-for-enterprise-software/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Carbon Robotics",
+   "stage": "Series D",
+   "amount": "$70M",
+   "date": "2024-10-21T11:30:00Z",
+   "sourceTitle": "Future of farming? Carbon Robotics raises $70M for AI robots that blast weeds with lasers",
+   "sourceUrl": "https://www.geekwire.com/2024/future-of-farming-carbon-robotics-raises-70m-for-ai-robots-that-blast-weeds-with-lasers/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Live Aware Labs",
+   "stage": "seed",
+   "amount": "$4.8M",
+   "date": "2024-10-16T16:01:19Z",
+   "sourceTitle": "Seattle startup Live Aware raises $4.8M for new AI-powered game developer feedback system",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-live-aware-raises-4-8m-for-new-ai-powered-game-developer-feedback-system/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Fairway Bikes",
+   "stage": "seed",
+   "amount": "$1.25M",
+   "date": "2024-10-15T16:00:00Z",
+   "sourceTitle": "Seattle startup raises $1.25M for electric bike used on golf courses",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-raises-1-25m-for-electric-bike-used-on-golf-courses/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Vieu",
+   "stage": "seed",
+   "amount": "$11M",
+   "date": "2024-10-03T12:00:00Z",
+   "sourceTitle": "Seattle startup Vieu raises $11M to reimagine B2B sales outreach, with help from AI",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-vieu-raises-11m-to-reimagine-b2b-sales-outreach-with-help-from-ai/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Outgo",
+   "stage": "funding",
+   "amount": "$15M",
+   "date": "2024-09-24T13:00:00Z",
+   "sourceTitle": "Freight fintech startup Outgo raises $15M to help trucking carriers access cash quickly",
+   "sourceUrl": "https://www.geekwire.com/2024/freight-fintech-startup-outgo-raises-15m-to-help-trucking-carriers-access-cash-quickly/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Arzeda",
+   "stage": "funding",
+   "amount": "$38M",
+   "date": "2024-09-17T13:00:00Z",
+   "sourceTitle": "Seattle startup Arzeda raises $38M to create proteins for food, pharma, and other industries",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-arzeda-raises-38m-to-create-proteins-for-food-pharma-and-other-industries/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Viome",
+   "stage": "funding",
+   "amount": "$25M",
+   "date": "2024-09-10T13:00:00Z",
+   "sourceTitle": "Microbiome and diagnostics startup Viome lands $25M and hires former Amazon leader as COO",
+   "sourceUrl": "https://www.geekwire.com/2024/viome-a-microbiome-and-diagnostics-startup-lands-25m-and-hires-former-amazon-leader-as-coo/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "ZipBio",
+   "stage": "seed",
+   "amount": "$4M",
+   "date": "2024-09-05T16:13:03Z",
+   "sourceTitle": "ZipBio, a new Seattle biotech startup aiming to compress proteins, raises $4M",
+   "sourceUrl": "https://www.geekwire.com/2024/zipbio-a-new-seattle-biotech-startup-aiming-to-compress-proteins-raises-4m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Revefi",
+   "stage": "Series A",
+   "amount": "$20M",
+   "date": "2024-09-04T13:00:00Z",
+   "sourceTitle": "Data observability startup Revefi raises $20M to fuel new ‘AI data engineer’ product",
+   "sourceUrl": "https://www.geekwire.com/2024/data-observability-startup-revefi-raises-20m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Seeq",
+   "stage": "funding",
+   "amount": "$50M",
+   "date": "2024-08-06T16:59:34Z",
+   "sourceTitle": "Industrial analytics startup Seeq lands $50M to continue its growth",
+   "sourceUrl": "https://www.geekwire.com/2024/industrial-analytics-startup-seeq-lands-50m-to-continue-its-growth/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Outpace",
+   "stage": "funding",
+   "amount": "$144M",
+   "date": "2024-08-01T13:00:00Z",
+   "sourceTitle": "Protein design startup Outpace lands $144M to test treatments that target solid tumors",
+   "sourceUrl": "https://www.geekwire.com/2024/protein-design-startup-outpace-lands-144m-to-test-treatments-that-target-solid-tumors/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Terrantic",
+   "stage": "seed",
+   "amount": "$3.5M",
+   "date": "2024-07-26T14:15:00Z",
+   "sourceTitle": "Agtech startup Terrantic raises $3.5M to help food growers optimize yield and quality",
+   "sourceUrl": "https://www.geekwire.com/2024/agtech-startup-terrantic-raises-3-5m-to-help-food-growers-optimize-yield-and-quality/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Archera",
+   "stage": "Series B",
+   "amount": "$17M",
+   "date": "2024-07-25T13:00:00Z",
+   "sourceTitle": "Archera raises $17M to help companies get cloud discounts without long-term commitments",
+   "sourceUrl": "https://www.geekwire.com/2024/archera-raises-17m-to-help-companies-get-cloud-discounts-without-long-term-commitments/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Kestra Medical Technologies",
+   "stage": "funding",
+   "amount": "$196M",
+   "date": "2024-07-24T15:26:15Z",
+   "sourceTitle": "Kestra Medical Technologies lands $196M to boost commercialization of wearable defibrillator",
+   "sourceUrl": "https://www.geekwire.com/2024/kestra-medical-technologies-lands-196m-to-boost-commercialization-of-wearable-defibrillator/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Deako",
+   "stage": "Series B",
+   "amount": "$3.4M",
+   "date": "2024-07-23T21:42:27Z",
+   "sourceTitle": "Smart light switch startup Deako raises $3.4M to meet growing market demand",
+   "sourceUrl": "https://www.geekwire.com/2024/smart-light-switch-startup-deako-raises-3-4m-to-meet-growing-market-demand/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "QA Wolf",
+   "stage": "Series B",
+   "amount": "$36M",
+   "date": "2024-07-23T15:42:16Z",
+   "sourceTitle": "Seattle startup QA Wolf raises $36M to help companies spot bugs in software code",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-qa-wolf-raises-36m-to-help-companies-spot-bugs-in-software-code/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "LevelTen",
+   "stage": "Series D",
+   "amount": "$65M",
+   "date": "2024-07-16T10:00:00Z",
+   "sourceTitle": "LevelTen lands $65M from Microsoft, Google to expand clean energy marketplace services",
+   "sourceUrl": "https://www.geekwire.com/2024/levelten-lands-65m-to-expand-its-clean-energy-marketplaces-services-and-geographic-reach/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "RareCyte",
+   "stage": "funding",
+   "amount": "$20M",
+   "date": "2024-06-27T19:07:14Z",
+   "sourceTitle": "Seattle-based RareCyte raises $20M for cell analysis products",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-based-rarecyte-raises-20m-for-cell-analysis-products/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "TraceAir",
+   "stage": "Series B",
+   "amount": "$25M",
+   "date": "2024-05-29T17:37:13Z",
+   "sourceTitle": "TraceAir, a construction software startup targeting land development projects, raises $25M",
+   "sourceUrl": "https://www.geekwire.com/2024/traceair-a-construction-software-startup-targeting-land-development-projects-raises-25m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Abett",
+   "stage": "Series A",
+   "amount": "$11.6M",
+   "date": "2024-05-21T15:00:00Z",
+   "sourceTitle": "Seattle startup Abett lands $11.6M to help companies manage healthcare expenses",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-abett-lands-11-6m-to-help-companies-manage-healthcare-expenses/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "A-Alpha Bio",
+   "stage": "funding",
+   "amount": "$14.5M",
+   "date": "2024-05-21T14:42:23Z",
+   "sourceTitle": "A-Alpha Bio lands $14.5M from Department of Defense to prep for future biological threats",
+   "sourceUrl": "https://www.geekwire.com/2024/a-alpha-bio-lands-14-5m-from-department-of-defense-to-prep-for-future-biological-threats/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Tidal Vision",
+   "stage": "funding",
+   "amount": "$46.7M",
+   "date": "2024-05-17T15:41:21Z",
+   "sourceTitle": "Tidal Vision, a startup turning crab shells into a green industrial chemical, is raising fresh cash",
+   "sourceUrl": "https://www.geekwire.com/2024/tidal-vision-a-startup-turning-crab-shells-into-a-green-industrial-chemical-is-raising-fresh-cash/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Aerial",
+   "stage": "pre-seed",
+   "amount": "$2M",
+   "date": "2024-05-13T15:10:09Z",
+   "sourceTitle": "QuickBooks for legal docs: Seattle startup Aerial raises $2M to help companies organize key data",
+   "sourceUrl": "https://www.geekwire.com/2024/quickbooks-for-legal-docs-seattle-startup-aerial-raises-2m-to-help-companies-organize-key-data/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "PairTree",
+   "stage": "funding",
+   "amount": "$7.85M",
+   "date": "2024-04-09T15:29:48Z",
+   "sourceTitle": "PairTree, a Seattle startup that facilitates adoptions, raises more cash to fuel expansion",
+   "sourceUrl": "https://www.geekwire.com/2024/pairtree-a-seattle-startup-that-facilitates-adoptions-raises-more-cash-to-fuel-expansion/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Pollen Systems",
+   "stage": "funding",
+   "amount": "$2.4M",
+   "date": "2024-04-02T18:33:12Z",
+   "sourceTitle": "Pollen Systems raises $2.4M and expands global reach of its crop analysis platform",
+   "sourceUrl": "https://www.geekwire.com/2024/pollen-systems-raises-2-4m-and-expands-global-reach-of-its-crop-analysis-platform/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "TerraClear",
+   "stage": "Series A",
+   "amount": "$15M",
+   "date": "2024-04-01T15:09:30Z",
+   "sourceTitle": "Ag-tech startup TerraClear raises $15M to grow its end-to-end solution for ridding fields of rocks",
+   "sourceUrl": "https://www.geekwire.com/2024/ag-tech-startup-terraclear-raises-15m-to-grow-its-end-to-end-solution-for-ridding-fields-of-rocks/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Goodbill",
+   "stage": "funding",
+   "amount": "$2M",
+   "date": "2024-03-26T22:11:15Z",
+   "sourceTitle": "Goodbill raises $2M and expands customer base to unearth and challenge medical billing errors",
+   "sourceUrl": "https://www.geekwire.com/2024/goodbill-raises-2m-and-expands-customer-base-to-unearth-and-challenge-medical-billing-errors/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "OpenPipe",
+   "stage": "seed",
+   "amount": "$6.7M",
+   "date": "2024-03-26T11:30:00Z",
+   "sourceTitle": "Seattle startup OpenPipe raises $6.7M to help companies reduce costs for LLM models",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-openpipe-raises-6-7m-to-help-companies-reduce-costs-for-llm-development/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Pandion",
+   "stage": "Series B",
+   "amount": "$41.5M",
+   "date": "2024-03-22T14:10:34Z",
+   "sourceTitle": "Pandion, an e-commerce delivery startup led by Amazon Air founder, lands $41.5M",
+   "sourceUrl": "https://www.geekwire.com/2024/pandion-an-e-commerce-delivery-startup-led-by-amazon-air-founder-lands-41-5m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Enzzo",
+   "stage": "seed",
+   "amount": "$3M",
+   "date": "2024-03-05T16:24:29Z",
+   "sourceTitle": "Enzzo, a PSL spinout led by Seattle startup vet, raises $3M to use AI for hardware development",
+   "sourceUrl": "https://www.geekwire.com/2024/enzzo-a-psl-spinout-led-by-seattle-startup-vet-raises-3m-to-use-ai-for-hardware-development/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Healionics",
+   "stage": "funding",
+   "amount": "$5.5M",
+   "date": "2024-02-23T00:10:51Z",
+   "sourceTitle": "Healionics lands $5.5M to complete human trial of artificial blood vessel for dialysis patients",
+   "sourceUrl": "https://www.geekwire.com/2024/healionics-lands-5-5m-to-complete-human-trial-of-artificial-blood-vessel-for-dialysis-patients/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Finpilot",
+   "stage": "funding",
+   "amount": "$4M",
+   "date": "2024-02-22T18:30:00Z",
+   "sourceTitle": "Finpilot, a Seattle startup using generative AI to help financial analysts with research, raises $4M",
+   "sourceUrl": "https://www.geekwire.com/2024/finpilot-a-seattle-startup-using-generative-ai-to-help-financial-analysts-with-research-raises-4m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Planette",
+   "stage": "funding",
+   "amount": "$2.4M",
+   "date": "2024-02-14T21:31:09Z",
+   "sourceTitle": "Techstars Seattle startup Planette raises $2.4M for AI-boosted climate prediction tech",
+   "sourceUrl": "https://www.geekwire.com/2024/techstars-seattle-startup-planette-raises-2-4m-for-ai-boosted-weather-and-climate-prediction-tech/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "ProfoundBio",
+   "stage": "funding",
+   "amount": "$112M",
+   "date": "2024-02-13T17:51:22Z",
+   "sourceTitle": "ProfoundBio raises $112M to support clinical-stage oncology pipeline",
+   "sourceUrl": "https://www.geekwire.com/2024/profoundbio-raises-112m-to-support-clinical-stage-oncology-pipeline/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Validated",
+   "stage": "pre-seed",
+   "amount": "$1.2M",
+   "date": "2024-02-06T16:28:36Z",
+   "sourceTitle": "Validated, a Seattle startup that uses AI to generate ads for product insights, raises $1.2M",
+   "sourceUrl": "https://www.geekwire.com/2024/validated-a-seattle-startup-that-uses-ai-to-generate-ads-for-product-insights-raises-1-2m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Cimba.ai",
+   "stage": "pre-seed",
+   "amount": "$1.25M",
+   "date": "2024-02-06T15:40:57Z",
+   "sourceTitle": "Ex-Amazon and Airbnb engineers raise $1.25M for enterprise AI agent developer Cimba.ai",
+   "sourceUrl": "https://www.geekwire.com/2024/ex-amazon-and-airbnb-engineers-raise-1-25m-for-enterprise-ai-agent-developer-cimba-ai/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Medsense Health",
+   "stage": "funding",
+   "amount": "$500K",
+   "date": "2024-02-02T15:56:07Z",
+   "sourceTitle": "Medsense Health, which sells sensors for remote medication management, raises $500K",
+   "sourceUrl": "https://www.geekwire.com/2024/medsense-health-which-sells-sensors-for-remote-medication-management-raises-500k/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Nomad Go",
+   "stage": "funding",
+   "amount": "$1.5M",
+   "date": "2024-01-24T20:45:29Z",
+   "sourceTitle": "Nomad Go raises $1.5M to power computer vision software that automatically counts inventory",
+   "sourceUrl": "https://www.geekwire.com/2024/nomad-go-raises-1-5m-to-power-computer-vision-software-that-automatically-counts-inventory/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Steller",
+   "stage": "funding",
+   "amount": "$5M",
+   "date": "2024-01-11T16:03:36Z",
+   "sourceTitle": "Travel planning startup led by longtime tech investor combines human insight and AI",
+   "sourceUrl": "https://www.geekwire.com/2024/travel-planning-startup-led-by-longtime-tech-investor-combines-human-insight-and-ai/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Symbiosys",
+   "stage": "Series A",
+   "amount": "$9M",
+   "date": "2024-01-09T22:52:18Z",
+   "sourceTitle": "Symbiosys, an adtech startup led by former Google and Microsoft exec, raises $9M",
+   "sourceUrl": "https://www.geekwire.com/2024/symbiosys-an-adtech-startup-led-by-former-google-and-microsoft-exec-raises-9m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Charmed",
+   "stage": "funding",
+   "amount": "$500K",
+   "date": "2024-01-09T18:00:00Z",
+   "sourceTitle": "Seattle gaming startup Charmed lands $500K and reveals new 3D character design tool",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-gaming-startup-charmed-lands-500k-and-reveals-new-3d-character-design-tool/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Recurrent",
+   "stage": "Series A",
+   "amount": "$16M",
+   "date": "2024-01-08T14:00:00Z",
+   "sourceTitle": "Seattle startup Recurrent raises $16M, aims to be standard for scoring used EV batteries",
+   "sourceUrl": "https://www.geekwire.com/2024/seattle-startup-recurrent-raises-16m-aims-to-be-standard-for-scoring-used-ev-batteries/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Strike Graph",
+   "stage": "Series A",
+   "amount": "$1.5M",
+   "date": "2023-12-18T14:00:00Z",
+   "sourceTitle": "Compliance software startup Strike Graph raises more cash",
+   "sourceUrl": "https://www.geekwire.com/2023/compliance-software-startup-strike-graph-raises-more-cash/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Parse Biosciences",
+   "stage": "Series C",
+   "amount": "$50M",
+   "date": "2023-12-14T13:00:00Z",
+   "sourceTitle": "Parse Biosciences raises $50M for single cell sequencing tech",
+   "sourceUrl": "https://www.geekwire.com/2023/parse-biosciences-raises-50m-for-single-cell-sequencing-tech/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Zuper",
+   "stage": "Series B",
+   "amount": "$32M",
+   "date": "2023-12-13T15:58:48Z",
+   "sourceTitle": "Field operations software startup Zuper raises $32M",
+   "sourceUrl": "https://www.geekwire.com/2023/field-operations-software-startup-zuper-raises-32m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Carbon",
+   "stage": "seed",
+   "amount": "$1.3M",
+   "date": "2023-12-08T15:36:10Z",
+   "sourceTitle": "Seattle startup Carbon raises $1.3M to help developers manage external data for LLMs",
+   "sourceUrl": "https://www.geekwire.com/2023/seattle-startup-carbon-raises-1-3m-to-help-developers-manage-external-data-for-llms/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Center",
+   "stage": "Series C",
+   "amount": "$30M",
+   "date": "2023-12-05T13:00:00Z",
+   "sourceTitle": "Center lands $30M to bolster corporate expense software, explore potential bank partnerships",
+   "sourceUrl": "https://www.geekwire.com/2023/center-lands-30m-to-bolster-corporate-expense-software-explore-potential-bank-partnerships/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Joon Care",
+   "stage": "funding",
+   "amount": "$6M",
+   "date": "2023-12-04T16:41:42Z",
+   "sourceTitle": "Seattle startup Joon raises $6M to expand online mental health therapy for youth",
+   "sourceUrl": "https://www.geekwire.com/2023/seattle-startup-joon-raises-6m-to-expand-online-mental-health-therapy-for-youth/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Levanta",
+   "stage": "funding",
+   "amount": "$1M",
+   "date": "2023-12-01T20:13:36Z",
+   "sourceTitle": "Levanta, which connects influencers and Amazon sellers for affiliate partnerships, raises $1M",
+   "sourceUrl": "https://www.geekwire.com/2023/levanta-a-startup-that-connects-influencers-and-amazon-sellers-for-affiliate-partnerships-raises-1m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Retrocausal",
+   "stage": "funding",
+   "amount": "$5.3M",
+   "date": "2023-11-30T16:02:11Z",
+   "sourceTitle": "Manufacturing software startup Retrocausal raises $5.3M to help workers assemble products",
+   "sourceUrl": "https://www.geekwire.com/2023/manufacturing-software-startup-retrocasual-raises-5-3m-to-help-workers-assemble-products/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Tola Capital",
+   "stage": "funding",
+   "amount": "$230M",
+   "date": "2023-11-29T16:50:42Z",
+   "sourceTitle": "Tola Capital raises $230M for third fund to help Seattle firm back enterprise software startups",
+   "sourceUrl": "https://www.geekwire.com/2023/tola-capital-raises-230m-for-third-fund-to-help-seattle-area-firm-back-enterprise-software-startups/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Expanso",
+   "stage": "seed",
+   "amount": "$7.5M",
+   "date": "2023-11-21T15:24:34Z",
+   "sourceTitle": "Expanso, a distributed data processing startup led by Google and Microsoft vets, raises $7.5M",
+   "sourceUrl": "https://www.geekwire.com/2023/expanso-a-distributed-data-processing-startup-led-by-google-and-microsoft-vets-raises-7-5m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Zuplo",
+   "stage": "seed",
+   "amount": "$9M",
+   "date": "2023-11-08T16:00:00Z",
+   "sourceTitle": "Seattle-area startup Zuplo lands $9M to help companies launch and manage their APIs",
+   "sourceUrl": "https://www.geekwire.com/2023/seattle-area-startup-zuplo-lands-9m-to-help-companies-launch-and-manage-their-apis/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "KeySavvy",
+   "stage": "seed",
+   "amount": "$2M",
+   "date": "2023-11-06T19:22:21Z",
+   "sourceTitle": "Porsche invests in Seattle startup KeySavvy, which aims to safeguard used car sales",
+   "sourceUrl": "https://www.geekwire.com/2023/porsche-invests-in-seattle-startup-keysavvy-which-aims-to-safeguard-used-car-sales/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Skytap",
+   "stage": "funding",
+   "amount": "$18M",
+   "date": "2023-10-19T15:48:47Z",
+   "sourceTitle": "Seattle cloud company Skytap lands $18M",
+   "sourceUrl": "https://www.geekwire.com/2023/seattle-cloud-company-skytap-lands-18m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Pulumi",
+   "stage": "seed",
+   "amount": "$41M",
+   "date": "2023-10-03T12:00:00Z",
+   "sourceTitle": "Cloud startup Pulumi raises $41M from Madrona, NEA to grow ‘infrastructure as code’ platform",
+   "sourceUrl": "https://www.geekwire.com/2023/cloud-startup-pulumi-raises-41m-from-madrona-nea-to-grow-infrastructure-as-code-platform/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "PortX",
+   "stage": "Series B",
+   "amount": "$16.5M",
+   "date": "2023-09-27T13:00:00Z",
+   "sourceTitle": "Fintech startup PortX raises $16.5M and forms new subsidiary to serve credit unions",
+   "sourceUrl": "https://www.geekwire.com/2023/fintech-startup-portx-raises-16-5m-and-forms-new-subsidiary-to-serve-credit-unions/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "MotherDuck",
+   "stage": "Series B",
+   "amount": "$52.5M",
+   "date": "2023-09-20T14:18:32Z",
+   "sourceTitle": "Seattle startup MotherDuck raises $52.5M at a $400M valuation to fuel DuckDB analytics platform",
+   "sourceUrl": "https://www.geekwire.com/2023/seattle-startup-motherduck-raises-52-5m-at-a-400m-valuation-to-fuel-duckdb-analytics-platform/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Gable.ai",
+   "stage": "seed",
+   "amount": "$7M",
+   "date": "2023-09-12T19:45:05Z",
+   "sourceTitle": "‘GitHub for data’: Convoy vets land $7M for data collaboration platform",
+   "sourceUrl": "https://www.geekwire.com/2023/github-for-data-convoy-vets-land-7m-for-data-collaboration-platform/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Sironix Renewables",
+   "stage": "funding",
+   "amount": "$1.4M",
+   "date": "2023-08-30T19:31:00Z",
+   "sourceTitle": "Seattle clean tech startup lands $1.4M for eco-friendly soy-based suds for shampoos, detergents",
+   "sourceUrl": "https://www.geekwire.com/2023/seattle-clean-tech-startup-lands-1-4m-for-eco-friendly-soy-based-suds-for-shampoos-detergents/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Hyperproof",
+   "stage": "funding",
+   "amount": "$40M",
+   "date": "2023-08-30T15:08:43Z",
+   "sourceTitle": "Seattle-area startup Hyperproof lands $40M for risk and compliance software",
+   "sourceUrl": "https://www.geekwire.com/2023/seattle-area-startup-hyperproof-lands-40m-for-risk-and-compliance-software/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Electric Era",
+   "stage": "funding",
+   "amount": "$11.5M",
+   "date": "2023-08-22T18:07:53Z",
+   "sourceTitle": "EV charging startup Electric Era lands $11.5M to deploy AI- and battery-supported stations",
+   "sourceUrl": "https://www.geekwire.com/2023/ev-charging-startup-electric-era-lands-11-5m-to-deploy-ai-and-battery-supported-stations/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Viome Life Sciences",
+   "stage": "Series C",
+   "amount": "$86.5M",
+   "date": "2023-08-18T14:21:43Z",
+   "sourceTitle": "Genomic testing startup Viome closes $86.5M round, partners with CVS to sell at-home kits",
+   "sourceUrl": "https://www.geekwire.com/2023/genomic-testing-startup-viome-closes-86-5m-round-partners-with-cvs-to-sell-at-home-kits/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "INRIX",
+   "stage": "funding",
+   "amount": "$70M",
+   "date": "2023-08-08T17:11:13Z",
+   "sourceTitle": "Transportation data analytics provider INRIX lands $70M from Morgan Stanley",
+   "sourceUrl": "https://www.geekwire.com/2023/transportation-data-analytics-provider-inrix-lands-70m-from-morgan-stanley/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Proprio",
+   "stage": "Series B",
+   "amount": "$43M",
+   "date": "2023-07-27T14:00:00Z",
+   "sourceTitle": "Fresh off FDA milestone, Proprio lands $43M as it readies surgical navigation tech",
+   "sourceUrl": "https://www.geekwire.com/2023/fresh-off-fda-milestone-propio-lands-43m-as-it-readies-surgical-navigation-tech/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Protect AI",
+   "stage": "funding",
+   "amount": "$35M",
+   "date": "2023-07-26T13:00:00Z",
+   "sourceTitle": "Seattle startup that helps companies protect their AI and machine learning code raises $35M",
+   "sourceUrl": "https://www.geekwire.com/2023/seattle-startup-that-helps-companies-protect-their-machine-learning-code-raises-35m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "CurvaFix",
+   "stage": "funding",
+   "amount": "$39M",
+   "date": "2023-07-14T11:30:00Z",
+   "sourceTitle": "CurvaFix lands $39M to boost curved surgical device used for pelvic fracture treatment",
+   "sourceUrl": "https://www.geekwire.com/2023/curvafix-raises-39m-aims-to-improve-pelvic-fracture-treatment-with-curved-surgical-device/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Tangibly",
+   "stage": "seed",
+   "amount": "$6.5M",
+   "date": "2023-07-13T15:00:00Z",
+   "sourceTitle": "Tangibly, a Seattle startup that uses AI to help companies protect trade secrets, raises $6.5M",
+   "sourceUrl": "https://www.geekwire.com/2023/tangibly-a-seattle-startup-that-uses-ai-to-help-companies-protect-trade-secrets-raises-6-5m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Jirav",
+   "stage": "funding",
+   "amount": "$20M",
+   "date": "2023-07-12T19:28:34Z",
+   "sourceTitle": "Financial budgeting and analytics platform Jirav raises $20M",
+   "sourceUrl": "https://www.geekwire.com/2023/financial-budgeting-and-analytics-platform-jirav-raises-20m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "DexCare",
+   "stage": "funding",
+   "amount": "$75M",
+   "date": "2023-06-21T16:31:56Z",
+   "sourceTitle": "Patient appointment booking platform DexCare lands $75M in one of the year’s largest deals",
+   "sourceUrl": "https://www.geekwire.com/2023/patient-appointment-booking-platform-dexcare-lands-75m-in-one-of-the-years-largest-deals/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Madrona Venture Labs",
+   "stage": "funding",
+   "amount": "$11M",
+   "date": "2023-06-21T14:00:00Z",
+   "sourceTitle": "Madrona Venture Labs raises $11M for fifth fund as studio doubles down on AI startups",
+   "sourceUrl": "https://www.geekwire.com/2023/madrona-venture-labs-raises-11m-for-fifth-fund-as-studio-doubles-down-on-ai-startups/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Outbound AI",
+   "stage": "funding",
+   "amount": "$16M",
+   "date": "2023-06-21T13:00:00Z",
+   "sourceTitle": "Healthcare billing and claims automation startup Outbound AI raises $16M",
+   "sourceUrl": "https://www.geekwire.com/2023/healthcare-billing-and-claims-automation-startup-outbound-ai-raises-16m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Picket Homes",
+   "stage": "Series B",
+   "amount": "$20M",
+   "date": "2023-06-20T14:00:00Z",
+   "sourceTitle": "Real estate investment and property management platform Picket lands $20M",
+   "sourceUrl": "https://www.geekwire.com/2023/real-estate-investment-and-property-management-platform-picket-lands-20m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Tagboard",
+   "stage": "funding",
+   "amount": "$4M",
+   "date": "2023-06-13T15:57:49Z",
+   "sourceTitle": "Tagboard lands $4M to boost cloud production studio, build off partnerships with ESPN and NBA",
+   "sourceUrl": "https://www.geekwire.com/2023/tagboard-lands-4m-to-boost-cloud-production-studio-build-off-partnerships-with-espn-nba/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Mozart Therapeutics",
+   "stage": "funding",
+   "amount": "$25M",
+   "date": "2023-06-07T13:41:10Z",
+   "sourceTitle": "Mozart Therapeutics lands $25M to develop therapies for autoimmune, inflammatory diseases",
+   "sourceUrl": "https://www.geekwire.com/2023/mozart-therapeutics-lands-25m-to-boost-development-of-remedies-for-celiac-and-crohns-disease/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Nori",
+   "stage": "funding",
+   "amount": "$6.25M",
+   "date": "2023-06-06T18:29:41Z",
+   "sourceTitle": "Carbon removal startup Nori raises $6.25M from Toyota and others; names new CEO",
+   "sourceUrl": "https://www.geekwire.com/2023/carbon-removal-startup-nori-raises-6-25m-from-toyota-and-others-names-new-ceo/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Groopit",
+   "stage": "funding",
+   "amount": "$3.5M",
+   "date": "2023-05-18T13:00:00Z",
+   "sourceTitle": "Employee insights startup Groopit raises $3.5M, plans to develop generative AI tools",
+   "sourceUrl": "https://www.geekwire.com/2023/employee-data-crowdsourcing-startup-groopit-raises-3-5m-plans-to-develop-generative-ai-tools/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Cascade Health",
+   "stage": "pre-seed",
+   "amount": "$2M",
+   "date": "2023-05-15T13:00:00Z",
+   "sourceTitle": "Seattle startup raises $2M to make healthcare pricing data more transparent",
+   "sourceUrl": "https://www.geekwire.com/2023/seattle-startup-raises-2m-to-help-to-make-healthcare-pricing-data-more-transparent/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Genemod",
+   "stage": "funding",
+   "amount": "$4.5M",
+   "date": "2023-05-05T16:19:49Z",
+   "sourceTitle": "Genemod lands $4.5M for life sciences data storage and collaboration platform",
+   "sourceUrl": "https://www.geekwire.com/2023/genemod-lands-4-5m-for-life-sciences-data-storage-and-collaboration-platform/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "GoodShip",
+   "stage": "seed",
+   "amount": "$5M",
+   "date": "2023-05-04T22:31:48Z",
+   "sourceTitle": "Trucking analytics startup GoodShip raises $5M",
+   "sourceUrl": "https://www.geekwire.com/2023/trucking-analytics-startup-goodship-raises-5m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Foundation",
+   "stage": "seed",
+   "amount": "$3M",
+   "date": "2023-05-01T16:22:54Z",
+   "sourceTitle": "Foundation, a wholesale e-commerce startup led by former Staples exec, lands $3M",
+   "sourceUrl": "https://www.geekwire.com/2023/foundation-a-seattle-based-wholesale-e-commerce-startup-led-by-a-former-staples-exec-lands-3m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Capria",
+   "stage": "funding",
+   "amount": "$100M",
+   "date": "2023-04-25T17:26:09Z",
+   "sourceTitle": "Seattle VC fund Capria raises $100M to invest in ‘Global South’ startups",
+   "sourceUrl": "https://www.geekwire.com/2023/seattle-based-vc-fund-raises-100m-to-invest-in-global-south-startups/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Avalanche Energy",
+   "stage": "Series A",
+   "amount": "$40M",
+   "date": "2023-04-24T13:00:00Z",
+   "sourceTitle": "‘Desktop fusion’ startup Avalanche Energy lands $40M and logs new tech achievement",
+   "sourceUrl": "https://www.geekwire.com/2023/desktop-fusion-startup-avalanche-energy-lands-40m-and-logs-new-tech-achievement/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Payscore",
+   "stage": "funding",
+   "amount": "$2.2M",
+   "date": "2023-04-05T14:51:04Z",
+   "sourceTitle": "Payscore, a startup that helps property managers and car dealerships verify income, raises $2.2M",
+   "sourceUrl": "https://www.geekwire.com/2023/payscore-a-startup-that-helps-property-managers-and-car-dealerships-verify-income-raises-2-2m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "TipHaus",
+   "stage": "funding",
+   "amount": "$3.5M",
+   "date": "2023-04-03T15:12:49Z",
+   "sourceTitle": "TipHaus, which helps companies distribute tips, raises $3.5M and launches banking tool",
+   "sourceUrl": "https://www.geekwire.com/2023/tiphaus-which-helps-companies-distribute-tips-raises-3-5m-and-launches-banking-tool/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Aiberry",
+   "stage": "funding",
+   "amount": "$8M",
+   "date": "2023-03-08T13:00:00Z",
+   "sourceTitle": "Seattle-area startup using AI for mental health screening tech raises $8M",
+   "sourceUrl": "https://www.geekwire.com/2023/startup-developing-an-ai-powered-mental-health-screening-tool-lands-8m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Sentio",
+   "stage": "funding",
+   "amount": "$6.4M",
+   "date": "2023-02-23T01:13:51Z",
+   "sourceTitle": "Blockchain observability platform Sentio raises $6.4M",
+   "sourceUrl": "https://www.geekwire.com/2023/blockchain-observability-platform-sentio-raises-6-4m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Kaito",
+   "stage": "funding",
+   "amount": "$5.3M",
+   "date": "2023-02-23T00:23:15Z",
+   "sourceTitle": "Google for crypto: Seattle search engine startup Kaito raises $5.3M",
+   "sourceUrl": "https://www.geekwire.com/2023/google-for-crypto-seattle-search-engine-startup-kaito-raises-5-3m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Lightfox Games",
+   "stage": "funding",
+   "amount": "$6M",
+   "date": "2023-02-15T21:37:01Z",
+   "sourceTitle": "Lightfox, the Seattle-based mobile game developer behind ‘Knight’s Edge,’ raises $6M",
+   "sourceUrl": "https://www.geekwire.com/2023/lightfox-the-seattle-based-mobile-game-developer-behind-knights-edge-raises-6m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Whalesync",
+   "stage": "funding",
+   "amount": "$1.8M",
+   "date": "2023-01-27T01:14:49Z",
+   "sourceTitle": "Whalesync, a Seattle startup syncing data between software apps, raises $1.8M",
+   "sourceUrl": "https://www.geekwire.com/2023/whalesync-a-seattle-startup-syncing-data-between-software-apps-raises-1-8m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "SirionLabs",
+   "stage": "Series D",
+   "amount": "$25M",
+   "date": "2023-01-04T01:01:06Z",
+   "sourceTitle": "Contract lifecycle management startup SirionLabs raises $25M",
+   "sourceUrl": "https://www.geekwire.com/2023/contract-lifecycle-management-startup-sirionlabs-raises-25m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Keyplay",
+   "stage": "funding",
+   "amount": "$3M",
+   "date": "2022-12-07T16:00:00Z",
+   "sourceTitle": "Keyplay, a new Seattle startup led by veteran entrepreneur Adam Schoenfeld, raises $3M",
+   "sourceUrl": "https://www.geekwire.com/2022/keyplay-a-new-seattle-startup-led-by-veteran-entrepreneur-adam-schoenfeld-raises-3m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Bonum Therapeutics",
+   "stage": "funding",
+   "amount": "$93M",
+   "date": "2022-11-15T12:00:00Z",
+   "sourceTitle": "Seattle biotech startup born out of a Roche buyout lands $93M to advance therapies",
+   "sourceUrl": "https://www.geekwire.com/2022/bonum-therapeutics-raises-93m-to-advance-tech-platform-retained-after-roche-buyout/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Spiral",
+   "stage": "funding",
+   "amount": "$1.25M",
+   "date": "2022-11-11T15:44:33Z",
+   "sourceTitle": "Spiral, a Seattle startup that analyzes customer feedback, raises $1.25M",
+   "sourceUrl": "https://www.geekwire.com/2022/spiral-a-seattle-startup-that-analyzes-customer-feedback-raises-1-25m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Needl",
+   "stage": "funding",
+   "amount": "$2.5M",
+   "date": "2022-10-26T13:00:00Z",
+   "sourceTitle": "Needl, a YC startup based in Seattle, raises $2.5M to build ‘a search bar for your entire life’",
+   "sourceUrl": "https://www.geekwire.com/2022/needl-a-yc-startup-based-in-seattle-raises-2-5m-to-build-a-search-bar-for-your-entire-life/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Lithos",
+   "stage": "seed",
+   "amount": "$6.3M",
+   "date": "2022-10-20T17:53:06Z",
+   "sourceTitle": "Lithos, a Seattle agtech startup that uses basalt rocks to help farmers remove carbon, lands $6.3M",
+   "sourceUrl": "https://www.geekwire.com/2022/carbon-removal-company-lithos-lands-6-3m-for-ag-focused-climate-tech/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Xembly",
+   "stage": "funding",
+   "amount": "$15M",
+   "date": "2022-10-04T16:30:50Z",
+   "sourceTitle": "Seattle startup Xembly raises $15M for AI ‘chief of staff’ that automates tedious conversational tasks",
+   "sourceUrl": "https://www.geekwire.com/2022/seattle-startup-xembly-raises-15m-for-ai-chief-of-staff-that-automates-tedious-conversational-tasks/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "QorusDocs",
+   "stage": "funding",
+   "amount": "$10M",
+   "date": "2022-10-04T13:00:00Z",
+   "sourceTitle": "QorusDocs, which helps companies create and manage sales proposals, raises $10M",
+   "sourceUrl": "https://www.geekwire.com/2022/qorusdocs-which-helps-companies-create-and-manage-sales-proposals-raises-10m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Cheq",
+   "stage": "funding",
+   "amount": "$8M",
+   "date": "2022-09-21T10:00:00Z",
+   "sourceTitle": "Seattle-area startup Cheq lands $8M for mobile ordering platform used in stadiums, restaurants",
+   "sourceUrl": "https://www.geekwire.com/2022/seattle-startup-mobile-ordering-platform/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Spot",
+   "stage": "seed",
+   "amount": "$5.5M",
+   "date": "2022-09-20T16:00:00Z",
+   "sourceTitle": "Spot, a Seattle metaverse startup for hybrid workforces, raises $5.5M",
+   "sourceUrl": "https://www.geekwire.com/2022/spot-a-seattle-metaverse-startup-for-hybrid-workforces-raises-5-5m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Taqtile",
+   "stage": "funding",
+   "amount": "$5M",
+   "date": "2022-09-16T14:30:00Z",
+   "sourceTitle": "Taqtile, a Seattle startup that sells AR-enabled job training tech, raises $5M",
+   "sourceUrl": "https://www.geekwire.com/2022/taqtile-raises-5m-a-startup-that-sells-ar-enabled-job-training-tech/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "98point6",
+   "stage": "funding",
+   "amount": "$20M",
+   "date": "2022-09-01T13:00:00Z",
+   "sourceTitle": "Telehealth startup 98point6 raises $20M, inks deal with health system to license tech",
+   "sourceUrl": "https://www.geekwire.com/2022/telehealth-startup-98point6-raises-20m-inks-deal-with-health-system-to-license-tech/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Alongside",
+   "stage": "funding",
+   "amount": "$5.5M",
+   "date": "2022-08-24T15:41:00Z",
+   "sourceTitle": "Seattle mental health startup Alongside raises $5.5M, aims to test app with schools",
+   "sourceUrl": "https://www.geekwire.com/2022/seattle-mental-health-startup-alongside-raises-5-5m-aims-to-test-app-with-schools/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Nortis",
+   "stage": "funding",
+   "amount": "$6M",
+   "date": "2022-08-19T22:59:16Z",
+   "sourceTitle": "Nortis, a Seattle-based startup developing ‘organ-on-a-chip’ tech, raises cash",
+   "sourceUrl": "https://www.geekwire.com/2022/nortis-a-seattle-based-startup-developing-organ-on-a-chip-tech-raises-cash/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "HDT Bio",
+   "stage": "funding",
+   "amount": "$1.8M",
+   "date": "2022-08-11T14:56:04Z",
+   "sourceTitle": "Seattle startup HDT Bio lands $1.8M U.S. Army grant to develop nasal spray against viruses",
+   "sourceUrl": "https://www.geekwire.com/2022/seattle-startup-hdt-bio-lands-1-8m-u-s-army-grant-to-develop-nasal-spray-against-viruses/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "SEngine Precision Medicine",
+   "stage": "funding",
+   "amount": "$10M",
+   "date": "2022-08-10T16:44:36Z",
+   "sourceTitle": "Fred Hutch spinout lands $10M for precision test to guide cancer treatment, develop drugs",
+   "sourceUrl": "https://www.geekwire.com/2022/fred-hutch-spinout-lands-10m-for-precision-test-to-guide-cancer-treatment-develop-drugs/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Ozette",
+   "stage": "funding",
+   "amount": "$26M",
+   "date": "2022-07-28T11:00:00Z",
+   "sourceTitle": "Seattle biotech startup Ozette lands $26M from Microsoft, Madrona, others to analyze immune cells",
+   "sourceUrl": "https://www.geekwire.com/2022/madrona-backed-biotech-startup-ozette-lands-26-million-for-immune-cell-tech/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Uplevel",
+   "stage": "funding",
+   "amount": "$20M",
+   "date": "2022-07-13T13:51:30Z",
+   "sourceTitle": "Uplevel, a Seattle startup that measures engineer productivity, raises $20M",
+   "sourceUrl": "https://www.geekwire.com/2022/uplevel-a-seattle-startup-that-measures-engineer-productivity-raises-20m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Major League Cricket",
+   "stage": "Series A",
+   "amount": "$120M",
+   "date": "2022-05-18T17:39:02Z",
+   "sourceTitle": "Major League Cricket secures $120M funding from Microsoft CEO and others to launch in U.S.",
+   "sourceUrl": "https://www.geekwire.com/2022/major-league-cricket-secures-120m-funding-from-microsoft-ceo-and-others-to-launch-in-u-s/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Arrived Homes",
+   "stage": "Series A",
+   "amount": "$25M",
+   "date": "2022-05-17T16:33:45Z",
+   "sourceTitle": "Rental property investment startup Arrived Homes raises $25M to fund further expansion",
+   "sourceUrl": "https://www.geekwire.com/2022/rental-property-investment-startup-arrived-homes-raises-25m-to-fund-further-expansion/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Flying Fish",
+   "stage": "funding",
+   "amount": "$70M",
+   "date": "2022-05-17T14:28:05Z",
+   "sourceTitle": "Flying Fish raises $70M fund and will cast net beyond Seattle to back more AI/ML startups",
+   "sourceUrl": "https://www.geekwire.com/2022/flying-fish-raises-70m-fund-and-will-cast-net-beyond-seattle-to-back-more-ai-ml-startups/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Tignis",
+   "stage": "funding",
+   "amount": "$7.2M",
+   "date": "2022-05-12T13:00:00Z",
+   "sourceTitle": "Seattle startup Tignis raises $7.2M to fuel use of AI process control in semiconductor manufacturing",
+   "sourceUrl": "https://www.geekwire.com/2022/seattle-startup-tignis-raises-7-2m-to-fuel-use-of-ai-process-control-in-semiconductor-manufacturing/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Heard",
+   "stage": "Series A",
+   "amount": "$10M",
+   "date": "2022-05-06T17:27:17Z",
+   "sourceTitle": "Seattle startup Heard raises $10M to ease administrative load for mental health providers",
+   "sourceUrl": "https://www.geekwire.com/2022/seattle-startup-heard-raises-10m-to-ease-administrative-load-for-mental-health-providers/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Edge Delta",
+   "stage": "funding",
+   "amount": "$63M",
+   "date": "2022-05-03T16:00:00Z",
+   "sourceTitle": "Edge Delta raises $63M to help companies analyze observability data ‘at its source’",
+   "sourceUrl": "https://www.geekwire.com/2022/edge-delta-lands-63m-to-help-companies-analyze-observability-data-at-its-source/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Possible Finance",
+   "stage": "funding",
+   "amount": "$20M",
+   "date": "2022-05-03T15:00:00Z",
+   "sourceTitle": "Seattle fintech startup Possible Finance lands $20M to launch ‘safest credit card ever’",
+   "sourceUrl": "https://www.geekwire.com/2022/seattle-fintech-startup-possible-finance-lands-20m-to-launch-safest-credit-card-ever/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "ModusBox",
+   "stage": "Series A",
+   "amount": "$7.5M",
+   "date": "2022-04-28T13:05:00Z",
+   "sourceTitle": "Seattle startup ModusBox raises $7.5M to meet demand for its financial services integration tech",
+   "sourceUrl": "https://www.geekwire.com/2022/seattle-startup-modusbox-raises-7-5m-to-meet-demand-for-its-financial-services-integration-tech/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Indicio",
+   "stage": "seed",
+   "amount": "$3.5M",
+   "date": "2022-04-25T19:26:35Z",
+   "sourceTitle": "Indicio lands $3.5M to help companies verify digital credentials using blockchain tech",
+   "sourceUrl": "https://www.geekwire.com/2022/indicio-lands-3-5m-to-help-companies-verify-digital-credentials-using-blockchain-tech/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Formations",
+   "stage": "funding",
+   "amount": "$8M",
+   "date": "2022-04-13T23:06:21Z",
+   "sourceTitle": "Funding news: Fintech startup for freelancers lands $8M; electric car data platform raises $4.5M",
+   "sourceUrl": "https://www.geekwire.com/2022/funding-news-fintech-startup-for-freelancers-lands-8m-electric-car-data-platform-raises-4-5m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Teal",
+   "stage": "Series A",
+   "amount": "$10.8M",
+   "date": "2022-03-29T15:28:36Z",
+   "sourceTitle": "Seattle IoT networking startup Teal lands $10.8M",
+   "sourceUrl": "https://www.geekwire.com/2022/seattle-area-iot-startup-teal-lands-10-8m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Affini-T Therapeutics",
+   "stage": "funding",
+   "amount": "$175M",
+   "date": "2022-03-22T11:30:00Z",
+   "sourceTitle": "Fred Hutch spinout Affini-T Therapeutics lands $175M for cell therapies to treat solid tumors",
+   "sourceUrl": "https://www.geekwire.com/2022/affini-t-therapeutics-land-175m-to-advance-therapies-to-treat-solid-tumors/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Doxo",
+   "stage": "Series C",
+   "amount": "$18.5M",
+   "date": "2022-03-16T16:13:22Z",
+   "sourceTitle": "Bill pay software startup Doxo lands $18.5M",
+   "sourceUrl": "https://www.geekwire.com/2022/bill-pay-software-startup-doxo-lands-18-5m/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Swiftly",
+   "stage": "Series B",
+   "amount": "$100M",
+   "date": "2022-03-08T15:50:09Z",
+   "sourceTitle": "Seattle startup Swiftly lands $100M to help grocers fend off Amazon and other e-commerce players",
+   "sourceUrl": "https://www.geekwire.com/2022/seattle-startup-swiftly-lands-100m-to-help-grocers-fend-off-amazon-and-other-e-commerce-players/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Showdigs",
+   "stage": "funding",
+   "amount": "$7.4M",
+   "date": "2022-02-15T23:02:19Z",
+   "sourceTitle": "Real estate startup Showdigs raises $7.4M as it looks to grow team and expand across U.S.",
+   "sourceUrl": "https://www.geekwire.com/2022/real-estate-startup-showdigs-raises-7-4m-as-it-looks-to-grow-team-and-expand-across-u-s/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Kevala",
+   "stage": "funding",
+   "amount": "$12.1M",
+   "date": "2022-02-14T15:00:00Z",
+   "sourceTitle": "Kevala lands $12.1M to address worker shortages for healthcare companies",
+   "sourceUrl": "https://www.geekwire.com/2022/kevala-lands-12-1m-to-address-worker-shortages-for-healthcare-companies/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Logixboard",
+   "stage": "funding",
+   "amount": "$32M",
+   "date": "2022-01-26T13:00:00Z",
+   "sourceTitle": "Logixboard lands $32M as supply chain chaos drives demand for freight forwarding software",
+   "sourceUrl": "https://www.geekwire.com/2022/logixboard-lands-32m-as-supply-chain-chaos-drives-demand-for-freight-forwarding-software/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Atlas Health",
+   "stage": "funding",
+   "amount": "$40M",
+   "date": "2022-01-25T18:49:56Z",
+   "sourceTitle": "Seattle startup Atlas Health raises $40M to connect health systems with philanthropic aid for patients",
+   "sourceUrl": "https://www.geekwire.com/2022/seattle-startup-atlas-health-raises-40m-to-help-healthcare-customers-find-philanthropic-aid-for-patients/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Bateau",
+   "stage": "funding",
+   "amount": "$4M",
+   "date": "2022-01-24T13:00:00Z",
+   "sourceTitle": "Bateau lands $4M for software used by senior living companies",
+   "sourceUrl": "https://www.geekwire.com/2022/bateau-lands-4m-for-software-used-by-senior-living-companies/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "BirchAI",
+   "stage": "seed",
+   "amount": "$3.1M",
+   "date": "2022-01-19T15:50:57Z",
+   "sourceTitle": "AI2 spinout BirchAI lands $3.1M for healthcare customer support platform",
+   "sourceUrl": "https://www.geekwire.com/2022/ai2-spinout-birchai-lands-3-1m-for-healthcare-customer-support-platform/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Highspot",
+   "stage": "Series F",
+   "amount": "$248M",
+   "date": "2022-01-13T13:00:00Z",
+   "sourceTitle": "Highspot raises $248M at $3.5B valuation as demand rises for software that helps salespeople",
+   "sourceUrl": "https://www.geekwire.com/2022/highspot-raises-248m-at-3-5b-valuation-as-demand-rises-for-software-that-helps-salespeople/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Pendulum",
+   "stage": "seed",
+   "amount": "$5.9M",
+   "date": "2022-01-07T15:00:00Z",
+   "sourceTitle": "Pendulum raises $5.9M to help companies identify potentially harmful narratives online",
+   "sourceUrl": "https://www.geekwire.com/2022/pendulum-raises-5-9m-to-help-companies-identify-potential-harmful-narratives-online/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Good Therapeutics",
+   "stage": "funding",
+   "amount": "$8M",
+   "date": "2021-12-30T17:20:36Z",
+   "sourceTitle": "Good Therapeutics lands $8M to develop protein drugs that work only where needed in the body",
+   "sourceUrl": "https://www.geekwire.com/2021/good-therapeutics-lands-8m-to-develop-protein-drugs-that-work-only-where-needed-in-the-body/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Rec Room",
+   "stage": "funding",
+   "amount": "$145M",
+   "date": "2021-12-20T15:28:00Z",
+   "sourceTitle": "Seattle VR startup Rec Room raises $145M, reaches $3.5B valuation",
+   "sourceUrl": "https://www.geekwire.com/2021/seattle-vr-startup-rec-room-hits-3-5b-valuation-with-new-145m-round/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Tasso",
+   "stage": "funding",
+   "amount": "$100M",
+   "date": "2021-12-17T18:41:36Z",
+   "sourceTitle": "Seattle startup Tasso lands $100M for self-administered blood collection devices",
+   "sourceUrl": "https://www.geekwire.com/2021/seattle-startup-tasso-lands-100m-for-self-administered-blood-collection-devices/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "Level",
+   "stage": "funding",
+   "amount": "$7M",
+   "date": "2021-12-13T14:00:00Z",
+   "sourceTitle": "Level rides ‘Great Resignation’ wave and lands $7M for credit service used by independent contractors",
+   "sourceUrl": "https://www.geekwire.com/2021/level-rides-great-resignation-wave-and-lands-7m-for-credit-service-used-by-independent-contractors/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  },
+  {
+   "name": "StormSensor",
+   "stage": "funding",
+   "amount": "$10M",
+   "date": "2021-12-01T18:16:42Z",
+   "sourceTitle": "StormSensor raises $10M for rain management tech amid severe flooding across the world",
+   "sourceUrl": "https://www.geekwire.com/2021/stormsensor-raises-10m-for-rain-management-tech-amid-severe-flooding-across-the-world/",
+   "firstSeen": "2026-11-27T04:43:54Z"
+  }
+ ],
+ "unnamed": [
+  {
+   "stage": "Series A",
+   "amount": "$20M",
+   "date": "2026-11-20T16:28:29Z",
+   "sourceTitle": "StepSecurity, led by two Microsoft vets, raises $20M to defend developers’ tools from hackers",
+   "sourceUrl": "https://www.geekwire.com/2026/stepsecurity-founded-by-two-microsoft-vets-raises-20m-to-defend-developers-tools-from-hackers/"
+  },
+  {
+   "stage": "Series A",
+   "amount": "$10M",
+   "date": "2026-10-27T17:19:10Z",
+   "sourceTitle": "Seattle’s Kivo Health raises $10M to bring lung disease rehab into patients’ homes",
+   "sourceUrl": "https://www.geekwire.com/2026/seattles-kivo-health-raises-10m-to-bring-lung-disease-rehab-into-patients-homes/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$1B",
+   "date": "2026-10-20T17:51:05Z",
+   "sourceTitle": "Autonomous flight startup Reliable Robotics opens Seattle area radar hub as valuation tops $1 billion",
+   "sourceUrl": "https://www.geekwire.com/2026/autonomous-flight-startup-reliable-robotics-opens-seattle-area-radar-hub-as-valuation-tops-1-billion/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$1M",
+   "date": "2026-10-15T21:51:34Z",
+   "sourceTitle": "A two-person Seattle startup lands $1M to reinvent energy-hungry chips suitable for space",
+   "sourceUrl": "https://www.geekwire.com/2026/a-two-person-seattle-startup-lands-1m-to-reinvent-energy-hungry-chips-suitable-for-space/"
+  },
+  {
+   "stage": "Series G",
+   "amount": "$500M",
+   "date": "2026-09-15T21:00:40Z",
+   "sourceTitle": "Helion funding round grows to $500M amid uncertainty over fusion startup’s Microsoft timeline",
+   "sourceUrl": "https://www.geekwire.com/2026/helion-funding-round-grows-to-500m-amid-uncertainty-over-fusion-startups-microsoft-timeline/"
+  },
+  {
+   "stage": "Series A",
+   "amount": "$50M",
+   "date": "2026-09-15T15:13:28Z",
+   "sourceTitle": "Seattle’s Nuance Labs raises $50M to give AI models human expression and nuance",
+   "sourceUrl": "https://www.geekwire.com/2026/seattles-nuance-labs-raises-50m-to-give-ai-models-human-expression-and-nuance/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$13M",
+   "date": "2026-09-09T20:17:47Z",
+   "sourceTitle": "NLM Photonics adds key investors in quest to reduce the power needed to move data between chips",
+   "sourceUrl": "https://www.geekwire.com/2026/nlm-photonics-adds-key-investors-in-quest-to-reduce-the-power-needed-to-move-data-between-chips/"
+  },
+  {
+   "stage": "Series A",
+   "amount": "$46M",
+   "date": "2026-06-17T16:16:48Z",
+   "sourceTitle": "Seattle biotech heavy-hitters emerge from stealth with $46M for next-gen migraine treatments",
+   "sourceUrl": "https://www.geekwire.com/2026/seattle-biotech-heavy-hitters-emerge-from-stealth-with-46m-for-next-gen-migraine-treatments/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$54M",
+   "date": "2026-06-11T19:36:26Z",
+   "sourceTitle": "With $54M and a SpaceX playbook, Seattle’s Endurance races to tap deep-sea volcanic power",
+   "sourceUrl": "https://www.geekwire.com/2026/with-54m-and-a-spacex-playbook-seattles-endurance-races-to-tap-deep-sea-volcanic-power/"
+  },
+  {
+   "stage": "seed",
+   "amount": "$7.5M",
+   "date": "2026-06-10T13:00:00Z",
+   "sourceTitle": "Ex-Icertis executives raise $7.5M for Rivvun, a startup that recovers lost corporate cash",
+   "sourceUrl": "https://www.geekwire.com/2026/ex-icertis-executives-raise-7-5m-to-launch-rivvun-a-startup-that-recovers-lost-corporate-cash/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$15.5B",
+   "date": "2026-06-04T15:00:17Z",
+   "sourceTitle": "Helion hits $15.5B valuation with $465M in new cash as it aims to commercialize fusion this decade",
+   "sourceUrl": "https://www.geekwire.com/2026/helion-hits-15-5b-valuation-with-465m-in-new-cash-to-commercialize-fusion-this-decade/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$8M",
+   "date": "2026-06-03T16:37:27Z",
+   "sourceTitle": "‘Biometrics for things’: Alitheon raises $8M to expand its optical AI tech to ID physical objects",
+   "sourceUrl": "https://www.geekwire.com/2026/biometrics-for-things-alitheon-raises-8m-to-expand-its-optical-ai-tech-to-id-physical-objects/"
+  },
+  {
+   "stage": "seed",
+   "amount": "$8.6M",
+   "date": "2026-04-23T13:08:54Z",
+   "sourceTitle": "Iridius, led by Microsoft and AWS vets, raises $8.6M to crack AI’s regulatory compliance bottleneck",
+   "sourceUrl": "https://www.geekwire.com/2026/iridius-led-by-microsoft-and-aws-vets-raises-8-6m-to-crack-ais-regulatory-compliance-bottleneck/"
+  },
+  {
+   "stage": "Series A",
+   "amount": "$42M",
+   "date": "2026-03-17T16:47:32Z",
+   "sourceTitle": "Cybersecurity startup Native, led by AWS vets with roots in Seattle, comes out of stealth with $42M",
+   "sourceUrl": "https://www.geekwire.com/2026/cybersecurity-startup-native-led-by-aws-vets-with-roots-in-seattle-comes-out-of-stealth-with-42m/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$2M",
+   "date": "2026-03-16T23:23:00Z",
+   "sourceTitle": "Former CrowdStrike and Bloomberg engineers raise $2M for Seattle fintech startup OpenCFO",
+   "sourceUrl": "https://www.geekwire.com/2026/former-crowdstrike-and-bloomberg-engineers-raise-2m-for-seattle-fintech-startup-opencfo/"
+  },
+  {
+   "stage": "Series A",
+   "amount": "$12M",
+   "date": "2026-02-23T20:34:09Z",
+   "sourceTitle": "Seattle startup Elevāt raises $12M to help industrial companies speed up equipment repairs",
+   "sourceUrl": "https://www.geekwire.com/2026/seattle-startup-elevat-raises-12m-to-help-industrial-companies-speed-up-equipment-repairs/"
+  },
+  {
+   "stage": "pre-seed",
+   "amount": "$1.5M",
+   "date": "2026-02-12T16:00:00Z",
+   "sourceTitle": "This Seattle startup wants to turn AI prompts into shareable software",
+   "sourceUrl": "https://www.geekwire.com/2026/this-seattle-startup-wants-to-turn-ai-prompts-into-shareable-software/"
+  },
+  {
+   "stage": "seed",
+   "amount": "$8.5M",
+   "date": "2026-02-11T13:00:00Z",
+   "sourceTitle": "AI startup founded by ex-Accolade leaders lands $8.5M from Seattle VCs to rethink contact center operations",
+   "sourceUrl": "https://www.geekwire.com/2026/ai-startup-founded-by-ex-accolade-leaders-lands-8-5m-from-seattle-vcs-to-rethink-contact-center-operations/"
+  },
+  {
+   "stage": "seed",
+   "amount": "$60M",
+   "date": "2026-02-10T14:53:27Z",
+   "sourceTitle": "Former GitHub CEO launches new developer platform with huge $60M seed round",
+   "sourceUrl": "https://www.geekwire.com/2026/former-github-ceo-launches-new-developer-platform-with-huge-60m-seed-round/"
+  },
+  {
+   "stage": "seed",
+   "amount": "$8.4M",
+   "date": "2026-02-10T13:00:00Z",
+   "sourceTitle": "Seattle security startup led by husband-wife duo raises $8.4M",
+   "sourceUrl": "https://www.geekwire.com/2026/seattle-security-startup-led-by-husband-wife-duo-raises-8-4m/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$29M",
+   "date": "2026-02-03T11:00:00Z",
+   "sourceTitle": "Soviet secrets and Star Wars prototypes: Avalanche raises $29M for its desktop-sized power quest",
+   "sourceUrl": "https://www.geekwire.com/2026/soviet-secrets-and-star-wars-prototypes-avalanche-raises-29m-for-its-desktop-sized-power-quest/"
+  },
+  {
+   "stage": "pre-seed",
+   "amount": "$6M",
+   "date": "2026-01-29T13:30:00Z",
+   "sourceTitle": "Remitly vets’ new startup raises $6M to help sports teams manage business operations with AI",
+   "sourceUrl": "https://www.geekwire.com/2026/remitly-vets-new-startup-raises-6m-to-help-sports-teams-manage-business-operations-with-ai/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$1.2M",
+   "date": "2026-01-20T21:25:20Z",
+   "sourceTitle": "Seattle startup that brings hedge fund investing capabilities to anyone raises $1.2M",
+   "sourceUrl": "https://www.geekwire.com/2026/seattle-startup-that-brings-hedge-fund-investing-capabilities-to-anyone-raises-1-2m/"
+  },
+  {
+   "stage": "Series C",
+   "amount": "$2B",
+   "date": "2026-01-08T20:57:21Z",
+   "sourceTitle": "Here’s where Seattle ranks among U.S. cities based on capital raised",
+   "sourceUrl": "https://www.geekwire.com/2026/heres-where-seattle-ranks-among-u-s-cities-based-on-capital-raised/"
+  },
+  {
+   "stage": "Series A",
+   "amount": "$15M",
+   "date": "2026-01-08T14:38:05Z",
+   "sourceTitle": "Former Amazon execs raise $15M for agentic commerce startup that uses AI to generate custom storefronts",
+   "sourceUrl": "https://www.geekwire.com/2026/former-amazon-execs-raise-15m-for-agentic-commerce-startup-that-uses-ai-to-generate-custom-storefronts/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$14.9M",
+   "date": "2026-01-08T01:59:16Z",
+   "sourceTitle": "New filing: Seattle fusion startup Avalanche Energy raising fresh cash",
+   "sourceUrl": "https://www.geekwire.com/2026/new-filing-seattle-fusion-startup-avalanche-energy-raising-fresh-cash/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$1.75M",
+   "date": "2025-12-30T20:38:15Z",
+   "sourceTitle": "The mother of all treatments: Mitera lands $1.75M to unlock the immune-tolerance secrets of pregnancy",
+   "sourceUrl": "https://www.geekwire.com/2025/the-mother-of-all-treatments-mitera-lands-1-75m-to-unlock-the-immune-tolerance-secrets-of-pregnancy/"
+  },
+  {
+   "stage": "pre-seed",
+   "amount": "$12M",
+   "date": "2025-12-18T17:30:00Z",
+   "sourceTitle": "Tin Can dials up another $12M to meet soaring demand for landline-style phone for kids",
+   "sourceUrl": "https://www.geekwire.com/2025/tin-can-dials-up-another-12m-to-meet-soaring-demand-for-landline-style-phone-for-kids/"
+  },
+  {
+   "stage": "pre-seed",
+   "amount": "$2M",
+   "date": "2025-11-18T14:57:43Z",
+   "sourceTitle": "This Seattle startup is rethinking spreadsheets for CPG brands — and giving away its product for free",
+   "sourceUrl": "https://www.geekwire.com/2025/this-seattle-startup-is-rethinking-spreadsheets-for-cpg-brands-and-giving-away-its-product-for-free/"
+  },
+  {
+   "stage": "seed",
+   "amount": "$8M",
+   "date": "2025-11-12T14:00:00Z",
+   "sourceTitle": "Seattle entrepreneur Stefan Kalb launches Super Labs to help mid-market businesses tap into AI",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-entrepreneur-stefan-kalb-launches-new-startup-to-help-mid-market-businesses-tap-into-ai/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$50M",
+   "date": "2025-11-03T16:21:07Z",
+   "sourceTitle": "Seattle VC firm Founders’ Co-op raises $50M for new fund to back more Pacific Northwest founders",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-vc-firm-founders-co-op-raises-50m-for-new-fund-to-back-more-pacific-northwest-founders/"
+  },
+  {
+   "stage": "Series C",
+   "amount": "$2.5B",
+   "date": "2025-10-01T16:24:56Z",
+   "sourceTitle": "Seattle startup Temporal hits $2.5B valuation after $105M secondary round",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-temporal-hits-2-5b-valuation-after-105m-secondary-round/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$35M",
+   "date": "2025-10-01T15:01:40Z",
+   "sourceTitle": "Opendoor co-founder brings Seattle-area startup Summation out of stealth with $35M in funding",
+   "sourceUrl": "https://www.geekwire.com/2025/opendoor-co-founder-brings-seattle-area-startup-summation-out-of-stealth-with-35m-in-funding/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$10M",
+   "date": "2025-09-16T21:04:12Z",
+   "sourceTitle": "Fred Hutch leaders raise $10M for new AI startup aiming to expedite drug discovery",
+   "sourceUrl": "https://www.geekwire.com/2025/fred-hutch-leaders-raise-10m-for-new-ai-startup-aiming-to-expedite-drug-discovery/"
+  },
+  {
+   "stage": "Series A",
+   "amount": "$15M",
+   "date": "2025-09-16T17:46:21Z",
+   "sourceTitle": "‘Commerce is entering the agentic era’: Envive raises $15M to build AI agents for online retailers",
+   "sourceUrl": "https://www.geekwire.com/2025/commerce-is-entering-the-agentic-era-envive-raises-15m-to-build-ai-agents-for-online-retailers/"
+  },
+  {
+   "stage": "pre-seed",
+   "amount": "$2.5M",
+   "date": "2025-09-16T12:00:00Z",
+   "sourceTitle": "Seattle startup raises $2.5M to analyze retail worker conversations using AI and microphones",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-raises-2-5m-to-analyze-retail-worker-conversations-using-ai-and-microphones/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$10M",
+   "date": "2025-09-09T21:55:59Z",
+   "sourceTitle": "Ex-Apple PhDs raise $10M, choose Seattle to build an AI foundation model that understands emotion",
+   "sourceUrl": "https://www.geekwire.com/2025/ex-apple-phds-raise-10m-choose-seattle-to-build-an-ai-foundation-model-that-understands-emotion/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$7M",
+   "date": "2025-09-03T15:21:49Z",
+   "sourceTitle": "Amazon and Google alums land $7M to build a personal AI therapist for people with dementia",
+   "sourceUrl": "https://www.geekwire.com/2025/amazon-and-google-alums-land-7m-to-build-a-personal-ai-therapist-for-people-with-dementia/"
+  },
+  {
+   "stage": "Series A",
+   "amount": "$14M",
+   "date": "2025-08-28T21:00:46Z",
+   "sourceTitle": "How a frustrated salon owner sparked a pivot to 911 call centers for this Seattle software startup",
+   "sourceUrl": "https://www.geekwire.com/2025/how-a-frustrated-salon-owner-sparked-a-pivot-to-911-call-centers-for-this-seattle-software-startup/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$8.9M",
+   "date": "2025-08-22T16:17:31Z",
+   "sourceTitle": "EV charging startup Electric Era raising fresh cash amid industry headwinds",
+   "sourceUrl": "https://www.geekwire.com/2025/ev-charging-startup-electric-era-raising-fresh-cash-amid-industry-headwinds/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$25M",
+   "date": "2025-08-12T13:00:00Z",
+   "sourceTitle": "Freight logistics startup GoodShip opening new Bellevue office after raising $25M",
+   "sourceUrl": "https://www.geekwire.com/2025/freight-logistics-startup-goodship-opening-new-bellevue-office-after-raising-25m/"
+  },
+  {
+   "stage": "seed",
+   "amount": "$7.6M",
+   "date": "2025-08-04T12:30:00Z",
+   "sourceTitle": "Qbeast, led by Azure and AWS vet, raises $7.6M to optimize analytics on open data platforms",
+   "sourceUrl": "https://www.geekwire.com/2025/qbeast-led-by-azure-and-aws-vet-raises-7-6m-to-optimize-analytics-on-open-data-platforms/"
+  },
+  {
+   "stage": "Series B",
+   "amount": "$14M",
+   "date": "2025-07-22T15:21:02Z",
+   "sourceTitle": "Semiconductor startup Lumotive boosts Series B round with help from Amazon",
+   "sourceUrl": "https://www.geekwire.com/2025/semiconductor-startup-lumotive-boosts-series-b-round-with-help-from-amazon/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$80M",
+   "date": "2025-07-16T15:26:23Z",
+   "sourceTitle": "Filings: AI2 Incubator raises third fund to back more early stage startups",
+   "sourceUrl": "https://www.geekwire.com/2025/filings-ai2-incubator-raises-third-fund-to-back-more-early-stage-startups/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$6.3M",
+   "date": "2025-07-10T21:00:00Z",
+   "sourceTitle": "Seattle startup raises $6.3M to pick up your used stuff for free — and turn it into a resale marketplace",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-raises-6-3m-to-pick-up-your-used-stuff-for-free-and-turn-it-into-a-resale-marketplace/"
+  },
+  {
+   "stage": "seed",
+   "amount": "$16M",
+   "date": "2025-06-04T17:20:35Z",
+   "sourceTitle": "Seattle startup backed by former Google CEO lands $16M to automate repetitive tasks on a computer",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-backed-by-former-google-ceo-lands-16m-to-automate-repetitive-tasks-on-a-computer/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$13.7M",
+   "date": "2025-05-21T16:28:25Z",
+   "sourceTitle": "Yoodli CEO Varun Puri on startup grit, filtering out noise, and building the ‘AI roleplay’ category",
+   "sourceUrl": "https://www.geekwire.com/2025/yoodli-ceo-varun-puri-on-startup-grit-filtering-out-noise-and-building-the-ai-roleplay-category/"
+  },
+  {
+   "stage": "seed",
+   "amount": "$4.9M",
+   "date": "2025-05-21T12:00:00Z",
+   "sourceTitle": "ROI on generative AI: Microsoft vets raise $4.9M to quantify business value of AI investments",
+   "sourceUrl": "https://www.geekwire.com/2025/roi-on-generative-ai-microsoft-vets-raise-4-9m-to-quantify-business-value-of-ai-investments/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$16M",
+   "date": "2025-05-14T22:20:54Z",
+   "sourceTitle": "Exclusive: Former Apple leaders raise $16M for stealthy Seattle startup building AI inference tech",
+   "sourceUrl": "https://www.geekwire.com/2025/exclusive-former-apple-leaders-raise-16m-for-stealthy-seattle-startup-building-ai-inference-tech/"
+  },
+  {
+   "stage": "seed",
+   "amount": "$4M",
+   "date": "2025-05-14T16:28:41Z",
+   "sourceTitle": "Amazon vets land $4M for Seattle data security startup Tensor9",
+   "sourceUrl": "https://www.geekwire.com/2025/amazon-vets-land-4m-for-seattle-data-security-startup-tensor9/"
+  },
+  {
+   "stage": "pre-seed",
+   "amount": "$2M",
+   "date": "2025-04-29T22:01:59Z",
+   "sourceTitle": "Marketers are ‘freaking out’ about AI search. This Seattle startup just raised $2M to help.",
+   "sourceUrl": "https://www.geekwire.com/2025/marketers-are-freaking-out-about-ai-search-this-seattle-startup-just-raised-2m-to-help/"
+  },
+  {
+   "stage": "seed",
+   "amount": "$6M",
+   "date": "2025-04-15T12:00:00Z",
+   "sourceTitle": "This Seattle startup uses AI to help mortgage lenders compete with industry giants",
+   "sourceUrl": "https://www.geekwire.com/2025/this-seattle-startup-uses-ai-to-help-smaller-mortgage-lenders-compete-with-industry-giants/"
+  },
+  {
+   "stage": "seed",
+   "amount": "$2M",
+   "date": "2025-04-02T12:00:00Z",
+   "sourceTitle": "Madrona backs new startup tackling corporate guest travel",
+   "sourceUrl": "https://www.geekwire.com/2025/madrona-backs-new-startup-tackling-corporate-guest-travel/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$146M",
+   "date": "2025-03-31T15:03:55Z",
+   "sourceTitle": "Tiger Global leads $146M round for Seattle-based developer tools startup Temporal",
+   "sourceUrl": "https://www.geekwire.com/2025/tiger-global-leads-146m-round-for-seattle-based-developer-tools-startup-temporal/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$3.5M",
+   "date": "2025-03-25T12:00:00Z",
+   "sourceTitle": "Sironix, which turns soybeans into cleaning ingredients, raises $3.5M to fund manufacturing",
+   "sourceUrl": "https://www.geekwire.com/2025/sironix-lands-3-5m-to-fund-manufacturing-of-its-coconut-and-soy-based-cleaning-ingredients/"
+  },
+  {
+   "stage": "pre-seed",
+   "amount": "$600K",
+   "date": "2025-03-17T12:00:00Z",
+   "sourceTitle": "This Seattle-area startup just raised $600K to capture carbon and turn it into graphite",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-area-startup-raises-cash-for-capturing-co2-thats-transformed-into-in-demand-graphite/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$2M",
+   "date": "2025-03-11T17:31:53Z",
+   "sourceTitle": "Seattle startup vets launch new company to rethink marketing for spas and beauty brands",
+   "sourceUrl": "https://www.geekwire.com/2025/seattle-startup-vets-launch-new-company-to-rethink-marketing-for-spas-and-beauty-brands/"
+  },
+  {
+   "stage": "seed",
+   "amount": "$5M",
+   "date": "2025-03-05T16:00:00Z",
+   "sourceTitle": "This Seattle AI startup watches you work — then automates the tedious back-office tasks",
+   "sourceUrl": "https://www.geekwire.com/2025/this-seattle-ai-startup-watches-you-work-then-automates-the-tedious-back-office-tasks/"
+  },
+  {
+   "stage": "pre-seed",
+   "amount": "$2.5M",
+   "date": "2025-02-27T18:12:25Z",
+   "sourceTitle": "Automating ‘science of war’: Exia Labs raises $2.5M to build AI for military operations",
+   "sourceUrl": "https://www.geekwire.com/2025/automating-science-of-war-exia-labs-raises-2-5m-to-build-ai-for-military-operations/"
+  },
+  {
+   "stage": "funding",
+   "amount": "$10M",
+   "date": "2025-02-26T17:21:35Z",
+   "sourceTitle": "These colorful AI aliens could be your new virtual best friend as startup lands $10M to launch Tolan",
+   "sourceUrl": "https://www.geekwire.com/2025/these-colorful-ai-aliens-could-be-your-new-virtual-best-friend-as-startup-lands-10m-to-launch-tolan/"
+  }
+ ],
+ "boards": {}
+}
