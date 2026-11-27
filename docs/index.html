@@ -377,10 +377,10 @@ function saveStore() { try { localStorage.setItem(STORE_KEY, JSON.stringify(stor
 let boardJobs = [], companies = [], backers = {}, updatedAt = null, boardErrors = [], loadFailed = false;
 // From discover.py (docs/leads.json): newly seeded startups found in funding news, not on the watchlist.
 let leadCos = [], unnamedLeads = [];
-// Recent first: by default the list only shows roles posted in the last month.
+// "Posted within" narrows the list when asked; by default every open role shows.
 const POSTED = [["3", "3 days"], ["7", "week"], ["30", "month"], ["all", "any time"]];
 const ui = { tab: store.ui.tab || "new", cats: new Set(), tiers: new Set(store.ui.tiers || []), q: "", open: new Set(),
-  posted: POSTED.some(([k]) => k === store.ui.posted) ? store.ui.posted : "30" };
+  posted: POSTED.some(([k]) => k === store.ui.posted) ? store.ui.posted : "all" };
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -588,7 +588,7 @@ function renderTabs(jobs) {
 
 function renderQueue(jobs) {
   if (loadFailed) { $("queue").innerHTML = `<div class="empty"><strong>Couldn't load the job list</strong>Make sure jobs.json sits next to this page. If you opened the file directly, serve the folder instead (see the README).</div>`; return; }
-  const list = spreadOut(filtered(jobs).filter(j => ui.tab === "all" || j.status === ui.tab), !ui.q.trim());
+  const list = spreadOut(filtered(jobs).filter(j => ui.tab === "all" || j.status === ui.tab), false);  // every role shows; companies stay mixed
   if (!jobs.length) { $("queue").innerHTML = `<div class="empty"><strong>No roles yet</strong>Run the daily workflow once (Actions → Daily job refresh → Run workflow) and reload.</div>`; return; }
   if (!list.length) { $("queue").innerHTML = `<div class="empty"><strong>Nothing here</strong>Try a longer "posted within", another tab, or clear the filters.</div>`; return; }
   $("queue").innerHTML = list.map((j, i) => {
