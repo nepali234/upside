@@ -72,6 +72,11 @@ Opening `docs/index.html` directly from disk won't load the data. Serve the fold
 
 Read this before changing anything.
 
+> **Start from an up-to-date local copy. Always.** The owner's working copy lives on their machine (`~/Downloads/upside-radar`), and it often has commits that aren't on GitHub yet, while the daily bot keeps pushing `jobs.json` refreshes to GitHub. Before you change anything:
+> 1. Work in that local copy, not a fresh clone or a patch built from GitHub's `main`. Changes built on an old copy collide with the owner's unpushed work.
+> 2. Run `git status` (it should be clean) and `git log --oneline origin/main..main` to see any unpushed commits, then `git pull --rebase` to get the bot's latest commits under them. If the rebase conflicts only in `docs/jobs.json`, keep GitHub's version.
+> 3. Make your changes on top of that, run `python3 -m unittest discover tests`, and commit. Leave `git push` to the owner unless they ask you to push.
+
 ### Design principles
 
 1. **No AI and no paid services at runtime.** The owner chose this deliberately. Don't add LLM calls, hosted APIs, databases, or anything that needs a key or costs money. The whole system is a cron job, a script, a JSON file and a static page.
